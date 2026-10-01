@@ -1002,6 +1002,8 @@
         td.cell.jam { position: relative; }
         td.cell.jam::after { content: ''; position: absolute; top: 3px; left: 3px; width: 7px; height: 7px; border-radius: 50%; background: var(--brand); }
         .welcome-banner { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; border-radius: 10px; padding: 10px 14px; font-size: 13px; font-weight: 800; line-height: 1.8; margin-bottom: 12px; }
+        .wb-actions .quick-fill-btn { background: #fff; border: 1px solid #a7f3d0; border-radius: 99px; padding: 2px 14px; text-decoration: none; font-size: 12.5px; font-weight: 800; color: #065f46; }
+        .wb-actions .quick-fill-btn:hover, .wb-actions .quick-fill-btn:focus-visible { background: #d1fae5; outline: none; }
         .wb-actions { display: flex; align-items: center; gap: 8px; }
         .wb-x { background: none; border: none; font-size: 20px; line-height: 1; color: #065f46; cursor: pointer; padding: 2px 8px; border-radius: 8px; }
         .wb-x:hover, .wb-x:focus-visible { background: #d1fae5; outline: none; }
@@ -1010,6 +1012,42 @@
         .help-sec p { margin: 0; font-size: 13px; font-weight: 600; line-height: 1.95; color: var(--muted); }
         .help-sec b { color: var(--primary-main); }
         @media print { .welcome-banner { display: none !important; } }
+        .notice-bar .quick-fill-btn, .day-actions .quick-fill-btn { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px; text-decoration: none; font-weight: 800; color: var(--primary-main); }
+        .notice-bar .quick-fill-btn:hover, .day-actions .quick-fill-btn:hover, .notice-bar .quick-fill-btn:focus-visible, .day-actions .quick-fill-btn:focus-visible { border-color: var(--brand); outline: none; }
+        .disc-btn { background: none; border: none; padding: 6px 0; font: inherit; font-size: 12.5px; font-weight: 800; color: var(--brand); cursor: pointer; text-align: right; }
+        .disc-btn::after { content: ''; display: inline-block; width: 6px; height: 6px; border: solid currentColor; border-width: 0 2px 2px 0; transform: rotate(45deg); margin-inline-start: 8px; vertical-align: 2px; transition: transform .15s; }
+        .disc-btn[aria-expanded="true"]::after { transform: rotate(-135deg); vertical-align: -1px; }
+        .day-actions { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
+        .notice-bar { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; background: #f8fafc; border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; font-size: 13px; font-weight: 700; line-height: 1.9; color: var(--primary-main); margin: 8px 0; }
+        .chips-scroll { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
+        .chips-scroll .day-chip { flex-shrink: 0; }
+        .tnote::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--brand); margin-inline-end: 6px; vertical-align: middle; }
+        .adj-row { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+        .adj-name { flex: 1; font-size: 13.5px; font-weight: 800; }
+        .adj-btn { width: 34px; height: 34px; border: 1px solid var(--border); background: #fff; border-radius: 8px; font: inherit; font-size: 18px; font-weight: 800; line-height: 1; cursor: pointer; }
+        .adj-btn:hover, .adj-btn:focus-visible { border-color: var(--brand); outline: none; }
+        .adj-val { min-width: 36px; text-align: center; font-weight: 900; font-size: 14px; direction: ltr; }
+        .wb-gender { display: inline-flex; align-items: center; gap: 6px; font-weight: 800; }
+        .wb-g { background: #fff; border: 1px solid #a7f3d0; border-radius: 99px; padding: 2px 14px; font: inherit; font-size: 12.5px; font-weight: 800; color: #065f46; cursor: pointer; }
+        .wb-g:hover, .wb-g:focus-visible { background: #d1fae5; outline: none; }
+        .more-btn { display: none; }
+        .more-list { display: flex; flex-direction: column; gap: 8px; }
+        .more-item { display: flex; align-items: center; gap: 12px; width: 100%; padding: 14px 16px; background: #fff; border: 1px solid var(--border); border-radius: 12px; font: inherit; font-size: 14.5px; font-weight: 800; color: var(--primary-main); cursor: pointer; text-align: right; }
+        .more-item svg { width: 19px; height: 19px; flex-shrink: 0; color: var(--muted); }
+        .more-item:hover, .more-item:focus-visible { border-color: var(--brand); background: #f8fafc; outline: none; }
+        @media (max-width: 720px) {
+            .mode-tabs-row { flex-wrap: nowrap; align-items: stretch; gap: 8px; }
+            .mode-tabs.mode-switch { flex: 1; min-width: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: #e2e8f0; padding: 3px; border-radius: 12px; }
+            .mode-switch .mode-tab { justify-content: center; padding: 10px 4px; border: none; background: transparent; border-radius: 9px; font-size: 13px; white-space: nowrap; gap: 5px; }
+            .mode-switch .mode-tab:hover { background: rgba(255,255,255,.55); }
+            .mode-switch .mode-tab.active { background: var(--primary-dark); color: #fff; }
+            .mode-tabs.mode-actions { display: none; }
+            .more-btn { display: inline-flex; align-items: center; justify-content: center; width: 48px; padding: 0; border-radius: 12px; }
+            .header .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; width: 100%; }
+            .header .actions > * { min-width: 0; }
+            #btn-reset, #btn-ramadan-reset { grid-column: 1 / -1; }
+        }
+        @media print { .notice-bar, .day-actions { display: none !important; } }
         .archive-del { background: none; border: none; color: #94a3b8; cursor: pointer; padding: 6px; line-height: 0; border-radius: 6px; }
         .archive-del:hover, .archive-del:focus-visible { color: #ef4444; background: #fef2f2; }
         .confirm-msg { margin: 0; font-size: 14px; font-weight: 700; line-height: 1.9; color: var(--primary-main); }
@@ -1291,13 +1329,13 @@
     </style>
 </head>
 <body>
-    <div class="welcome-banner no-print" id="welcome-banner" style="display:none"><span>مرحبًا بك في نظام تزكية 🌙 — اضغط على أي خانة في الجدول لتسجّل عبادتك.</span><span class="wb-actions"><button type="button" class="quick-fill-btn" id="wb-guide">دليل سريع</button><button type="button" class="wb-x" id="wb-close" aria-label="إغلاق">×</button></span></div>
+    <div class="welcome-banner no-print" id="welcome-banner" style="display:none"><span>أهلًا بك في نظام تزكية. اضغط على أي خانة في الجدول لتسجيل عبادتك.</span><span class="wb-gender" id="wb-gender">أنا: <button type="button" class="wb-g" data-g="m">رجل</button><button type="button" class="wb-g" data-g="f">امرأة</button></span><span class="wb-actions"><button type="button" class="quick-fill-btn" id="wb-guide">دليل سريع</button><button type="button" class="wb-x" id="wb-close" aria-label="إغلاق">×</button></span></div>
     <noscript><div style="padding:24px;text-align:center;font-weight:800;font-family:sans-serif">هذا التطبيق يحتاج تفعيل JavaScript في المتصفح ليعمل.</div></noscript>
     <div class="container">
         <div class="storage-banner no-print" id="storage-banner" role="alert" style="display:none">تنبيه: المتصفح لا يسمح بحفظ البيانات (وضع التصفح الخاص أو مساحة ممتلئة). ما تسجّله الآن سيضيع عند إغلاق الصفحة — نزّل نسخة احتياطية من زر «نسخة احتياطية» أولًا بأول.</div>
         <!-- Mode switcher -->
         <div class="mode-tabs-row no-print">
-            <div class="mode-tabs">
+            <div class="mode-tabs mode-switch">
                 <button type="button" class="mode-tab active" id="tab-weekly">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                     المتابعة الأسبوعية
@@ -1307,7 +1345,8 @@
                     وضع رمضان
                 </button>
             </div>
-            <div class="mode-tabs">
+            <button type="button" class="mode-tab more-btn" id="btn-more" aria-label="المزيد" aria-haspopup="dialog"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></button>
+            <div class="mode-tabs mode-actions">
                 <button type="button" class="mode-tab" id="btn-archive">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="5" rx="1"/><path d="M4 8v11a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V8"/><line x1="10" y1="13" x2="14" y2="13"/></svg>
                     الأرشيف
@@ -1389,7 +1428,7 @@
             <span class="leg-item"><span class="leg-dot" style="background:#3b82f6"></span> منتصف الوقت</span>
             <span class="leg-item"><span class="leg-dot" style="background:#f59e0b"></span> جزئي / آخر الوقت</span>
             <span class="leg-item"><span class="leg-dot" style="background:#ef4444"></span> لم يتم / فائتة</span>
-            <span class="leg-item"><span class="leg-dot" style="background:#94a3b8"></span> عذر شرعي / ظرف خاص</span>
+            <span class="leg-item"><span class="leg-dot" style="background:#94a3b8"></span><span class="leg-excuse"> عذر شرعي / ظرف خاص</span></span>
             <span class="leg-item"><span class="leg-dot" style="background:var(--brand);width:7px;height:7px"></span> جماعة</span>
                 <span class="leg-item" style="color:var(--muted)">— فارغ</span>
         </div>
@@ -1463,6 +1502,7 @@
             </div>
 
             <!-- Zakat al-Fitr + Khatm widgets -->
+            <div id="ramadan-notice" class="no-print"></div>
             <div class="ramadan-widgets" id="ramadan-widgets"></div>
 
             <!-- Legend -->
@@ -1472,7 +1512,7 @@
                 <span class="leg-item"><span class="leg-dot" style="background:#3b82f6"></span> منتصف الوقت</span>
                 <span class="leg-item"><span class="leg-dot" style="background:#f59e0b"></span> جزئي</span>
                 <span class="leg-item"><span class="leg-dot" style="background:#ef4444"></span> لم يتم / لم أصم</span>
-                <span class="leg-item"><span class="leg-dot" style="background:#94a3b8"></span> عذر شرعي / ظرف خاص</span>
+                <span class="leg-item"><span class="leg-dot" style="background:#94a3b8"></span><span class="leg-excuse"> عذر شرعي / ظرف خاص</span></span>
                 <span class="leg-item"><span class="leg-dot" style="background:var(--brand);width:7px;height:7px"></span> جماعة</span>
                 <span class="leg-item" style="color:var(--muted)">— فارغ</span>
             </div>
@@ -1877,6 +1917,11 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         qadr: ['التمسوها في العشر الأواخر، وفي الوتر منها آكد (متفق عليه)، وقد تكون في أي ليلة منها.', 'الليلة «٢٧» مثلًا تبدأ من مغرب اليوم السابق؛ فإن قمتَ مساء اليوم ٢٦ فهي ليلة ٢٧ وتُسجَّل في صف اليوم ٢٧.', 'الدعاء المأثور: «اللهم إنك عفوٌّ تحب العفو فاعفُ عني» (الترمذي).'],
         itikaf: ['سنّة مؤكدة في العشر الأواخر من رمضان.', 'واختلف الفقهاء في أقلّه: فلحظة بنيّة الاعتكاف في المسجد عند الجمهور، ويوم (أو أكثر) عند غيرهم.']
     };
+    const PR_INFO_M = 'صلاة الجماعة في المسجد للرجال: واجبة عند الحنابلة، وفرض كفاية أو سنة مؤكدة عند غيرهم، فيُحرص عليها.';
+    const PR_INFO_F = 'للمرأة أن تصلي في بيتها ولها الجماعة مع أهل بيتها، وحضور المسجد جائز؛ وفي الحيض والنفاس لا صلاة عليها ولا قضاء لها.';
+    const INFO_M = { fasting: ['الصيام من طلوع الفجر الصادق إلى غروب الشمس.', 'من أفطر لعذر (مرض يُرجى برؤه أو سفر) وجب عليه القضاء.', 'والعاجز عجزًا دائمًا (كِبَر أو مرض لا يُرجى برؤه) عليه فدية إطعام مسكين عن كل يوم.'] };
+    const INFO_F = {};
+    ['prayer_0', 'prayer_1', 'prayer_2', 'prayer_3', 'prayer_4'].forEach(function (k) { INFO_M[k] = INFO[k].concat([PR_INFO_M]); INFO_F[k] = INFO[k].concat([PR_INFO_F]); });
 
     // تعريف كل بند أساسي في النظام: المفتاح، العنوان، المجموعة، ونوع التفاعل.
     // الفرائض الخمس ثابتة دائمًا (أساس النظام)؛ باقي البنود قابلة للإخفاء من
@@ -1930,7 +1975,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
     const SETTINGS_STORAGE = 'TazkiyahSystem_v7_settings';
     // الإعدادات (البنود المخفية والمخصّصة) منفصلة عمدًا عن بيانات الأسبوع، حتى لا
     // يفقدها المستخدم عند الضغط على "مسح وبدء أسبوع"
-    let settings = { hidden: [], custom: [], hijriMethod: 'egypt', hijriOffset: 0, autoWeek: true, lockFuture: true, autoHideNA: true, view: 'week', rview: 'month', autoBackup: true, over: {}, order: [], details: {}, fridayMode: 'men', fridayChosen: false, seen: [], prayerTimes: true, city: 'cairo', lat: 30.0444, lon: 31.2357, method: 'egyptian', madhab: 'shafi', notifyLead: -1 };
+    let settings = { hidden: [], custom: [], hijriMethod: 'egypt', hijriOffset: 0, autoWeek: true, lockFuture: true, autoHideNA: true, view: 'week', rview: 'month', autoBackup: true, over: {}, order: [], details: {}, fridayMode: 'men', fridayChosen: false, gender: '', prAdj: {}, seen: [], prayerTimes: true, city: 'cairo', lat: 30.0444, lon: 31.2357, method: 'egyptian', madhab: 'shafi', notifyLead: -1 };
     let customCounter = 0;
 
     function loadSettings() {
@@ -1968,6 +2013,8 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             if (p.details && typeof p.details === 'object' && !Array.isArray(p.details)) settings.details = p.details;
             if (['men', 'women', 'none'].indexOf(p.fridayMode) !== -1) settings.fridayMode = p.fridayMode;
             settings.fridayChosen = p.fridayChosen === true;
+            if (p.gender === 'm' || p.gender === 'f') settings.gender = p.gender;
+            if (p.prAdj && typeof p.prAdj === 'object' && !Array.isArray(p.prAdj)) settings.prAdj = p.prAdj;
             if (Array.isArray(p.seen)) settings.seen = p.seen.filter(k => typeof k === 'string').slice(0, 60);
         } catch (e) {
             console.warn('Settings load failed', e);
@@ -1980,7 +2027,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
                 hidden: settings.hidden, custom: settings.custom, customCounter: customCounter,
                 hijriMethod: settings.hijriMethod, hijriOffset: settings.hijriOffset,
                 autoWeek: settings.autoWeek, lockFuture: settings.lockFuture, autoHideNA: settings.autoHideNA, view: settings.view,
-                rview: settings.rview, autoBackup: settings.autoBackup, over: settings.over, order: settings.order, details: settings.details, fridayMode: settings.fridayMode, fridayChosen: settings.fridayChosen, seen: settings.seen,
+                rview: settings.rview, autoBackup: settings.autoBackup, over: settings.over, order: settings.order, details: settings.details, fridayMode: settings.fridayMode, fridayChosen: settings.fridayChosen, gender: settings.gender, prAdj: settings.prAdj, seen: settings.seen,
                 prayerTimes: settings.prayerTimes, city: settings.city, lat: settings.lat, lon: settings.lon, method: settings.method, madhab: settings.madhab, notifyLead: settings.notifyLead
             }));
         } catch (e) {
@@ -2091,7 +2138,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         return result;
     }
 
-    const HIJRI_CAVEAT = ' الحساب فلكي وقد يختلف يومًا عن إعلان الجهة الرسمية؛ صحّحه من "تخصيص البنود" ← "التقويم الهجري".';
+    const HIJRI_CAVEAT = ' الحساب فلكي وقد يختلف يومًا عن إعلان الجهة الرسمية؛ صحّحه من "تخصيص البنود" ثم "التقويم الهجري".';
 
     // نص توضيحي لكل بند مقيَّد بأيام معيّنة، يظهر في لوحة "تخصيص البنود"
     function columnDateHint(c) {
@@ -2324,6 +2371,48 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         { id: 'gray',  text: 'عذر شرعي',  short: 'عذر شرعي', color: 'var(--gr-bd)' }
     ];
 
+    // تسميات العذر تتبع الجنس: العذر الشرعي الخاص بالمرأة (حيض/نفاس/حمل/إرضاع) لا يظهر للرجل
+    function applyGenderLabels() {
+        const g = settings.gender;
+        const T = g === 'f' ? { p: ['عذر شرعي (حيض / نفاس / مرض / سفر)', 'عذر شرعي'], n: ['عذر شرعي (حيض / نفاس / مرض)', 'عذر شرعي'], f: ['عذر شرعي (حيض / نفاس / حمل / إرضاع / مرض / سفر)', 'عذر شرعي'] }
+            : g === 'm' ? { p: ['عذر / رخصة (مرض / سفر / مطر)', 'عذر'], n: ['عذر (مرض / سفر)', 'عذر'], f: ['عذر (مرض / سفر)', 'عذر'] }
+            : { p: ['عذر شرعي / رخصة', 'عذر شرعي'], n: ['عذر شرعي', 'عذر شرعي'], f: ['عذر شرعي', 'عذر شرعي'] };
+        const set = (arr, v) => { const o = arr.find(x => x.id === 'gray'); if (o) { o.text = v[0]; o.short = v[1]; } };
+        set(PRAYER_OPTS, T.p); set(NAFILA_OPTS, T.n); set(FASTING_OPTS, T.f);
+        document.querySelectorAll('.leg-excuse').forEach(e => { e.textContent = ' ' + (g === 'm' ? 'عذر / ظرف خاص' : 'عذر شرعي / ظرف خاص'); });
+    }
+    function setGender(g) {
+        settings.gender = g;
+        if (!(settings.fridayChosen && settings.fridayMode === 'none')) { settings.fridayMode = g === 'f' ? 'women' : 'men'; settings.fridayChosen = true; }
+        applyGenderLabels(); saveSettings(); refreshAllViews();
+    }
+    function addProfileSettings() {
+        const mb = document.getElementById('modal-body');
+        if (!mb) return;
+        const box = document.createElement('div');
+        box.className = 'settings-section';
+        box.innerHTML = '<div class="settings-hint" style="font-weight:800;margin-top:6px">أنا</div><div class="settings-hint">اختر لتظهر لك العبارات والخيارات المناسبة لحالك (كالعذر الشرعي وسنن الجمعة وزر «تعليم اليوم بعذر» للمرأة).</div><div class="pill-toggle">' +
+            [['m', 'رجل'], ['f', 'امرأة']].map(x => '<button type="button" class="pill-btn' + (settings.gender === x[0] ? ' active' : '') + '" data-g="' + x[0] + '">' + x[1] + '</button>').join('') + '</div>';
+        mb.insertBefore(box, mb.firstChild);
+        box.querySelectorAll('.pill-btn').forEach(b => b.onclick = function () { setGender(b.getAttribute('data-g')); box.querySelectorAll('.pill-btn').forEach(x => x.classList.toggle('active', x === b)); });
+    }
+    const EXCUSE_KIND = c => c.kind === 'prayer' || c.kind === 'nafila' || c.kind === 'fasting' || (c.kind === 'smart' && c.isPrayer);
+    function toggleDayExcuse(src, id, cols) {
+        const targets = cols.filter(EXCUSE_KIND), keyOf = c => src.dayKey(id) + '_' + c.key;
+        if (!targets.length) return;
+        const prev = targets.map(c => [keyOf(c), src.cells()[keyOf(c)]]);
+        const allGray = targets.every(c => statusFromRaw(src.cells()[keyOf(c)]) === 'gray');
+        targets.forEach(c => { const k = keyOf(c); if (allGray) delete src.cells()[k]; else src.cells()[k] = c.kind === 'smart' ? { checks: [], status: 'gray' } : 'gray'; });
+        src.commit();
+        showToast(allGray ? 'أُلغي العذر لهذا اليوم' : 'عُلّم اليوم بعذر (الصلوات والنوافل والصيام فقط)', function () { prev.forEach(p => { if (p[1] === undefined) delete src.cells()[p[0]]; else src.cells()[p[0]] = p[1]; }); src.commit(); });
+    }
+    function dayExcuseHtml(src, id, cols) {
+        if (settings.gender !== 'f') return '';
+        const targets = cols.filter(EXCUSE_KIND);
+        if (!targets.length) return '';
+        const all = targets.every(c => statusFromRaw(src.cells()[src.dayKey(id) + '_' + c.key]) === 'gray');
+        return '<div class="day-actions no-print"><button type="button" class="quick-fill-btn day-excuse-btn">' + (all ? 'إلغاء العذر لهذا اليوم' : 'تعليم اليوم بعذر (حيض / نفاس)') + '</button></div>';
+    }
     const RAMADAN_ETIQUETTE = ['تأخير السحور', 'تعجيل الفطر عند الغروب', 'الدعاء عند الإفطار', 'السحور (ولو على تمرة أو شربة ماء)', 'الإفطار على رطب أو تمر أو ماء', 'حفظ اللسان والجوارح (ترك الغيبة والسباب والرفث)', 'تفطير صائم ولو بشربة ماء'];
 
     // الليالي الوترية من العشر الأواخر — أشهر الأقوال في تحرّي ليلة القدر (قد تكون في
@@ -2536,21 +2625,21 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         return (d.target || note) ? { target: d.target || '', note: note, amount: d.amount || 0 } : null;
     }
     function amountOf(key) { const d = detailOf(key); return d && d.amount ? d.amount : 0; }
-    function infoHtml(key) { const a = INFO[key]; return a ? '<div class="info-box">' + a.map(x => '<div>• ' + escapeHtml(x) + '</div>').join('') + '</div>' : ''; }
+    function infoHtml(key) { const a = (settings.gender === 'm' && INFO_M[key]) || (settings.gender === 'f' && INFO_F[key]) || INFO[key]; return a ? '<div class="info-box">' + a.map(x => '<div>• ' + escapeHtml(x) + '</div>').join('') + '</div>' : ''; }
     function detailTip(c) { const d = detailOf(c.key); return c.title + (d && d.target ? ' — ' + d.target : '') + (d && d.note ? ' — ' + d.note : ''); }
     function detailsHtml(key) {
         const d = detailOf(key);
-        return d ? '<div class="det-box">' + (d.target ? '<div><b>المستهدف:</b> ' + escapeHtml(d.target) + '</div>' : '') + (d.note ? '<div>📌 ' + escapeHtml(d.note) + '</div>' : '') + '</div>' : '';
+        return d ? '<div class="det-box">' + (d.target ? '<div><b>المستهدف:</b> ' + escapeHtml(d.target) + '</div>' : '') + (d.note ? '<div><b>ملاحظة:</b> ' + escapeHtml(d.note) + '</div>' : '') + '</div>' : '';
     }
     function todayDetailHtml(key) {
         const d = detailOf(key);
-        return d ? (d.target ? ' <small class="tgt">' + escapeHtml(d.target) + '</small>' : '') + (d.note ? '<div class="tnote">📌 ' + escapeHtml(d.note) + '</div>' : '') : '';
+        return d ? (d.target ? ' <small class="tgt">' + escapeHtml(d.target) + '</small>' : '') + (d.note ? '<div class="tnote">' + escapeHtml(d.note) + '</div>' : '') : '';
     }
     function refreshAllViews() { try { renderHeader(); build(); renderRamadanHeader(); buildRamadan(); } catch (e) { console.warn('refresh failed', e); } }
     function addDetailsSettings(colsFn) {
         const box = document.createElement('div');
         box.className = 'settings-section';
-        const summary = k => { const d = settings.details[k]; return d ? [d.target, d.note ? '📌' : ''].filter(Boolean).join(' · ') : 'لم يُحدَّد'; };
+        const summary = k => { const d = settings.details[k]; return d ? [d.target, d.note ? 'ملاحظة' : ''].filter(Boolean).join(' · ') : 'لم يُحدَّد'; };
         const dayLbl = x => x === 0 ? 'دائم' : x === 7 ? 'أسبوع' : x === 14 ? 'أسبوعان' : x === 30 ? '30 يومًا' : x === 60 ? 'شهران' : '3 أشهر';
         const buildPanel = (k, panel, row) => {
             panel.dataset.built = '1';
@@ -2588,6 +2677,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         document.getElementById('modal-body').appendChild(box);
     }
 
+    const PR_KEYS = ['fajr', 'sunrise', 'dhuhr', 'asr', 'maghrib', 'isha'];
     function sanitizeState() {
         data = { meta: { date: cleanDate(data.meta && data.meta.date), quran: str(data.meta && data.meta.quran, 120), dhikr: str(data.meta && data.meta.dhikr, 120) },
             cells: cleanCells(data.cells), notes: cleanNotes(data.notes) };
@@ -2597,6 +2687,8 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         const ov = {}; Object.keys(settings.over || {}).forEach(k => { if (BAD_KEYS.indexOf(k) === -1 && k.length <= 60) ov[k] = settings.over[k]; });
         settings.over = ov;
         settings.details = cleanDetails(settings.details);
+        settings.gender = (settings.gender === 'm' || settings.gender === 'f') ? settings.gender : '';
+        { const pa = {}; PR_KEYS.forEach(function (k) { const v = Math.round(Number(isPlain(settings.prAdj) ? settings.prAdj[k] : 0)); if (isFinite(v) && v !== 0) pa[k] = Math.max(-20, Math.min(20, v)); }); settings.prAdj = pa; }
         // البنود الاختيارية الجديدة (قضاء رمضان، صيام داود...) تبدأ مخفية حتى يفعّلها المستخدم بنفسه
         let seenChanged = false;
         BASE_COLUMNS.filter(c => c.optIn).forEach(c => {
@@ -3020,7 +3112,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             html +=
                 '<div class="opt" data-key="' + key + '" data-st="none" tabindex="0" role="button" style="background:#f1f5f9;justify-content:center;margin-top:10px">' +
                 '<div class="opt-txt" style="color:#64748b">مسح الاختيار</div></div>';
-            if (isPrayerOpts) html += '<div class="chk" style="margin-top:12px"><input type="checkbox" id="jam-chk"' + (curObj && curObj.jam ? ' checked' : '') + '><label for="jam-chk">صلّيتها جماعة (في المسجد أو مع أهل بيتي)</label></div>';
+            if (isPrayerOpts) html += '<div class="chk" style="margin-top:12px"><input type="checkbox" id="jam-chk"' + (curObj && curObj.jam ? ' checked' : '') + '><label for="jam-chk">' + (settings.gender === 'm' ? 'صلّيتها جماعة في المسجد' : 'صلّيتها جماعة (في المسجد أو مع أهل بيتي)') + '</label></div>';
             html += infoHtml(col);
             openModal('تحديد: ' + title, detailsHtml(col) + html, false);
             document.querySelectorAll('#modal-body .opt').forEach(el => {
@@ -3089,7 +3181,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         // الرواتب صلاة فعلاً، فالعذر الشرعي يشملها؛ أما أذكار ما بعد الصلاة فليست
         // صلاة ولا واجبة، فلا "عذر شرعي" بالمعنى الفقهي لها — العبارة الدقيقة عذر/ظرف عام
         const excuseLabel = isPrayer
-            ? 'عذر شرعي لهذا البند كاملاً (يتجاوز القائمة أدناه)'
+            ? (settings.gender === 'm' ? 'عذر لهذا البند كاملاً (يتجاوز القائمة أدناه)' : 'عذر شرعي لهذا البند كاملاً (يتجاوز القائمة أدناه)')
             : 'عذر / ظرف خاص لهذا البند كاملاً (يتجاوز القائمة أدناه)';
 
         td.onclick = function () {
@@ -3711,6 +3803,49 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
 
     /* ── رمضان: عرض "اليوم" ── */
     let rtodaySel = null;
+    // بداية رمضان المتوقعة بحسب التقويم الهجري المختار (الحالي إن كنا فيه، وإلا القادم)
+    // عدد الأيام بصياغة عربية صحيحة: يوم / يومان / 3-10 أيام / 11-99 يومًا / 100+ يوم
+    function arDays(n) {
+        if (n === 1) return 'يوم واحد';
+        if (n === 2) return 'يومان';
+        if (n >= 3 && n <= 10) return n + ' أيام';
+        return n + (n <= 99 ? ' يومًا' : ' يوم');
+    }
+    function suggestRamadanStart() {
+        try {
+            const t = new Date(), base = new Date(t.getFullYear(), t.getMonth(), t.getDate());
+            for (let i = -29; i <= 420; i++) {
+                const d = new Date(base.getFullYear(), base.getMonth(), base.getDate() + i), h = hijriParts(d);
+                if (h && h.month === 9 && h.day === 1) return isoOf(d);
+            }
+        } catch (e) { /* تجاهل */ }
+        return '';
+    }
+    function autoRamadanStart() {
+        if (ramadanData.meta.startDate) return;
+        const sg = suggestRamadanStart();
+        if (sg && sg <= todayISO()) {
+            ramadanData.meta.startDate = sg; saveRamadan();
+            setTimeout(function () { showToast('ضُبط تاريخ بداية رمضان من التقويم الهجري، ويمكنك تعديله', null, 6000); }, 900);
+        }
+    }
+    function startNewRamadan(iso) {
+        if (!archiveCurrentRamadan()) { showToast('تعذّر حفظ الأرشيف فلم يُمسح شيء — نزّل نسخة احتياطية أولًا'); return; }
+        ramadanData = { meta: { startDate: iso, dayCount: 30 }, cells: {}, notes: {}, khatm: { unit: 'juz', total: 30, days: 30, entries: {} }, zakatFitr: { paid: false, note: '' } };
+        rtodaySel = null; saveRamadan(); buildRamadan(); showToast('بدأ رمضان جديد وحُفظ السابق في الأرشيف');
+    }
+    function renderRamadanNotice() {
+        const box = document.getElementById('ramadan-notice');
+        if (!box) return;
+        const sg = suggestRamadanStart(), st = ramadanData.meta.startDate;
+        const old = st && (Date.now() - new Date(st + 'T00:00:00').getTime()) / DAY_MS > 200;
+        let html = '';
+        if (!st && sg) html = '<div class="notice-bar"><span>لم تحدّد تاريخ بداية رمضان. المتوقع بحسب التقويم الهجري: <b>' + escapeHtml(formatDateDisplay(sg)) + '</b> (قد يختلف يومًا، فاعتمد إعلان الجهة الرسمية).</span><button type="button" class="quick-fill-btn" id="rn-apply">اعتماد هذا التاريخ</button></div>';
+        else if (old && sg) html = '<div class="notice-bar"><span>البيانات الحالية لرمضان السابق. رمضان القادم المتوقع: <b>' + escapeHtml(formatDateDisplay(sg)) + '</b>.</span><button type="button" class="quick-fill-btn" id="rn-new">أرشفة السابق وبدء رمضان الجديد</button></div>';
+        box.innerHTML = html;
+        const a = document.getElementById('rn-apply'); if (a) a.onclick = function () { ramadanData.meta.startDate = sg; saveRamadan(); buildRamadan(); showToast('تم ضبط تاريخ بداية رمضان'); };
+        const n = document.getElementById('rn-new'); if (n) n.onclick = function () { askConfirm('بدء رمضان جديد', 'سيُحفظ رمضان السابق في الأرشيف ثم يبدأ رمضان جديد من التاريخ المقترح. متأكد؟', 'بدء رمضان الجديد', function () { startNewRamadan(sg); }); };
+    }
     function ramadanTodayNum() {
         const d0 = ramadanDayDate(1);
         if (!d0) return null;
@@ -3724,18 +3859,30 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         box.style.display = on ? '' : 'none';
         wrap.style.display = on ? 'none' : '';
         document.querySelectorAll('#rview-toggle .pill-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-v') === settings.rview));
+        const N = ramadanData.meta.dayCount || 30, d0 = ramadanDayDate(1);
+        if (!d0) {
+            const sg = suggestRamadanStart();
+            box.innerHTML = '<div class="settings-empty">لم يُحدَّد تاريخ بداية رمضان بعد.</div>' + (sg ? '<div class="notice-bar"><span>المتوقع بحسب التقويم الهجري: <b>' + escapeHtml(formatDateDisplay(sg)) + '</b> (قد يختلف يومًا، فاعتمد إعلان الجهة الرسمية).</span></div>' : '') +
+                '<div class="day-actions">' + (sg ? '<button type="button" class="quick-fill-btn" id="ns-apply">اعتماد التاريخ المقترح</button>' : '') + '<button type="button" class="quick-fill-btn" id="ns-month">عرض الشهر كله</button></div>';
+            const ap = document.getElementById('ns-apply'); if (ap) ap.onclick = function () { ramadanData.meta.startDate = sg; saveRamadan(); buildRamadan(); showToast('تم ضبط تاريخ بداية رمضان'); };
+            document.getElementById('ns-month').onclick = function () { settings.rview = 'month'; saveSettings(); buildRamadan(); };
+            return;
+        }
         const tn = ramadanTodayNum();
-        if (!tn) { box.innerHTML = '<div class="settings-empty">اليوم خارج أيام الشهر المسجَّلة. حدّد تاريخ بداية رمضان أولًا.</div>'; return; }
-        if (rtodaySel === null || rtodaySel > tn) rtodaySel = tn;
+        const diff = Math.round((new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()).getTime() - d0.getTime()) / DAY_MS);
+        const banner = tn ? '' : (diff < 0 ? 'لم يبدأ رمضان بعد؛ يبدأ بعد ' + arDays(-diff) + '، ويمكنك استعراض أيامه.' : 'انتهى رمضان؛ يمكنك استعراض أيامه أو أرشفته من «مسح بيانات رمضان».');
+        if (rtodaySel === null || rtodaySel < 1 || rtodaySel > N) rtodaySel = tn || (diff < 0 ? 1 : N);
         const dt = ramadanDayDate(rtodaySel), h = hijriParts(dt);
         const cols = ramadanActiveColumns().filter(c => !RAMADAN_SRC.na(c, rtodaySel));
         const sc = scoreDay(RAMADAN_SRC, cols.filter(c => c.kind !== 'khatm'), rtodaySel);
         let chips = '';
-        for (let n = Math.max(1, tn - 2); n <= tn; n++) chips += '<button type="button" class="day-chip' + (n === rtodaySel ? ' active' : '') + '" data-n="' + n + '">' + (n === tn ? 'اليوم' : 'اليوم ' + n) + '</button>';
+        for (let n = 1; n <= N; n++) chips += '<button type="button" class="day-chip' + (n === rtodaySel ? ' active' : '') + '" data-n="' + n + '">' + (n === tn ? 'اليوم' : 'يوم ' + n) + '</button>';
         box.innerHTML = '<div class="today-head"><div><div class="today-title">اليوم ' + rtodaySel + ' من رمضان</div><div class="today-sub">' + formatDateDisplay(isoOf(dt)) +
             (h ? ' · ' + h.day + ' ' + HIJRI_MONTHS[h.month - 1] + ' ' + h.year + 'هـ' : '') + '</div></div><div class="today-pct">' + (sc.total ? Math.round(sc.earned / sc.total * 100) + '%' : '—') + '</div></div>' +
-            '<div class="day-chips">' + chips + '</div>' + prayerStripHtml(dt, true) + '<div id="rtoday-list"></div>' + (getRamadanNote('day' + rtodaySel).trim() ? '<div class="today-note-print"><b>ملاحظات اليوم:</b> ' + escapeHtml(getRamadanNote('day' + rtodaySel).trim()) + '</div>' : '');
+            (banner ? '<div class="notice-bar">' + banner + '</div>' : '') + '<div class="day-chips chips-scroll">' + chips + '</div>' + dayExcuseHtml(RAMADAN_SRC, rtodaySel, cols) + prayerStripHtml(dt, true) + '<div id="rtoday-list"></div>' + (getRamadanNote('day' + rtodaySel).trim() ? '<div class="today-note-print"><b>ملاحظات اليوم:</b> ' + escapeHtml(getRamadanNote('day' + rtodaySel).trim()) + '</div>' : '');
         fillTodayList(box.querySelector('#rtoday-list'), RAMADAN_SRC, RAMADAN_GROUP_META, cols, rtodaySel);
+        box.querySelectorAll('.day-excuse-btn').forEach(b => b.onclick = function () { toggleDayExcuse(RAMADAN_SRC, rtodaySel, cols); });
+        const ac = box.querySelector('.day-chip.active'); if (ac && ac.scrollIntoView) { try { ac.scrollIntoView({ inline: 'center', block: 'nearest' }); } catch (e) { /* تجاهل */ } }
         box.querySelectorAll('.day-chip').forEach(b => b.onclick = function () { rtodaySel = parseInt(this.getAttribute('data-n'), 10); buildRamadanToday(); });
         prayerTick();
     }
@@ -3753,6 +3900,8 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             const M = adhan.CalculationMethod, mk = { egyptian: M.Egyptian, ummalqura: M.UmmAlQura, mwl: M.MuslimWorldLeague, karachi: M.Karachi, na: M.NorthAmerica }[settings.method] || M.Egyptian;
             const params = mk();
             params.madhab = settings.madhab === 'hanafi' ? adhan.Madhab.Hanafi : adhan.Madhab.Shafi;
+            const adj = settings.prAdj || {};
+            PR_KEYS.forEach(function (k) { if (typeof adj[k] === 'number' && adj[k]) params.adjustments[k] = adj[k]; });
             return new adhan.PrayerTimes(new adhan.Coordinates(c[1], c[2]), date, params);
         } catch (e) { return null; }
     }
@@ -3838,8 +3987,9 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         for (let i = 0; i <= ti; i++) chips += '<button type="button" class="day-chip' + (i === todaySel ? ' active' : '') + '" data-i="' + i + '">' + (i === ti ? 'اليوم' : DAYS[i]) + '</button>';
         box.innerHTML = '<div class="today-head"><div><div class="today-title">' + day + ' ' + formatDateDisplay(isoOf(dt)) + '</div><div class="today-sub">' +
             (h ? h.day + ' ' + HIJRI_MONTHS[h.month - 1] + ' ' + h.year + 'هـ' : '') + '</div></div><div class="today-pct">' + (pct === null ? '—' : pct + '%') + '</div></div>' +
-            '<div class="day-chips">' + chips + '</div>' + prayerStripHtml(dt, false) + '<div id="today-list"></div>' + (getDayNote(day).trim() ? '<div class="today-note-print"><b>ملاحظات اليوم:</b> ' + escapeHtml(getDayNote(day).trim()) + '</div>' : '');
+            '<div class="day-chips">' + chips + '</div>' + dayExcuseHtml(WEEK_SRC, day, cols) + prayerStripHtml(dt, false) + '<div id="today-list"></div>' + (getDayNote(day).trim() ? '<div class="today-note-print"><b>ملاحظات اليوم:</b> ' + escapeHtml(getDayNote(day).trim()) + '</div>' : '');
         fillTodayList(box.querySelector('#today-list'), WEEK_SRC, GROUP_META, cols, day);
+        box.querySelectorAll('.day-excuse-btn').forEach(b => b.onclick = function () { toggleDayExcuse(WEEK_SRC, day, cols); });
         box.querySelectorAll('.day-chip').forEach(b => b.onclick = function () { todaySel = parseInt(this.getAttribute('data-i'), 10); buildToday(); });
         prayerTick();
     }
@@ -3962,7 +4112,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
                 const fmt = l => l.map(x => escapeHtml(x.title) + ' <bdi>' + x.r + '%</bdi>').join(' · ');
                 const best = ranked.filter(x => x.r >= 70).slice(0, 3), weak = ranked.filter(x => x.r < 85).slice(-3).reverse();
                 html += '<div class="mo-card"><div class="archive-row" style="padding:0"><span class="archive-label">' + MONTH_NAMES_AR[p[1] - 1] + ' ' + p[0] + '</span>' +
-                    '<span class="archive-stats" style="color:' + archiveBarColor(a) + '"><bdi>' + a + '%</bdi>' + (delta === null ? '' : ' · ' + (delta >= 0 ? '▲ ' : '▼ ') + '<bdi>' + Math.abs(delta) + '</bdi> عن الشهر السابق') + '</span></div>' +
+                    '<span class="archive-stats" style="color:' + archiveBarColor(a) + '"><bdi>' + a + '%</bdi>' + (delta === null ? '' : ' · ' + (delta >= 0 ? 'ارتفاع ' : 'انخفاض ') + '<bdi>' + Math.abs(delta) + '</bdi> نقاط عن الشهر السابق') + '</span></div>' +
                     '<div class="mo-bars" aria-label="نسبة كل أسبوع">' + m.weeks.map(v => '<i title="' + v + '%" style="height:' + Math.max(6, v * 0.46) + 'px;background:' + archiveBarColor(v) + '"></i>').join('') + '</div>' +
                     '<div class="mo-list">' + (best.length ? '<b>الأقوى:</b> ' + fmt(best) + '<br>' : '') + (weak.length ? '<b>يحتاج اهتمامًا:</b> ' + fmt(weak) : '<b>كل البنود المسجَّلة فوق 85%</b>') + '</div></div>';
             });
@@ -3975,10 +4125,10 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
     }
 
     /* ── المشاركة: صورة (مشاركة/حفظ/نسخ) أو نص جاهز للواتساب ── */
-    const MARKS = { green: '✅', blue: '✅', yellow: '🟡', red: '❌', gray: '⚪' };
+    const MARKS = { green: 'تم', blue: 'تم', yellow: 'جزئي', red: 'لم يتم', gray: 'عذر' };
     function dayShareText(src, cols, id, head, pct) {
         const lines = [head + (pct === null ? '' : '\nالإنجاز: ' + pct + '%')];
-        cols.forEach(c => { if (!src.na(c, id)) lines.push((MARKS[src.status(src.dayKey(id) + '_' + c.key)] || '▫️') + ' ' + c.title); });
+        cols.forEach(c => { if (!src.na(c, id)) lines.push('- ' + c.title + ': ' + (MARKS[src.status(src.dayKey(id) + '_' + c.key)] || '—')); });
         return lines.join('\n');
     }
     function shareInfo(kind) {
@@ -4508,6 +4658,20 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             sel('pr-notify', 'تنبيه الصلاة (يعمل والصفحة مفتوحة)', [['-1', 'بدون'], ['0', 'عند الأذان'], ['10', 'قبل 10 دقائق'], ['15', 'قبل 15 دقيقة']], settings.notifyLead) +
             '<div class="perm-status" id="pr-perm-status"></div><div class="perm-extra" id="pr-perm-extra" style="display:none"></div>' +
             '<div style="display:flex;gap:8px;flex-wrap:wrap"><button type="button" class="quick-fill-btn" id="pr-perm" style="margin-top:4px"></button><button type="button" class="quick-fill-btn" id="pr-perm-go" style="margin-top:4px;display:none">متابعة وطلب الإذن</button></div>';
+        const PR_NAMES_AR = { fajr: 'الفجر', sunrise: 'الشروق', dhuhr: 'الظهر', asr: 'العصر', maghrib: 'المغرب', isha: 'العشاء' };
+        const adjV = k => { const v = (settings.prAdj && settings.prAdj[k]) || 0; return (v > 0 ? '+' : '') + v; };
+        box.insertAdjacentHTML('beforeend', '<div class="settings-hint" style="margin-top:14px;font-weight:800">تعديل المواقيت بالدقائق</div><div class="settings-hint">لو اختلف موقيت عن تقويم بلدك (دقيقة أو دقيقتين) عدّله هنا لكل صلاة: «−» يقدّمه و«+» يؤخّره.</div>' +
+            PR_KEYS.map(k => '<div class="adj-row" data-k="' + k + '"><span class="adj-name">' + PR_NAMES_AR[k] + '</span><button type="button" class="adj-btn" data-d="-1" aria-label="تقديم ' + PR_NAMES_AR[k] + ' دقيقة">−</button><span class="adj-val" id="adj-' + k + '">' + adjV(k) + '</span><button type="button" class="adj-btn" data-d="1" aria-label="تأخير ' + PR_NAMES_AR[k] + ' دقيقة">+</button></div>').join(''));
+        box.querySelectorAll('.adj-row').forEach(function (row) {
+            const k = row.getAttribute('data-k');
+            row.querySelectorAll('.adj-btn').forEach(function (b) {
+                b.onclick = function () {
+                    const v = Math.max(-20, Math.min(20, ((settings.prAdj && settings.prAdj[k]) || 0) + parseInt(b.getAttribute('data-d'), 10)));
+                    if (v) settings.prAdj[k] = v; else delete settings.prAdj[k];
+                    saveSettings(); row.querySelector('.adj-val').textContent = adjV(k); build(); buildRamadan();
+                };
+            });
+        });
         document.getElementById('modal-body').appendChild(box);
         const q = id => box.querySelector('#' + id);
         const apply = () => {
@@ -4527,15 +4691,15 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             const p = permState();
             goBtn.style.display = 'none'; say('');
             permStatus.className = 'perm-status' + (p === 'granted' ? ' ok' : (p === 'denied' || p === 'unsupported') ? ' bad' : '');
-            permStatus.textContent = p === 'granted' ? 'إشعارات المتصفح: مفعّلة ✓' : p === 'denied' ? 'إشعارات المتصفح: محجوبة من إعدادات المتصفح' : p === 'unsupported' ? 'متصفحك لا يدعم الإشعارات — سيظهر التنبيه داخل الصفحة فقط' : 'إشعارات المتصفح: لم تُفعَّل بعد (سيظهر التنبيه داخل الصفحة فقط)';
+            permStatus.textContent = p === 'granted' ? 'إشعارات المتصفح: مفعّلة' : p === 'denied' ? 'إشعارات المتصفح: محجوبة من إعدادات المتصفح' : p === 'unsupported' ? 'متصفحك لا يدعم الإشعارات — سيظهر التنبيه داخل الصفحة فقط' : 'إشعارات المتصفح: لم تُفعَّل بعد (سيظهر التنبيه داخل الصفحة فقط)';
             permBtn.style.display = p === 'unsupported' ? 'none' : '';
             permBtn.textContent = p === 'granted' ? 'تجربة إشعار' : p === 'denied' ? 'كيف أفعّلها؟' : 'تفعيل إشعارات المتصفح';
         };
         refreshPerm();
         permBtn.onclick = function () {
             const p = permState();
-            if (p === 'granted') { if (!sendNotification('هكذا سيصلك تنبيه الصلاة ✓', 'test')) showToast('تعذّر إرسال الإشعار من المتصفح'); }
-            else if (p === 'denied') say('اضغط على أيقونة القفل (أو الإعدادات) بجوار عنوان الصفحة ← الإشعارات ← «السماح»، ثم أعد تحميل الصفحة.');
+            if (p === 'granted') { if (!sendNotification('هكذا سيصلك تنبيه الصلاة', 'test')) showToast('تعذّر إرسال الإشعار من المتصفح'); }
+            else if (p === 'denied') say('اضغط على أيقونة القفل (أو الإعدادات) بجوار عنوان الصفحة ثم الإشعارات ثم «السماح»، ثم أعد تحميل الصفحة.');
             else { say('سيعرض المتصفح نافذة صغيرة تطلب إذنك (شكلها من المتصفح نفسه لا من النظام) — اختر «السماح» ليصلك التنبيه في وقت الصلاة حتى لو كنت في تبويب آخر، على أن تبقى هذه الصفحة مفتوحة.'); goBtn.style.display = ''; }
         };
         goBtn.onclick = function () {
@@ -4558,8 +4722,8 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
                 h += '<div class="settings-hint" style="margin-top:8px;font-weight:800">' + g.label + '</div>';
                 gc.forEach((c, i) => {
                     const w = c.weight || (c.kind === 'prayer' ? 2 : 1);
-                    h += '<div class="ord-row" data-k="' + escapeHtml(c.key) + '"><button type="button" class="ord-btn" data-d="-1"' + (i === 0 ? ' disabled' : '') + ' aria-label="أعلى">▲</button>' +
-                        '<button type="button" class="ord-btn" data-d="1"' + (i === gc.length - 1 ? ' disabled' : '') + ' aria-label="أسفل">▼</button>' +
+                    h += '<div class="ord-row" data-k="' + escapeHtml(c.key) + '"><button type="button" class="ord-btn" data-d="-1"' + (i === 0 ? ' disabled' : '') + ' aria-label="أعلى"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 15 12 9 18 15"/></svg></button>' +
+                        '<button type="button" class="ord-btn" data-d="1"' + (i === gc.length - 1 ? ' disabled' : '') + ' aria-label="أسفل"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>' +
                         '<input class="ord-title" maxlength="' + CUSTOM_TITLE_MAX + '" value="' + escapeHtml(c.title) + '" aria-label="اسم البند"><select class="ord-w" aria-label="الوزن">' +
                         [1, 2, 3].map(x => '<option value="' + x + '"' + (x === w ? ' selected' : '') + '>×' + x + '</option>').join('') + '</select></div>';
                 });
@@ -4635,6 +4799,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         settingsExtras();
     }
     function settingsExtras() {
+        addProfileSettings();
         addHijriSettings();
         addBehaviorSettings();
         addOrderSettings();
@@ -4691,6 +4856,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
     }
 
     function buildRamadan() {
+        renderRamadanNotice();
         updateDateDisplayButton('ramadan-start-date-btn', ramadanData.meta.startDate, function (iso) {
             ramadanData.meta.startDate = iso;
             saveRamadan();
@@ -4807,12 +4973,12 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             '<input type="checkbox" id="zakat-paid"' + (ramadanData.zakatFitr.paid ? ' checked' : '') + '>' +
             '<label for="zakat-paid">تم إخراج زكاة الفطر</label></div>' +
             '<textarea class="zakat-note" id="zakat-note" placeholder="ملاحظة (لمين، تاريخ الإخراج...)">' + escapeHtml(ramadanData.zakatFitr.note || '') + '</textarea>' +
-            '<div class="perm-extra">واجبة على كل مسلم عن نفسه ومن يعول: صاع من غالب قوت البلد عند الجمهور (ونصف صاع من القمح عند الحنفية). تجب بغروب شمس آخر يوم من رمضان عند الشافعية والحنابلة، وبفجر يوم العيد عند الحنفية. الأفضل إخراجها قبل صلاة العيد، ويجوز تعجيلها قبله (من أول رمضان عند الشافعية، وبيوم أو يومين عند غيرهم)، ويجوز بعد الصلاة في يوم العيد، وتأخيرها عن يوم العيد بلا عذر حرام ولا تسقط بفوات وقتها. وتفتي دار الإفتاء المصرية بجواز إخراج القيمة نقودًا (وتعلن قيمتها كل عام).</div>' +
+            '<button type="button" class="disc-btn" data-t="zk-info" aria-expanded="false">أحكام زكاة الفطر</button><div class="perm-extra" id="zk-info" hidden>واجبة على كل مسلم عن نفسه ومن يعول: صاع من غالب قوت البلد عند الجمهور (ونصف صاع من القمح عند الحنفية). تجب بغروب شمس آخر يوم من رمضان عند الشافعية والحنابلة، وبفجر يوم العيد عند الحنفية. الأفضل إخراجها قبل صلاة العيد، ويجوز تعجيلها قبله (من أول رمضان عند الشافعية، وبيوم أو يومين عند غيرهم)، ويجوز بعد الصلاة في يوم العيد، وتأخيرها عن يوم العيد بلا عذر حرام ولا تسقط بفوات وقتها. وتفتي دار الإفتاء المصرية بجواز إخراج القيمة نقودًا (وتعلن قيمتها كل عام).</div>' +
             '</div>';
         let qadaDue = 0;
         for (let d = 1; d <= dayCount; d++) { const fs = ramadanStatusOf('day' + d + '_fasting'); if (fs === 'red' || fs === 'gray') qadaDue++; }
         html += '<div class="rwidget"><div class="rwidget-title">قضاء الصيام</div><div class="khatm-summary">أيام تلزمك قضاءً: <b>' + qadaDue + '</b> ' + (qadaDue === 1 ? 'يوم' : 'أيام') + ' (المُفطرة أو المعذور فيها)</div>' +
-            '<div class="perm-extra">يجب قضاء ما أفطرته من رمضان ولو بعذر، متتابعًا أو متفرقًا حتى قبل رمضان القادم. والعاجز عجزًا دائمًا (كِبَر أو مرض لا يُرجى برؤه) عليه فدية إطعام مسكين عن كل يوم. يمكنك متابعة القضاء من بند «قضاء رمضان» في المتابعة الأسبوعية (فعّله من تخصيص البنود).</div></div>';
+            '<button type="button" class="disc-btn" data-t="qd-info" aria-expanded="false">أحكام القضاء والفدية</button><div class="perm-extra" id="qd-info" hidden>يجب قضاء ما أفطرته من رمضان ولو بعذر، متتابعًا أو متفرقًا حتى قبل رمضان القادم. والعاجز عجزًا دائمًا (كِبَر أو مرض لا يُرجى برؤه) عليه فدية إطعام مسكين عن كل يوم. يمكنك متابعة القضاء من بند «قضاء رمضان» في المتابعة الأسبوعية (فعّله من تخصيص البنود).</div></div>';
 
         html += '<div class="rwidget">' +
             '<div class="rwidget-title"><span>ختمة القرآن</span><span style="color:var(--muted)">' + pct + '%</span></div>' +
@@ -4914,6 +5080,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         const body = document.getElementById('modal-body');
         if (body) body.innerHTML = renderRamadanSettingsBody();
         wireRamadanSettingsBody();
+        addProfileSettings();
         addDetailsSettings(ramadanActiveColumns);
     }
 
@@ -4971,6 +5138,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
     function openRamadanSettings() {
         openModal('تخصيص بنود رمضان', renderRamadanSettingsBody(), false);
         wireRamadanSettingsBody();
+        addProfileSettings();
         addDetailsSettings(ramadanActiveColumns);
     }
 
@@ -5029,6 +5197,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         load();
         loadSettings();
         sanitizeState();
+        applyGenderLabels();
         const dateMigrated = migrateDateFieldIfNeeded();
         rollWeek();
         renderHeader();
@@ -5040,6 +5209,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         loadRamadan();
         loadRamadanSettings();
         sanitizeRamadan();
+        autoRamadanStart();
         renderRamadanHeader();
         buildRamadan();
 
@@ -5065,11 +5235,34 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
                 if (deferred) { const d = deferred; deferred = null; d.prompt(); if (d.userChoice) d.userChoice.then(function () { show(); }); return; }
                 const ios = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
                 const steps = ios
-                    ? ['افتح هذه الصفحة في متصفح <b>Safari</b> (وليس من داخل واتساب أو تطبيق آخر).', 'اضغط زر المشاركة <b>⬆︎</b> أسفل الشاشة.', 'اختر <b>«إضافة إلى الشاشة الرئيسية»</b> ثم اضغط <b>«إضافة»</b>.']
+                    ? ['افتح هذه الصفحة في متصفح <b>Safari</b> (وليس من داخل واتساب أو تطبيق آخر).', 'اضغط زر المشاركة (المربع الذي يخرج منه سهم للأعلى) أسفل الشاشة.', 'اختر <b>«إضافة إلى الشاشة الرئيسية»</b> ثم اضغط <b>«إضافة»</b>.']
                     : ['افتح قائمة المتصفح (⋮ أو ⋯).', 'اختر <b>«تثبيت التطبيق»</b> أو <b>«إضافة إلى الشاشة الرئيسية»</b>.', 'أكّد الإضافة، وسيظهر التطبيق بين تطبيقاتك ويعمل بدون إنترنت.'];
                 openModal('تثبيت التطبيق', '<p class="confirm-msg" style="margin-bottom:10px">ثبّته ليفتح كتطبيق مستقل، ويعمل بدون إنترنت، وتبقى بياناتك محفوظة بشكل أدوم على جهازك.</p><ol class="confirm-msg" style="padding-inline-start:22px;margin:0">' + steps.map(t => '<li style="margin-bottom:6px">' + t + '</li>').join('') + '</ol>', false);
             };
         })();
+        /* ── قائمة «المزيد» على الشاشات الصغيرة: تفتح الأزرار الثانوية نفسها بدل ازدحام الشريط ── */
+        (function () {
+            const mb = document.getElementById('btn-more');
+            if (!mb) return;
+            mb.onclick = function () {
+                const items = Array.prototype.filter.call(document.querySelectorAll('.mode-actions .mode-tab'), function (b) { return b.style.display !== 'none'; });
+                openModal('المزيد', '<div class="more-list">' + items.map(function (b) {
+                    return '<button type="button" class="more-item" data-id="' + b.id + '">' + (b.querySelector('svg') ? b.querySelector('svg').outerHTML : '') + '<span>' + escapeHtml(b.textContent.trim()) + '</span></button>';
+                }).join('') + '</div>', false);
+                document.querySelectorAll('#modal-body .more-item').forEach(function (it) {
+                    it.onclick = function () { const t = document.getElementById(it.getAttribute('data-id')); closeModal(); if (t) setTimeout(function () { t.click(); }, 80); };
+                });
+            };
+        })();
+
+        const rw = document.getElementById('ramadan-widgets');
+        if (rw) rw.addEventListener('click', function (e) {
+            const b = e.target.closest ? e.target.closest('.disc-btn') : null;
+            if (!b) return;
+            const t = document.getElementById(b.getAttribute('data-t'));
+            if (t) { t.hidden = !t.hidden; b.setAttribute('aria-expanded', t.hidden ? 'false' : 'true'); }
+        });
+
         /* ── المساعدة: دليل سريع يُعرض مرة واحدة على شكل بانر غير مزعج ── */
         (function () {
             const wb = document.getElementById('welcome-banner');
@@ -5078,7 +5271,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             const guide = [
                 ['كيف أسجّل؟', 'اضغط أي خانة واختر حالتها: <b>أخضر</b> مكتمل، <b>أزرق</b> منتصف الوقت، <b>أصفر</b> جزئي/آخر الوقت، <b>أحمر</b> لم يتم، <b>رمادي</b> عذر شرعي. وبعد كل تسجيل يظهر زر «تراجع» لثوانٍ.'],
                 ['الصلوات والجماعة', 'في الفريضة تقدر تعلّم «صلّيتها جماعة» فتظهر نقطة خضراء صغيرة في الخانة، ولا تؤثر في النسبة.'],
-                ['المقدار والتفاصيل', 'من «تخصيص البنود ← المقادير والتفاصيل» حدّد مقدار كل بند (الضحى ٨ ركعات مثلًا) وأضف دعاءً أو ملاحظة مثبّتة. بعدها تسجّل <b>الكمية المنجزة</b> (٦ من ٨) وتُحسب في النسبة.'],
+                ['المقدار والتفاصيل', 'من «تخصيص البنود ثم المقادير والتفاصيل» حدّد مقدار كل بند (الضحى ٨ ركعات مثلًا) وأضف دعاءً أو ملاحظة مثبّتة. بعدها تسجّل <b>الكمية المنجزة</b> (٦ من ٨) وتُحسب في النسبة.'],
                 ['وضع رمضان', 'يضم الصلوات والنوافل والأذكار مع الصيام وآدابه وليلة القدر والاعتكاف والختمة والصدقة. وما تسجّله من الصلوات والأذكار يظهر في المتابعة الأسبوعية لنفس الأيام والعكس، فلا يبدو أي أسبوع فارغًا.'],
                 ['عرض «اليوم» والطباعة', 'اختر «اليوم» لتسجيل يومك بسهولة، وعند الطباعة من عرض «اليوم» يُطبع اليوم وحده، ومن «الأسبوع كله» يُطبع الأسبوع.'],
                 ['بياناتك', 'محفوظة <b>على جهازك فقط</b>. نزّل نسخة من «نسخة احتياطية» من وقت لآخر، واستعدها إن غيّرت جهازك أو مسحت بيانات المتصفح. ويمكنك تثبيت التطبيق من زر «تثبيت التطبيق» ليعمل بدون إنترنت.'],
@@ -5087,6 +5280,8 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             const openGuide = () => { markSeen(); openModal('دليل سريع', guide.map(g => '<div class="help-sec"><h4>' + g[0] + '</h4><p>' + g[1] + '</p></div>').join(''), false); };
             const hb = document.getElementById('btn-help'); if (hb) hb.onclick = openGuide;
             if (wb) {
+                const gb = document.getElementById('wb-gender');
+                if (gb) { if (settings.gender) gb.style.display = 'none'; gb.querySelectorAll('.wb-g').forEach(function (b) { b.onclick = function () { setGender(b.getAttribute('data-g')); gb.style.display = 'none'; }; }); }
                 document.getElementById('wb-guide').onclick = openGuide;
                 document.getElementById('wb-close').onclick = markSeen;
                 if (!seen()) wb.style.display = '';
