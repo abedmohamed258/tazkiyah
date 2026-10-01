@@ -951,6 +951,65 @@
         .perm-extra { font-size: 12.5px; font-weight: 700; color: var(--muted); line-height: 1.9; margin: 6px 0; }
         @media print { .dd-list, .tip { display: none !important; } }
         @media (display-mode: standalone) { #btn-install { display: none !important; } }
+        .ad-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); gap: 6px; margin: 6px 0 12px; }
+        .ad-sq { border-radius: 8px; padding: 6px 0; text-align: center; font-size: 11.5px; font-weight: 800; color: #fff; }
+        .ad-sq.none { background: #e2e8f0; color: var(--muted); }
+        .dn { display: flex; flex-direction: column; line-height: 1.35; }
+        .rday { font-size: 9.5px; font-weight: 700; color: #a7f3d0; }
+        .det-box { background: #f8fafc; border: 1px solid var(--border); border-radius: 10px; padding: 8px 12px; margin-bottom: 12px; font-size: 13px; font-weight: 700; line-height: 1.9; color: var(--primary-main); }
+        .tgt { font-size: 10.5px; font-weight: 800; color: var(--brand); background: #ecfdf5; border-radius: 6px; padding: 1px 6px; margin-inline-start: 4px; white-space: nowrap; }
+        .tnote { font-size: 11.5px; font-weight: 700; color: var(--muted); line-height: 1.7; margin-top: 2px; }
+        .det-row { border: 1px solid var(--border); border-radius: 10px; margin-top: 8px; overflow: hidden; background: #fff; }
+        .det-head { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 10px; background: #fff; border: none; padding: 10px 12px; font: inherit; cursor: pointer; text-align: right; }
+        .det-head:hover, .det-head:focus-visible { background: #f8fafc; outline: none; }
+        .det-name { font-weight: 800; font-size: 13.5px; }
+        .det-sum { font-size: 12px; font-weight: 700; color: var(--muted); }
+        .det-panel { padding: 4px 12px 12px; border-top: 1px solid var(--border); }
+        .det-lbl { display: block; font-size: 12px; font-weight: 800; color: var(--muted); margin: 10px 0 4px; }
+        .det-panel input, .det-panel textarea { width: 100%; box-sizing: border-box; border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; font: inherit; font-weight: 700; }
+        .det-panel input:focus, .det-panel textarea:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px rgba(16,185,129,.18); }
+        .det-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+        .det-chip { background: #f1f5f9; border: 1px solid var(--border); border-radius: 99px; padding: 3px 12px; font: inherit; font-size: 12px; font-weight: 800; cursor: pointer; }
+        .det-chip:hover, .det-chip:focus-visible { border-color: var(--brand); color: var(--brand); outline: none; }
+        .today-note-print { display: none; margin-top: 12px; padding-top: 8px; border-top: 1px dashed #cbd5e1; font-size: 13px; font-weight: 700; line-height: 1.9; }
+        @media print {
+            body.print-today #week-table-wrap, body.print-today #ramadan-table-wrap, body.print-today #printNotes, body.print-today #ramadanPrintNotes,
+            body.print-today .view-switch, body.print-today .day-chips, body.print-today .prayer-strip { display: none !important; }
+            body.print-today #today-view, body.print-today #rtoday-view { display: block !important; box-shadow: none !important; border: none !important; padding: 0 !important; }
+            body.print-today .today-note-print { display: block !important; }
+            body.print-today .meta-row, body.print-today .print-filler, body.print-today #week-summary, body.print-today #ramadan-summary, body.print-today .ramadan-widgets { display: none !important; }
+            body.print-today #today-list { column-count: 2; column-gap: 14px; }
+            body.print-today #rtoday-list { column-count: 3; column-gap: 10px; column-fill: balance; }
+            body.print-today #rtoday-list .today-table td.tl { font-size: 11px; }
+            body.print-today .today-table { break-inside: avoid; margin-bottom: 8px; }
+            body.print-today .today-table td.cell { height: 22px; padding: 2px 6px; font-size: 11px; }
+            body.print-today .today-table td.tl { font-size: 12px; padding: 2px 8px; }
+            body.print-today .today-head { margin-bottom: 6px; }
+            .det-row, .det-box { display: none !important; }
+        }
+        .info-box { background: #f8fafc; border: 1px solid var(--border); border-radius: 10px; padding: 8px 12px; margin-top: 12px; font-size: 12px; font-weight: 600; line-height: 1.9; color: var(--muted); }
+        .qty-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 10px 12px; margin-bottom: 12px; }
+        .qty-hd { font-size: 12.5px; font-weight: 800; margin-bottom: 8px; color: var(--primary-main); }
+        .qty-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+        .qty-row input { flex: 1 1 90px; min-width: 80px; border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; font: inherit; font-weight: 800; box-sizing: border-box; }
+        .qty-row input:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px rgba(16,185,129,.18); }
+        .qty-btn { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px; font: inherit; font-size: 13px; font-weight: 800; color: var(--primary-main); cursor: pointer; transition: border-color .15s, background .15s; }
+        .qty-btn:hover, .qty-btn:focus-visible { border-color: var(--brand); outline: none; }
+        .qty-btn.primary { background: var(--brand); border-color: var(--brand); color: #fff; }
+        .qty-btn.primary:hover, .qty-btn.primary:focus-visible { filter: brightness(.95); }
+        .smart-note { display: block; font-size: 11.5px; font-weight: 600; color: var(--muted); line-height: 1.7; margin-top: 2px; }
+        .bonus-tag { background: #f1f5f9; border-radius: 6px; padding: 0 6px; font-size: 10.5px; color: var(--muted); font-weight: 800; }
+        td.cell.jam { position: relative; }
+        td.cell.jam::after { content: ''; position: absolute; top: 3px; left: 3px; width: 7px; height: 7px; border-radius: 50%; background: var(--brand); }
+        .welcome-banner { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; border-radius: 10px; padding: 10px 14px; font-size: 13px; font-weight: 800; line-height: 1.8; margin-bottom: 12px; }
+        .wb-actions { display: flex; align-items: center; gap: 8px; }
+        .wb-x { background: none; border: none; font-size: 20px; line-height: 1; color: #065f46; cursor: pointer; padding: 2px 8px; border-radius: 8px; }
+        .wb-x:hover, .wb-x:focus-visible { background: #d1fae5; outline: none; }
+        .help-sec { margin-bottom: 14px; }
+        .help-sec h4 { margin: 0 0 4px; font-size: 14px; font-weight: 900; color: var(--primary-main); }
+        .help-sec p { margin: 0; font-size: 13px; font-weight: 600; line-height: 1.95; color: var(--muted); }
+        .help-sec b { color: var(--primary-main); }
+        @media print { .welcome-banner { display: none !important; } }
         .archive-del { background: none; border: none; color: #94a3b8; cursor: pointer; padding: 6px; line-height: 0; border-radius: 6px; }
         .archive-del:hover, .archive-del:focus-visible { color: #ef4444; background: #fef2f2; }
         .confirm-msg { margin: 0; font-size: 14px; font-weight: 700; line-height: 1.9; color: var(--primary-main); }
@@ -1232,6 +1291,7 @@
     </style>
 </head>
 <body>
+    <div class="welcome-banner no-print" id="welcome-banner" style="display:none"><span>مرحبًا بك في نظام تزكية 🌙 — اضغط على أي خانة في الجدول لتسجّل عبادتك.</span><span class="wb-actions"><button type="button" class="quick-fill-btn" id="wb-guide">دليل سريع</button><button type="button" class="wb-x" id="wb-close" aria-label="إغلاق">×</button></span></div>
     <noscript><div style="padding:24px;text-align:center;font-weight:800;font-family:sans-serif">هذا التطبيق يحتاج تفعيل JavaScript في المتصفح ليعمل.</div></noscript>
     <div class="container">
         <div class="storage-banner no-print" id="storage-banner" role="alert" style="display:none">تنبيه: المتصفح لا يسمح بحفظ البيانات (وضع التصفح الخاص أو مساحة ممتلئة). ما تسجّله الآن سيضيع عند إغلاق الصفحة — نزّل نسخة احتياطية من زر «نسخة احتياطية» أولًا بأول.</div>
@@ -1263,6 +1323,10 @@
                 <button type="button" class="mode-tab" id="btn-backup">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                     نسخة احتياطية
+                </button>
+                <button type="button" class="mode-tab" id="btn-help">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    مساعدة
                 </button>
                 <button type="button" class="mode-tab" id="btn-install" style="display:none">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M12 8v6M9 11.5l3 3 3-3"/></svg>
@@ -1326,7 +1390,8 @@
             <span class="leg-item"><span class="leg-dot" style="background:#f59e0b"></span> جزئي / آخر الوقت</span>
             <span class="leg-item"><span class="leg-dot" style="background:#ef4444"></span> لم يتم / فائتة</span>
             <span class="leg-item"><span class="leg-dot" style="background:#94a3b8"></span> عذر شرعي / ظرف خاص</span>
-            <span class="leg-item" style="color:var(--muted)">— فارغ</span>
+            <span class="leg-item"><span class="leg-dot" style="background:var(--brand);width:7px;height:7px"></span> جماعة</span>
+                <span class="leg-item" style="color:var(--muted)">— فارغ</span>
         </div>
 
         <div class="view-switch no-print"><div class="pill-toggle" id="view-toggle"><button type="button" class="pill-btn" data-v="today">اليوم</button><button type="button" class="pill-btn" data-v="week">الأسبوع كله</button></div></div>
@@ -1408,6 +1473,7 @@
                 <span class="leg-item"><span class="leg-dot" style="background:#f59e0b"></span> جزئي</span>
                 <span class="leg-item"><span class="leg-dot" style="background:#ef4444"></span> لم يتم / لم أصم</span>
                 <span class="leg-item"><span class="leg-dot" style="background:#94a3b8"></span> عذر شرعي / ظرف خاص</span>
+                <span class="leg-item"><span class="leg-dot" style="background:var(--brand);width:7px;height:7px"></span> جماعة</span>
                 <span class="leg-item" style="color:var(--muted)">— فارغ</span>
             </div>
 
@@ -1755,12 +1821,62 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         { id: 'gray',   text: 'عذر / ظرف خاص',    short: 'ظرف خاص', color: 'var(--gr-bd)' }
     ];
 
-    const RATIBA = ['ركعتي الفجر', '4 قبل الظهر', '2 بعد الظهر', '2 بعد المغرب', '2 بعد العشاء'];
+    const RATIBA = ['ركعتي الفجر', '4 قبل الظهر', '2 بعد الظهر', '2 بعد المغرب', '2 بعد العشاء', '4 قبل العصر', 'ركعتان قبل المغرب', 'ركعتان قبل العشاء'];
     const SALAWAT = ['بعد الفجر', 'بعد الظهر', 'بعد العصر', 'بعد المغرب', 'بعد العشاء'];
-    // سنن مخصوصة بيوم الجمعة تحديدًا — اقتصرت على ما يصح لكل مسلم بلا فارق بين رجل
-    // وامرأة (قراءة الكهف، تحرّي ساعة الإجابة)، وتجنّبت عمدًا ما يرتبط بحضور الجمعة
-    // تحديدًا (كالتبكير والغسل لها) حتى لا نكرر مسألة الظهر/الجمعة المؤجَّلة سابقًا
-    const FRIDAY_SUNAN = ['قراءة سورة الكهف', 'تحرّي ساعة الإجابة (الدعاء)'];
+    // سنن يوم الجمعة كاملة. الفهرسان 0 و1 ثابتان كما كانا (حفاظًا على بيانات سابقة) وما بعدهما أُضيف.
+    // الوسم tag: att = لمن يحضر صلاة الجمعة، man = للرجال خاصةً (كالتطيّب). يُختار النمط من «تخصيص البنود».
+    const FRIDAY_SUNAN = ['قراءة سورة الكهف', 'تحرّي ساعة الإجابة (الدعاء)', 'الاغتسال (غسل الجمعة)', 'السواك', 'التطيّب بالطيب', 'لبس أحسن الثياب',
+        'التبكير إلى المسجد', 'المشي بسكينة وتجنّب تخطّي الرقاب', 'تحية المسجد وما تيسّر من النافلة', 'الإنصات للخطبة وترك اللغو', 'الإكثار من الصلاة على النبي ﷺ',
+        'قراءة (الم تنزيل) و(هل أتى) في فجر الجمعة', 'سنّة الجمعة البعدية (ركعتان أو أربع)'];
+    const EID_SUNAN = ['الاغتسال والتطيّب ولبس أجمل الثياب', 'الأكل قبل الخروج في الفطر (تمرات وترًا) وبعد الصلاة في الأضحى', 'التكبير', 'صلاة العيد', 'مخالفة الطريق (الذهاب من طريق والرجوع من آخر)', 'التهنئة وصلة الرحم'];
+    const SMART_META = {
+        ratiba: [{ note: 'خفيفتان؛ وهي أشدّ النوافل تعاهدًا (ركعتا الفجر خير من الدنيا وما فيها — مسلم)' }, { note: 'بسلامين (٢+٢)' }, { note: 'ركعتان بعد فريضة الظهر' }, { note: 'ركعتان بعد فريضة المغرب' }, { note: 'ركعتان بعد فريضة العشاء' },
+            { bonus: true, note: 'غير مؤكدة: ورد الترغيب فيها في حديث حسن (أبو داود والترمذي)' }, { bonus: true, note: 'غير مؤكدة: «صلّوا قبل المغرب» (البخاري)' }, { bonus: true, note: 'غير مؤكدة: «بين كل أذانين صلاة» (متفق عليه)' }],
+        adhkar_post: [{ note: 'استغفار ثلاثًا، «اللهم أنت السلام…»، التسبيح ٣٣ والتحميد ٣٣ والتكبير ٣٣ وتمام المئة، آية الكرسي، المعوذات؛ ويُزاد بعد الفجر: «لا إله إلا الله وحده لا شريك له…» عشرًا' }, { note: 'الأذكار نفسها بعد الظهر' }, { note: 'الأذكار نفسها بعد العصر' },
+            { note: 'الأذكار نفسها، ويُزاد عشر مرات «لا إله إلا الله وحده لا شريك له…» (وردت في المغرب والفجر بإسناد حسن)' }, { note: 'الأذكار نفسها بعد العشاء' }],
+        friday_sunan: [{ note: 'من غروب شمس الخميس إلى غروب شمس الجمعة' }, { note: 'أرجى الأقوال: آخر ساعة بعد العصر إلى الغروب، وما بين جلوس الإمام على المنبر وانقضاء الصلاة' },
+            { tag: 'att', note: 'سنة مؤكدة عند الجمهور (وأوجبه بعض أهل العلم) لمن يحضر الجمعة؛ والأفضل أن يكون قبل الذهاب' }, { tag: 'att', note: 'ورد مقرونًا بالغسل والطيب في الصحيح' },
+            { tag: 'man', note: 'للرجل؛ والمرأة إذا خرجت للصلاة لا تتطيّب' }, { tag: 'att', note: 'التجمّل للجمعة بأحسن الثياب المباحة' },
+            { tag: 'att', note: 'كلما بكّر عظُم الأجر (البدنة ثم البقرة…)؛ وفي بدء وقت التبكير خلاف: من الفجر عند الشافعية والحنابلة، ومن الزوال عند المالكية' },
+            { tag: 'att', note: 'وألّا يفرّق بين اثنين' }, { tag: 'att', note: 'ركعتان خفيفتان حتى لو كان الإمام يخطب' }, { tag: 'att', note: 'الإنصات واجب عند الجمهور' },
+            { note: 'ورد الأمر بالإكثار منها يوم الجمعة وليلتها' }, { note: 'ثبتت عن النبي ﷺ في صلاة فجر الجمعة' }, { tag: 'att', note: 'أقلها ركعتان (في البيت)، وأكملها أربع' }],
+        etiquette: [{ note: 'يُستحب تأخيره ما لم يُخشَ طلوع الفجر' }, { note: 'عند تحقق غروب الشمس' }, { note: 'ورد أن للصائم عند فطره دعوة مستجابة' }, { note: 'في السحور بركة (متفق عليه)' },
+            { note: 'رطبات ثم تمرات ثم ماء، على ما ورد عن النبي ﷺ' }, { note: 'الصيام جُنّة فلا يرفث ولا يجهل (متفق عليه)' }, { bonus: true, note: 'من فطّر صائمًا كان له مثل أجره (الترمذي)' }],
+        eid_sunan: [{}, { note: 'الفطر: قبل الصلاة؛ الأضحى: يُؤخَّر الأكل حتى يرجع فيأكل من أضحيته' }, { note: 'الفطر: من غروب ليلة العيد إلى الصلاة؛ الأضحى: من فجر عرفة إلى آخر أيام التشريق (على تفصيل بين المذاهب)' }, { note: 'سنة مؤكدة/واجبة/فرض كفاية بحسب المذهب، وتشهدها النساء أيضًا' }, {}, {}]
+    };
+    const INFO = {
+        prayer_0: ['وقتها من طلوع الفجر الصادق إلى طلوع الشمس.'], prayer_1: ['وقتها من زوال الشمس إلى أن يصير ظلّ كل شيء مثله؛ وللرجال المقيمين يوم الجمعة صلاة الجمعة بدلًا منها.'],
+        prayer_2: ['وقتها من دخول وقتها إلى غروب الشمس، والمختار إلى اصفرار الشمس؛ ومن أدرك ركعة قبل الغروب أدرك العصر.'], prayer_3: ['وقتها من غروب الشمس إلى مغيب الشفق الأحمر عند الجمهور.'],
+        prayer_4: ['وقتها من مغيب الشفق إلى منتصف الليل (المختار) ويمتد إلى الفجر عند العذر.'],
+        duha: ['أقلها ركعتان، وأكثرها ثماني ركعات عند كثير من الفقهاء (وذهب آخرون إلى أنه لا حدّ لأكثرها)، وتُصلّى مثنى مثنى.', 'وقتها من ارتفاع الشمس قدر رمح (نحو ١٥ دقيقة بعد الشروق) إلى قبيل الزوال، والأفضل إذا اشتدّ الضحى (صلاة الأوابين).'],
+        witr: ['سنّة مؤكدة (وواجب عند الحنفية)؛ أقلها ركعة وأكثرها إحدى عشرة، ويجوز ٣ و٥ و٧ و٩.', 'وقتها من بعد صلاة العشاء إلى قبيل الفجر؛ ومن خاف ألا يقوم آخر الليل أوتر أوله.'],
+        qiyam: ['لا حدّ لعدد ركعاته؛ وكان النبي ﷺ يصلّي غالبًا إحدى عشرة ركعة بالوتر، وصلّى الناس في زمن عمر رضي الله عنه عشرين ركعة في التراويح — والأمر واسع.', 'مثنى مثنى، وأفضل وقته الثلث الأخير من الليل.'],
+        ratiba: ['من صلّى اثنتي عشرة ركعة في اليوم والليلة بُني له بيت في الجنة (مسلم)، وتفصيلها: ركعتان قبل الفجر، أربع قبل الظهر وركعتان بعدها، وركعتان بعد المغرب، وركعتان بعد العشاء.', 'ويُستحب معها (غير مؤكدة): أربع قبل العصر، وركعتان قبل المغرب، وركعتان قبل العشاء.'],
+        adhkar_morn: ['وقتها من الفجر إلى ارتفاع الضحى (ويمتد عند بعض العلماء إلى الزوال).', 'من أهمها: آية الكرسي، الإخلاص والمعوذتان ٣ مرات، سيد الاستغفار، «اللهم بك أصبحنا…»، «رضيت بالله ربًّا…» ٣، «بسم الله الذي لا يضر مع اسمه شيء…» ٣، «سبحان الله وبحمده» ١٠٠.'],
+        adhkar_eve: ['وقتها من بعد العصر إلى ما بعد المغرب.', 'وهي نظير أذكار الصباح: آية الكرسي، الإخلاص والمعوذتان ٣، سيد الاستغفار، «اللهم بك أمسينا…»، «بسم الله الذي لا يضر…» ٣، «أعوذ بكلمات الله التامات من شر ما خلق» ٣.'],
+        adhkar_post: ['بعد السلام من الفريضة مباشرة: استغفار ٣، «اللهم أنت السلام ومنك السلام…»، ثم التسبيح ٣٣ والتحميد ٣٣ والتكبير ٣٣، وتمام المئة «لا إله إلا الله وحده لا شريك له…»، وآية الكرسي، والمعوذات.'],
+        dhikr_mutlaq: ['بلا وقت محدد ولا عدد محدد.', 'ومما ورد فضله: «سبحان الله وبحمده» ١٠٠ (تُحطّ الخطايا)، «لا إله إلا الله وحده لا شريك له…» ١٠٠ في اليوم، «لا حول ولا قوة إلا بالله» (كنز من كنوز الجنة)، والاستغفار.'],
+        salat_nabi: ['من صلّى عليّ صلاة صلّى الله عليه بها عشرًا (مسلم).', 'تتأكد يوم الجمعة وليلتها، وعند ذكره ﷺ، وبعد الأذان.'],
+        sleep: ['الوضوء قبل النوم، والنوم على الشق الأيمن.', 'آية الكرسي، ثم الإخلاص والمعوذتان يُقرأن وينفث بهما في الكفين ويمسح بهما الجسد ٣ مرات، وخواتيم سورة البقرة.', '«باسمك اللهم أموت وأحيا»، والتسبيح ٣٣ والتحميد ٣٣ والتكبير ٣٤.'],
+        duaa: ['أوقات يُرجى فيها الإجابة: الثلث الأخير من الليل، بين الأذان والإقامة، السجود، آخر ساعة من الجمعة، وعند الإفطار.'],
+        quran: ['أحبّ العمل إلى الله أدومه وإن قلّ (متفق عليه) — فاجعل لك وردًا يوميًا ثابتًا.', 'جزء يوميًا = ختمة في شهر (نحو ٢٠ صفحة).'],
+        friday_sunan: ['تظهر يوم الجمعة فقط، وتتغيّر القائمة بحسب حالتك (رجل يحضر، امرأة تحضر، لا أحضر) — يمكنك تغيير ذلك من «تخصيص البنود».'],
+        eid_sunan: ['تظهر في يوم عيد الفطر (١ شوال) ويوم عيد الأضحى (١٠ ذي الحجة) فقط.'],
+        white_days: ['ثلاثة أيام من كل شهر هجري (١٣ و١٤ و١٥)، وصيام ثلاثة أيام من كل شهر كصيام الدهر (متفق عليه).'],
+        mon_thu_fasting: ['تُعرض الأعمال يوم الإثنين والخميس فيُحبّ أن يُعرض عمله وهو صائم (الترمذي).'],
+        ashura: ['صيامه يكفّر السنة الماضية (مسلم)، ويُستحب صيام التاسع معه (أو الحادي عشر) مخالفةً لليهود.'],
+        arafah: ['يكفّر السنة الماضية والباقية (مسلم) لغير الحاج؛ أما الحاج بعرفة فيُستحب له الفطر عند جمهور العلماء ليتقوّى على الدعاء.'],
+        shawwal6: ['من صام رمضان ثم أتبعه ستًّا من شوال كان كصيام الدهر (مسلم)؛ تبدأ من ثاني شوال ويجوز متتابعة أو متفرقة.', 'يجوز الجمع بين نية قضاء رمضان ونية الست في شوال فيحصل الأجران (وبه تفتي دار الإفتاء المصرية)، والأكمل والأفضل صوم كلٍّ على حدة؛ ويرى بعض الفقهاء (كالحنابلة) تقديم القضاء.'],
+        sawm_dawud: ['أحبّ الصيام إلى الله صيام داود: يصوم يومًا ويفطر يومًا (متفق عليه)، ولا ينبغي الزيادة عليه.', 'تُفطر في الأيام التي يحرم صيامها (العيدان وأيام التشريق).'],
+        sawm_shaban: ['كان النبي ﷺ يكثر من الصيام في شعبان (متفق عليه).', 'يُنهى عن استقبال رمضان بصوم يوم أو يومين إلا من وافق عادةً له.'],
+        sawm_muharram: ['أفضل الصيام بعد رمضان شهر الله المحرّم (مسلم).'],
+        sawm_dhulhijja: ['العمل الصالح في العشر الأول من ذي الحجة أحبّ إلى الله من غيره (البخاري)، وصيام التسع مستحب عند جمهور العلماء ويتأكد آخرها (عرفة).', 'ويحرم صيام يوم العيد (١٠ ذي الحجة).'],
+        qada: ['واجب على من أفطر أيامًا من رمضان بعذر، ويجوز متتابعًا أو متفرقًا ما لم يدخل رمضان التالي.', 'وتأخيره بلا عذر حتى يدخل رمضان التالي يوجب الفدية مع القضاء عند الجمهور. والعاجز عجزًا دائمًا يُطعم عن كل يوم مسكينًا.'],
+        fasting: ['الصيام من طلوع الفجر الصادق إلى غروب الشمس.', 'من أفطر لعذر (مرض يُرجى برؤه، سفر، حيض ونفاس، وخوف على النفس أو الولد للحامل والمرضع) وجب عليه القضاء، وفي الفدية مع القضاء خلاف بين العلماء للحامل والمرضع.', 'والعاجز عجزًا دائمًا (كبر أو مرض لا يُرجى برؤه) عليه فدية إطعام مسكين عن كل يوم.'],
+        etiquette: ['السحور بركة، ويُستحب تأخيره، وتعجيل الفطر عند تحقق الغروب، والدعاء عند الفطر، وحفظ اللسان والجوارح.'],
+        qadr: ['التمسوها في العشر الأواخر، وفي الوتر منها آكد (متفق عليه)، وقد تكون في أي ليلة منها.', 'الليلة «٢٧» مثلًا تبدأ من مغرب اليوم السابق؛ فإن قمتَ مساء اليوم ٢٦ فهي ليلة ٢٧ وتُسجَّل في صف اليوم ٢٧.', 'الدعاء المأثور: «اللهم إنك عفوٌّ تحب العفو فاعفُ عني» (الترمذي).'],
+        itikaf: ['سنّة مؤكدة في العشر الأواخر من رمضان.', 'واختلف الفقهاء في أقلّه: فلحظة بنيّة الاعتكاف في المسجد عند الجمهور، ويوم (أو أكثر) عند غيرهم.']
+    };
 
     // تعريف كل بند أساسي في النظام: المفتاح، العنوان، المجموعة، ونوع التفاعل.
     // الفرائض الخمس ثابتة دائمًا (أساس النظام)؛ باقي البنود قابلة للإخفاء من
@@ -1781,11 +1897,16 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         { key: 'white_days', title: 'الأيام البيض', group: 'fasting', kind: 'nafila', whiteDays: true, toggleable: true, suppressDuringRamadan: true },
         { key: 'mon_thu_fasting', title: 'صيام الإثنين والخميس', group: 'fasting', kind: 'nafila', toggleable: true, days: ['الإثنين', 'الخميس'], suppressDuringRamadan: true },
         // عاشوراء وتاسوعاء: 9-10 محرم (الشهر الهجري رقم 1)
-        { key: 'ashura', title: 'صيام عاشوراء وتاسوعاء', group: 'fasting', kind: 'nafila', toggleable: true, hijriDates: [{ month: 1, day: 9 }, { month: 1, day: 10 }] },
+        { key: 'ashura', title: 'صيام عاشوراء وتاسوعاء', group: 'fasting', kind: 'nafila', toggleable: true, optional: true, hijriDates: [{ month: 1, day: 9 }, { month: 1, day: 10 }, { month: 1, day: 11 }] },
         // عرفة: 9 ذو الحجة (الشهر الهجري رقم 12)
         { key: 'arafah', title: 'صيام يوم عرفة', group: 'fasting', kind: 'nafila', toggleable: true, hijriDates: [{ month: 12, day: 9 }] },
         // الست من شوال: أي 6 أيام خلال شهر شوال كامل (الشهر الهجري رقم 10)، فتُترك متاحة طوال الشهر
-        { key: 'shawwal6', title: 'صيام الست من شوال', group: 'fasting', kind: 'nafila', toggleable: true, hijriMonth: 10 },
+        { key: 'shawwal6', title: 'صيام الست من شوال', group: 'fasting', kind: 'nafila', toggleable: true, optional: true, hijriMonth: 10 },
+        { key: 'sawm_dawud', title: 'صيام يوم وإفطار يوم', group: 'fasting', kind: 'fasting', toggleable: true, optIn: true, optional: true, suppressDuringRamadan: true },
+        { key: 'sawm_shaban', title: 'صيام شعبان', group: 'fasting', kind: 'fasting', toggleable: true, optIn: true, optional: true, hijriMonth: 8 },
+        { key: 'sawm_muharram', title: 'صيام المحرّم', group: 'fasting', kind: 'fasting', toggleable: true, optIn: true, optional: true, hijriMonth: 1 },
+        { key: 'sawm_dhulhijja', title: 'صيام تسع ذي الحجة', group: 'fasting', kind: 'fasting', toggleable: true, optIn: true, optional: true, hijriRange: { month: 12, from: 1, to: 9 } },
+        { key: 'qada', title: 'قضاء رمضان', group: 'fasting', kind: 'fasting', toggleable: true, optIn: true, optional: true, suppressDuringRamadan: true },
         { key: 'adhkar_morn', title: 'الصباح', group: 'adhkar', kind: 'std', toggleable: true },
         { key: 'adhkar_eve', title: 'المساء', group: 'adhkar', kind: 'std', toggleable: true },
         { key: 'adhkar_post', title: 'دبر الصلوات', group: 'adhkar', kind: 'smart', isPrayer: false, items: SALAWAT, hl: true, toggleable: true },
@@ -1794,7 +1915,8 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         { key: 'sleep', title: 'ذكر النوم', group: 'adhkar', kind: 'std', toggleable: true },
         { key: 'duaa', title: 'الدعاء', group: 'adhkar', kind: 'std', toggleable: true },
         { key: 'quran', title: 'ورد القرآن', group: 'adhkar', kind: 'std', toggleable: true },
-        { key: 'friday_sunan', title: 'سنن الجمعة', group: 'adhkar', kind: 'smart', isPrayer: false, items: FRIDAY_SUNAN, hl: true, toggleable: true, days: ['الجمعة'] }
+        { key: 'friday_sunan', title: 'سنن الجمعة', group: 'adhkar', kind: 'smart', isPrayer: false, items: FRIDAY_SUNAN, hl: true, toggleable: true, days: ['الجمعة'] },
+        { key: 'eid_sunan', title: 'سنن العيد', group: 'adhkar', kind: 'smart', isPrayer: false, items: EID_SUNAN, hl: true, toggleable: true, hijriDates: [{ month: 10, day: 1 }, { month: 12, day: 10 }] }
     ];
     const GROUP_META = [
         { id: 'fard', label: 'الصلوات الخمس (الفرائض)', alt: true },
@@ -1808,7 +1930,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
     const SETTINGS_STORAGE = 'TazkiyahSystem_v7_settings';
     // الإعدادات (البنود المخفية والمخصّصة) منفصلة عمدًا عن بيانات الأسبوع، حتى لا
     // يفقدها المستخدم عند الضغط على "مسح وبدء أسبوع"
-    let settings = { hidden: [], custom: [], hijriMethod: 'egypt', hijriOffset: 0, autoWeek: true, lockFuture: true, autoHideNA: true, view: 'week', rview: 'month', autoBackup: true, over: {}, order: [], prayerTimes: true, city: 'cairo', lat: 30.0444, lon: 31.2357, method: 'egyptian', madhab: 'shafi', notifyLead: -1 };
+    let settings = { hidden: [], custom: [], hijriMethod: 'egypt', hijriOffset: 0, autoWeek: true, lockFuture: true, autoHideNA: true, view: 'week', rview: 'month', autoBackup: true, over: {}, order: [], details: {}, fridayMode: 'men', fridayChosen: false, seen: [], prayerTimes: true, city: 'cairo', lat: 30.0444, lon: 31.2357, method: 'egyptian', madhab: 'shafi', notifyLead: -1 };
     let customCounter = 0;
 
     function loadSettings() {
@@ -1843,6 +1965,10 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
                 });
             }
             if (Array.isArray(p.order)) settings.order = p.order.filter(x => typeof x === 'string');
+            if (p.details && typeof p.details === 'object' && !Array.isArray(p.details)) settings.details = p.details;
+            if (['men', 'women', 'none'].indexOf(p.fridayMode) !== -1) settings.fridayMode = p.fridayMode;
+            settings.fridayChosen = p.fridayChosen === true;
+            if (Array.isArray(p.seen)) settings.seen = p.seen.filter(k => typeof k === 'string').slice(0, 60);
         } catch (e) {
             console.warn('Settings load failed', e);
         }
@@ -1854,7 +1980,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
                 hidden: settings.hidden, custom: settings.custom, customCounter: customCounter,
                 hijriMethod: settings.hijriMethod, hijriOffset: settings.hijriOffset,
                 autoWeek: settings.autoWeek, lockFuture: settings.lockFuture, autoHideNA: settings.autoHideNA, view: settings.view,
-                rview: settings.rview, autoBackup: settings.autoBackup, over: settings.over, order: settings.order,
+                rview: settings.rview, autoBackup: settings.autoBackup, over: settings.over, order: settings.order, details: settings.details, fridayMode: settings.fridayMode, fridayChosen: settings.fridayChosen, seen: settings.seen,
                 prayerTimes: settings.prayerTimes, city: settings.city, lat: settings.lat, lon: settings.lon, method: settings.method, madhab: settings.madhab, notifyLead: settings.notifyLead
             }));
         } catch (e) {
@@ -1868,7 +1994,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         let base = BASE_COLUMNS.filter(c => !c.toggleable || settings.hidden.indexOf(c.key) === -1);
         // بند مقيَّد بالتقويم (عرفة، عاشوراء، الست من شوال...) لا يُعرض عمودًا كاملًا في أسبوع لا ينطبق فيه أبدًا
         if (settings.autoHideNA && data.meta.date) {
-            base = base.filter(c => !(c.toggleable && (c.whiteDays || c.hijriDates || c.hijriMonth || c.suppressDuringRamadan) &&
+            base = base.filter(c => !(c.toggleable && (c.whiteDays || c.hijriDates || c.hijriMonth || c.hijriRange || c.suppressDuringRamadan) &&
                 DAYS.every(d => { const r = naReasonFor(c, d); return r && r.indexOf('أدخل') !== 0; })));
         }
         const custom = settings.custom.map(c => ({
@@ -1981,11 +2107,14 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         if (c.key === 'shawwal6') {
             return 'يظهر متاحًا طوال شهر شوال الهجري عدا يوم العيد — اختر أي 6 أيام منه.' + HIJRI_CAVEAT;
         }
+        if (c.hijriRange) return 'يظهر من ١ إلى ٩ ذي الحجة.' + HIJRI_CAVEAT;
+        if (c.hijriMonth) return 'يظهر طوال هذا الشهر الهجري.' + HIJRI_CAVEAT;
+        if (c.key === 'eid_sunan') return 'يظهر في أسبوع عيد الفطر وعيد الأضحى فقط.' + HIJRI_CAVEAT;
         if (c.days) {
             return 'يظهر فقط في: ' + c.days.join('، ') + '.';
         }
         if (c.ramadanDays) {
-            return 'يُتحرّى عادة في الليالي الوترية من العشر الأواخر.';
+            return 'تُتحرّى في العشر الأواخر من رمضان (والوتر منها آكد).';
         }
         return null;
     }
@@ -2168,10 +2297,16 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             if (wd.indexOf(day) === -1) return 'ليس من أيام هذه المناسبة هذا الأسبوع';
             return null;
         }
+        if (col.hijriRange) {
+            const r = col.hijriRange, wd = computeHijriMatch(hd => hd.month === r.month && hd.day >= r.from && hd.day <= r.to);
+            if (wd === null) return 'أدخل تاريخ بداية الأسبوع بالأعلى لحساب هذا تلقائيًا';
+            return wd.indexOf(day) === -1 ? 'خارج أيام هذه المناسبة' : null;
+        }
         if (col.hijriMonth) {
             const wd = computeHijriMatch(hd => hd.month === col.hijriMonth);
             if (wd === null) return 'أدخل تاريخ بداية الأسبوع بالأعلى لحساب هذا تلقائيًا';
             if (wd.indexOf(day) === -1) return 'خارج هذا الشهر الهجري';
+            if (col.key === 'sawm_shaban') { const dt = weekDayDate(DAYS.indexOf(day)), hd = dt ? hijriMonthDay(dt) : null; if (hd && hd.day >= 29) return 'يُنهى عن استقبال رمضان بصوم يوم أو يومين إلا لمن وافق عادته'; }
             return null;
         }
         if (col.days && col.days.indexOf(day) === -1) return 'لا ينطبق هذا اليوم';
@@ -2189,24 +2324,34 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         { id: 'gray',  text: 'عذر شرعي',  short: 'عذر شرعي', color: 'var(--gr-bd)' }
     ];
 
-    const RAMADAN_ETIQUETTE = ['تأخير السحور', 'تعجيل الفطر عند الغروب', 'الدعاء عند الإفطار'];
+    const RAMADAN_ETIQUETTE = ['تأخير السحور', 'تعجيل الفطر عند الغروب', 'الدعاء عند الإفطار', 'السحور (ولو على تمرة أو شربة ماء)', 'الإفطار على رطب أو تمر أو ماء', 'حفظ اللسان والجوارح (ترك الغيبة والسباب والرفث)', 'تفطير صائم ولو بشربة ماء'];
 
     // الليالي الوترية من العشر الأواخر — أشهر الأقوال في تحرّي ليلة القدر (قد تكون في
     // أي ليلة من العشر عند بعض العلماء، لكن هذا هو الأشهر والأكثر اتّباعًا)
-    const QADR_NIGHTS = [21, 23, 25, 27, 29];
+    const QADR_NIGHTS = [21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
 
+    const SH = (k, g) => Object.assign({}, BASE_COLUMNS.find(c => c.key === k), { group: g });
     const RAMADAN_BASE_COLUMNS = [
-        { key: 'fasting', title: 'الصيام', group: 'fard', kind: 'fasting' },
-        { key: 'etiquette', title: 'آداب الصيام', group: 'fard', kind: 'smart', isPrayer: false, items: RAMADAN_ETIQUETTE, toggleable: true },
+        SH('prayer_0', 'fard'), SH('prayer_1', 'fard'), SH('prayer_2', 'fard'), SH('prayer_3', 'fard'), SH('prayer_4', 'fard'),
+        { key: 'fasting', title: 'الصيام', group: 'fasting', kind: 'fasting' },
+        { key: 'etiquette', title: 'آداب الصيام', group: 'fasting', kind: 'smart', isPrayer: false, items: RAMADAN_ETIQUETTE, toggleable: true },
+        SH('duha', 'nafila'), SH('witr', 'nafila'), SH('ratiba', 'nafila'),
         { key: 'qiyam', title: 'قيام الليل / التراويح', group: 'nafila', kind: 'nafila', toggleable: true },
-        { key: 'qadr', title: 'تحرّي ليلة القدر', group: 'nafila', kind: 'std', toggleable: true, ramadanDays: QADR_NIGHTS },
+        { key: 'qadr', title: 'تحرّي ليلة القدر', group: 'nafila', kind: 'std', toggleable: true, optional: true, ramadanDays: QADR_NIGHTS },
+        { key: 'itikaf', title: 'الاعتكاف', group: 'nafila', kind: 'std', toggleable: true, optional: true, ramadanDays: QADR_NIGHTS },
+        SH('adhkar_morn', 'adhkar'), SH('adhkar_eve', 'adhkar'), SH('adhkar_post', 'adhkar'), SH('dhikr_mutlaq', 'adhkar'),
+        SH('salat_nabi', 'adhkar'), SH('sleep', 'adhkar'), SH('duaa', 'adhkar'), SH('quran', 'adhkar'),
         { key: 'sadaqah', title: 'الصدقة', group: 'adhkar', kind: 'std', toggleable: true },
-        { key: 'khatm', title: 'ختمة القرآن', group: 'adhkar', kind: 'khatm', toggleable: true }
+        { key: 'khatm', title: 'ختمة القرآن', group: 'adhkar', kind: 'khatm', toggleable: true },
+        SH('friday_sunan', 'adhkar')
     ];
+    // البنود المشتركة بين المتابعة الأسبوعية ورمضان: تُخزَّن مرة واحدة أيام رمضان، فلا يظهر أسبوع من رمضان فارغًا
+    const SHARED_KEYS = RAMADAN_BASE_COLUMNS.map(c => c.key).filter(k => BASE_COLUMNS.some(b => b.key === k));
     const RAMADAN_GROUP_META = [
-        { id: 'fard', label: 'الصيام وآدابه', alt: true },
-        { id: 'nafila', label: 'القيام وليلة القدر', alt: false },
-        { id: 'adhkar', label: 'الصدقة والقرآن', alt: true }
+        { id: 'fard', label: 'الصلوات الخمس (الفرائض)', alt: true },
+        { id: 'fasting', label: 'الصيام وآدابه', alt: false },
+        { id: 'nafila', label: 'النوافل والقيام وليلة القدر', alt: true },
+        { id: 'adhkar', label: 'الأذكار والقرآن والصدقة', alt: false }
     ];
     const RAMADAN_MAX_CUSTOM = 5;
 
@@ -2225,7 +2370,10 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
     let ramadanStorageAvailable = true;
 
     function ramadanActiveColumns() {
-        const base = RAMADAN_BASE_COLUMNS.filter(c => !c.toggleable || ramadanSettings.hidden.indexOf(c.key) === -1);
+        const base = RAMADAN_BASE_COLUMNS.filter(c => !c.toggleable || ramadanSettings.hidden.indexOf(c.key) === -1).map(c => {
+            const o = settings.over[c.key]; // أسماء وأوزان البنود المشتركة تتبع تخصيصك في المتابعة الأسبوعية
+            return (o && c.key !== 'qiyam' && SHARED_KEYS.indexOf(c.key) !== -1) ? Object.assign({}, c, o) : c;
+        });
         const custom = ramadanSettings.custom.map(c => ({
             key: c.key, title: c.title, group: 'adhkar', kind: 'std', isCustom: true
         }));
@@ -2234,8 +2382,9 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
 
     // سبب عدم انطباق البند في يوم رمضان رقم dayNum (null = ينطبق)
     function ramadanNaReasonFor(col, dayNum) {
+        if (col.days) { const dt = ramadanDayDate(dayNum); if (dt && col.days.indexOf(DAYS[(dt.getDay() + 1) % 7]) === -1) return 'يخص يوم ' + col.days.join(' و') + ' فقط'; }
         if (col.ramadanDays && col.ramadanDays.indexOf(dayNum) === -1) {
-            return 'يُتحرّى عادة في الليالي الوترية من العشر الأواخر';
+            return 'يخص العشر الأواخر من رمضان';
         }
         return null;
     }
@@ -2322,7 +2471,14 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             if (BAD_KEYS.indexOf(k) !== -1 || k.length > 80) return;
             const v = c[k];
             if (typeof v === 'string') { if (STATUS_SET.indexOf(v) !== -1) out[k] = v; }
-            else if (isPlain(v) && STATUS_SET.indexOf(v.status) !== -1) out[k] = v;
+            else if (isPlain(v) && (STATUS_SET.indexOf(v.status) !== -1 || (v.status === 'none' && v.jam))) {
+                const o = { status: v.status }, num = (x, hi) => typeof x === 'number' && isFinite(x) && x > 0 && x <= hi;
+                if (Array.isArray(v.checks)) o.checks = v.checks.filter(x => typeof x === 'number' && x >= 0 && x < 100).slice(0, 40);
+                if (num(v.qty, 100000) && num(v.amt, 100000)) { o.qty = v.qty; o.amt = v.amt; }
+                if (num(v.n, 100) && typeof v.k === 'number' && v.k >= 0 && v.k <= v.n) { o.n = v.n; o.k = v.k; }
+                if (v.jam) o.jam = 1;
+                out[k] = o;
+            }
         });
         return out;
     }
@@ -2349,6 +2505,89 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         });
         return out;
     }
+    const DETAIL_DAYS = [0, 7, 14, 30, 60, 90];
+    const TARGET_PRESETS = {
+        duha: ['ركعتان', '٤ ركعات', '٦ ركعات', '٨ ركعات', '١٢ ركعة'], witr: ['ركعة', '٣ ركعات', '٥ ركعات', '٧ ركعات', '١١ ركعة'],
+        qiyam: ['ركعتان', '٤ ركعات', '٨ ركعات', '١١ ركعة', '١٣ ركعة'], ratiba: ['٤ ركعات', '١٠ ركعات', '١٢ ركعة'],
+        quran: ['ربع جزء', 'نصف جزء', 'جزء', 'جزءان', '٥ صفحات', '١٠ صفحات'], dhikr_mutlaq: ['١٠٠ مرة', '٣٠٠ مرة', '١٠٠٠ مرة'],
+        salat_nabi: ['١٠ مرات', '١٠٠ مرة', '٣٠٠ مرة'], adhkar_morn: ['مرة واحدة', 'بعد الفجر مباشرة'], adhkar_eve: ['مرة واحدة', 'بعد العصر'],
+        sadaqah: ['يوميًا', 'مبلغ ثابت', 'كل جمعة'], prayer_0: ['جماعة في المسجد'], prayer_1: ['جماعة في المسجد'], prayer_2: ['جماعة في المسجد'],
+        prayer_3: ['جماعة في المسجد'], prayer_4: ['جماعة في المسجد'], duaa: ['١٠ دقائق', 'دعاء مثبّت']
+    };
+    function cleanDetails(d) {
+        const out = {};
+        if (!isPlain(d)) return out;
+        Object.keys(d).forEach(function (k) {
+            if (BAD_KEYS.indexOf(k) !== -1 || k.length > 60 || !isPlain(d[k])) return;
+            const o = d[k], t = str(o.target, 50).trim(), n = str(o.note, 300).trim();
+            if (!t && !n) return;
+            const r = { target: t, note: n }, am = parseAmount(t);
+            if (am) r.amount = am;
+            if (n) { r.days = DETAIL_DAYS.indexOf(o.days) !== -1 ? o.days : 0; r.since = cleanDate(o.since) || todayISO(); }
+            out[k] = r;
+        });
+        return out;
+    }
+    function detailOf(key) {
+        const d = settings.details && settings.details[key];
+        if (!d) return null;
+        let note = d.note || '';
+        if (note && d.days && d.since) { const end = new Date(+d.since.slice(0, 4), +d.since.slice(5, 7) - 1, +d.since.slice(8, 10) + d.days - 1); if (isoOf(end) < todayISO()) note = ''; }
+        return (d.target || note) ? { target: d.target || '', note: note, amount: d.amount || 0 } : null;
+    }
+    function amountOf(key) { const d = detailOf(key); return d && d.amount ? d.amount : 0; }
+    function infoHtml(key) { const a = INFO[key]; return a ? '<div class="info-box">' + a.map(x => '<div>• ' + escapeHtml(x) + '</div>').join('') + '</div>' : ''; }
+    function detailTip(c) { const d = detailOf(c.key); return c.title + (d && d.target ? ' — ' + d.target : '') + (d && d.note ? ' — ' + d.note : ''); }
+    function detailsHtml(key) {
+        const d = detailOf(key);
+        return d ? '<div class="det-box">' + (d.target ? '<div><b>المستهدف:</b> ' + escapeHtml(d.target) + '</div>' : '') + (d.note ? '<div>📌 ' + escapeHtml(d.note) + '</div>' : '') + '</div>' : '';
+    }
+    function todayDetailHtml(key) {
+        const d = detailOf(key);
+        return d ? (d.target ? ' <small class="tgt">' + escapeHtml(d.target) + '</small>' : '') + (d.note ? '<div class="tnote">📌 ' + escapeHtml(d.note) + '</div>' : '') : '';
+    }
+    function refreshAllViews() { try { renderHeader(); build(); renderRamadanHeader(); buildRamadan(); } catch (e) { console.warn('refresh failed', e); } }
+    function addDetailsSettings(colsFn) {
+        const box = document.createElement('div');
+        box.className = 'settings-section';
+        const summary = k => { const d = settings.details[k]; return d ? [d.target, d.note ? '📌' : ''].filter(Boolean).join(' · ') : 'لم يُحدَّد'; };
+        const dayLbl = x => x === 0 ? 'دائم' : x === 7 ? 'أسبوع' : x === 14 ? 'أسبوعان' : x === 30 ? '30 يومًا' : x === 60 ? 'شهران' : '3 أشهر';
+        const buildPanel = (k, panel, row) => {
+            panel.dataset.built = '1';
+            const d = settings.details[k] || {}, pre = TARGET_PRESETS[k] || [];
+            panel.innerHTML = '<label class="det-lbl">المقدار المستهدف</label><input type="text" class="det-target" maxlength="50" placeholder="مثال: ٨ ركعات" value="' + escapeHtml(d.target || '') + '">' +
+                (pre.length ? '<div class="det-chips">' + pre.map(p => '<button type="button" class="det-chip">' + escapeHtml(p) + '</button>').join('') + '</div>' : '') +
+                '<label class="det-lbl">ملاحظة أو دعاء/ذكر مثبّت</label><textarea class="det-note" maxlength="300" rows="2" placeholder="مثال: اللهم إنك عفوٌّ تحب العفو فاعفُ عني">' + escapeHtml(d.note || '') + '</textarea>' +
+                '<label class="det-lbl">مدة التثبيت</label><select class="det-days" aria-label="مدة التثبيت">' + DETAIL_DAYS.map(x => '<option value="' + x + '"' + ((d.days || 0) === x ? ' selected' : '') + '>' + dayLbl(x) + '</option>').join('') + '</select>' +
+                '<button type="button" class="quick-fill-btn det-clear" style="margin-top:10px">مسح تفاصيل هذا البند</button>';
+            const tg = panel.querySelector('.det-target'), nt = panel.querySelector('.det-note'), dy = panel.querySelector('.det-days');
+            const commit = resetSince => {
+                const t = tg.value.trim().slice(0, 50), n = nt.value.trim().slice(0, 300), days = parseInt(dy.value, 10) || 0;
+                if (!t && !n) delete settings.details[k];
+                else { const prev = settings.details[k] || {}; settings.details[k] = { target: t, note: n }; if (parseAmount(t)) settings.details[k].amount = parseAmount(t); if (n) { settings.details[k].days = days; settings.details[k].since = (resetSince || !prev.since) ? todayISO() : prev.since; } }
+                saveSettings(); row.querySelector('.det-sum').textContent = summary(k); refreshAllViews();
+            };
+            tg.onchange = () => commit(false); nt.onchange = () => commit(true); dy.onchange = () => commit(true);
+            panel.querySelectorAll('.det-chip').forEach(b => b.onclick = function () { tg.value = b.textContent; commit(false); });
+            panel.querySelector('.det-clear').onclick = function () { tg.value = ''; nt.value = ''; dy.value = '0'; dy.dispatchEvent(new Event('change')); };
+        };
+        let h = '<div class="settings-hint" style="font-weight:800;margin-top:14px">المقادير والتفاصيل لكل بند</div><div class="settings-hint">حدّد المقدار المستهدف (الضحى ٨ ركعات، الوتر ٣، ورد القرآن جزء...) وأضف ملاحظة أو دعاءً/ذكرًا مثبّتًا لمدة تختارها. يظهر في تلميح العمود وعند التحديد وفي عرض «اليوم»، وهو نفسه في المتابعة الأسبوعية ورمضان.</div>';
+        colsFn().filter(c => c.kind !== 'khatm').forEach(c => {
+            h += '<div class="det-row" data-k="' + escapeHtml(c.key) + '"><button type="button" class="det-head" aria-expanded="false"><span class="det-name">' + escapeHtml(c.title) + '</span><span class="det-sum">' + escapeHtml(summary(c.key)) + '</span></button><div class="det-panel" hidden></div></div>';
+        });
+        box.innerHTML = h;
+        box.querySelectorAll('.det-row').forEach(row => {
+            const k = row.getAttribute('data-k'), head = row.querySelector('.det-head'), panel = row.querySelector('.det-panel');
+            head.onclick = function () {
+                const willOpen = panel.hasAttribute('hidden');
+                if (willOpen && !panel.dataset.built) buildPanel(k, panel, row);
+                if (willOpen) panel.removeAttribute('hidden'); else panel.setAttribute('hidden', '');
+                head.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+            };
+        });
+        document.getElementById('modal-body').appendChild(box);
+    }
+
     function sanitizeState() {
         data = { meta: { date: cleanDate(data.meta && data.meta.date), quran: str(data.meta && data.meta.quran, 120), dhikr: str(data.meta && data.meta.dhikr, 120) },
             cells: cleanCells(data.cells), notes: cleanNotes(data.notes) };
@@ -2357,6 +2596,13 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         settings.order = cleanKeyList(settings.order, 200);
         const ov = {}; Object.keys(settings.over || {}).forEach(k => { if (BAD_KEYS.indexOf(k) === -1 && k.length <= 60) ov[k] = settings.over[k]; });
         settings.over = ov;
+        settings.details = cleanDetails(settings.details);
+        // البنود الاختيارية الجديدة (قضاء رمضان، صيام داود...) تبدأ مخفية حتى يفعّلها المستخدم بنفسه
+        let seenChanged = false;
+        BASE_COLUMNS.filter(c => c.optIn).forEach(c => {
+            if (settings.seen.indexOf(c.key) === -1) { settings.seen.push(c.key); if (settings.hidden.indexOf(c.key) === -1) settings.hidden.push(c.key); seenChanged = true; }
+        });
+        if (seenChanged) saveSettings();
         const mx = settings.custom.reduce((m, c) => Math.max(m, parseInt(String(c.key).replace(/\D/g, ''), 10) || 0), 0);
         if (customCounter < mx) customCounter = mx;
     }
@@ -2434,8 +2680,105 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
     }
 
     /* ── Helpers ── */
+    /* ══ أيام رمضان: البنود المشتركة تُقرأ وتُكتب في مخزن رمضان من الوضعين معًا ══ */
+    let mirrorOff = false;
+    const saveAll = () => { save(); saveRamadan(); };
+    function ramadanDayNumFor(dt) {
+        const d0 = ramadanDayDate(1);
+        if (!d0 || !dt) return null;
+        const n = Math.round((new Date(dt.getFullYear(), dt.getMonth(), dt.getDate()).getTime() - d0.getTime()) / DAY_MS) + 1;
+        return (n >= 1 && n <= (ramadanData.meta.dayCount || 30)) ? n : null;
+    }
+    function mirrorNum(day) { if (mirrorOff) return null; const di = DAYS.indexOf(day); return di < 0 ? null : ramadanDayNumFor(weekDayDate(di)); }
+    function mirrorKey(key) {
+        const i = key.indexOf('_');
+        if (i < 1 || SHARED_KEYS.indexOf(key.slice(i + 1)) === -1) return null;
+        const n = mirrorNum(key.slice(0, i));
+        return n ? 'day' + n + '_' + key.slice(i + 1) : null;
+    }
+    function weekIndexOfRamadanDay(n) {
+        const dt = ramadanDayDate(n), st = weekStartSaturday();
+        if (!dt || !st) return -1;
+        const idx = Math.round((dt.getTime() - new Date(st.getFullYear(), st.getMonth(), st.getDate()).getTime()) / DAY_MS);
+        return (idx >= 0 && idx < 7) ? idx : -1;
+    }
+    function weekKeyFor(rkey) {
+        const m = /^day(\d+)_(.+)$/.exec(rkey);
+        if (!m || SHARED_KEYS.indexOf(m[2]) === -1) return null;
+        const idx = weekIndexOfRamadanDay(+m[1]);
+        return idx < 0 ? null : DAYS[idx] + '_' + m[2];
+    }
+    function rawWeekCell(key) { const mk = mirrorKey(key); if (mk && ramadanData.cells[mk] !== undefined) return ramadanData.cells[mk]; return data.cells[key]; }
+    function rawRamadanCell(key) { const v = ramadanData.cells[key]; if (v !== undefined) return v; const wk = weekKeyFor(key); return wk ? data.cells[wk] : undefined; }
+    function writeWeekCell(key, v) {
+        const mk = mirrorKey(key);
+        if (mk) { if (v === undefined) delete ramadanData.cells[mk]; else ramadanData.cells[mk] = v; delete data.cells[key]; }
+        else if (v === undefined) delete data.cells[key]; else data.cells[key] = v;
+    }
+    function writeRamadanCell(key, v) {
+        if (v === undefined) delete ramadanData.cells[key]; else ramadanData.cells[key] = v;
+        const wk = weekKeyFor(key); if (wk) delete data.cells[wk];
+    }
+    const cellsProxy = (get, put) => new Proxy({}, { get: (t, k) => typeof k === 'string' ? get(k) : undefined, set: (t, k, v) => { put(k, v); return true; }, deleteProperty: (t, k) => { put(k, undefined); return true; } });
+    const weekCellsProxy = cellsProxy(rawWeekCell, writeWeekCell), ramadanCellsProxy = cellsProxy(rawRamadanCell, writeRamadanCell);
+    function getDayNote(day) { const n = mirrorNum(day); if (n && ramadanData.notes['day' + n]) return ramadanData.notes['day' + n]; return data.notes[day] || ''; }
+    function setDayNote(day, val) {
+        const n = mirrorNum(day);
+        if (n) { if (val) ramadanData.notes['day' + n] = val; else delete ramadanData.notes['day' + n]; delete data.notes[day]; saveRamadan(); }
+        else data.notes[day] = val;
+    }
+    function getRamadanNote(dayKey) {
+        const v = ramadanData.notes[dayKey]; if (v) return v;
+        const m = /^day(\d+)$/.exec(dayKey), idx = m ? weekIndexOfRamadanDay(+m[1]) : -1;
+        return idx >= 0 ? (data.notes[DAYS[idx]] || '') : '';
+    }
+    function setRamadanNote(dayKey, val) {
+        if (val) ramadanData.notes[dayKey] = val; else delete ramadanData.notes[dayKey];
+        const m = /^day(\d+)$/.exec(dayKey), idx = m ? weekIndexOfRamadanDay(+m[1]) : -1;
+        if (idx >= 0) delete data.notes[DAYS[idx]];
+    }
+    function effectiveWeekCells() {
+        const out = Object.assign({}, data.cells);
+        DAYS.forEach(d => { const n = mirrorNum(d); if (!n) return; SHARED_KEYS.forEach(k => { const rc = ramadanData.cells['day' + n + '_' + k]; if (rc !== undefined) out[d + '_' + k] = rc; }); });
+        return out;
+    }
+    function effectiveWeekNotes() {
+        const out = Object.assign({}, data.notes);
+        DAYS.forEach(d => { const n = mirrorNum(d); if (n && ramadanData.notes['day' + n]) out[d] = ramadanData.notes['day' + n]; });
+        return out;
+    }
+
+    function statusFromRaw(raw) { return !raw ? 'none' : (typeof raw === 'string' ? raw : (raw.status || 'none')); }
+    const rawStatus = statusFromRaw;
+    const colKeyOf = key => key.slice(key.indexOf('_') + 1);
+    function fmtQty(n) { return Number.isInteger(n) ? String(n) : String(Math.round(n * 100) / 100); }
+    // الرصيد: null = مستبعد (عذر)، وإلا من 0 إلى 1. الجزئي يُحسب بنسبة الكمية المنجزة أو البنود المنجزة إن سُجّلت
+    function creditOfRaw(raw) {
+        const st = statusFromRaw(raw);
+        if (st === 'gray') return null;
+        if (st === 'green' || st === 'blue') return 1;
+        if (st !== 'yellow') return 0;
+        if (raw && typeof raw === 'object') {
+            if (raw.amt > 0 && typeof raw.qty === 'number') return Math.max(0, Math.min(1, raw.qty / raw.amt));
+            if (raw.n > 0 && typeof raw.k === 'number') return Math.max(0, Math.min(1, raw.k / raw.n));
+        }
+        return 0.5;
+    }
+    function parseAmount(text) {
+        if (!text) return 0;
+        const t = String(text).replace(/[٠-٩]/g, d => '٠١٢٣٤٥٦٧٨٩'.indexOf(d)).replace(/٫/g, '.');
+        const m = /(\d+(?:\.\d+)?)/.exec(t);
+        if (m) { const v = parseFloat(m[1]); return (v > 0 && v <= 100000) ? v : 0; }
+        if (/^\s*ربع/.test(t)) return 0.25;
+        if (/^\s*نصف/.test(t)) return 0.5;
+        if (/^\s*ثلث/.test(t)) return 1 / 3;
+        if (/^\s*(ركعتان|جزءان|صفحتان|مرتان|ختمتان)/.test(t)) return 2;
+        if (/^\s*(ركعة|جزء|صفحة|حزب|مرة|ختمة|آية)/.test(t)) return 1;
+        return 0;
+    }
+
     function statusOf(key) {
-        const c = data.cells[key];
+        const c = rawWeekCell(key);
         if (!c) return 'none';
         return typeof c === 'string' ? c : (c.status || 'none');
     }
@@ -2446,6 +2789,15 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         return o ? o.short : '—';
     }
 
+    function smartMeta(colKey) { return SMART_META[colKey] || []; }
+    function smartIdx(colKey, items) {
+        const m = smartMeta(colKey), mode = settings.fridayMode;
+        return items.map((_, i) => i).filter(i => {
+            const tg = m[i] && m[i].tag;
+            if (!tg) return true;
+            return !(mode === 'none' || (mode === 'women' && tg === 'man'));
+        });
+    }
     function smartLabel(st, isPrayer) {
         if (st === 'green') return 'مكتمل';
         if (st === 'yellow') return 'جزئي';
@@ -2473,7 +2825,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
 
         let colsHtml = '<th style="border:none;background:transparent"></th>';
         cols.forEach(c => {
-            colsHtml += '<th scope="col" class="th-col' + (c.hl ? ' hl' : '') + '" title="' + escapeHtml(c.title) + '"><span>' + escapeHtml(c.title) + '</span></th>';
+            colsHtml += '<th scope="col" class="th-col' + (c.hl ? ' hl' : '') + '" title="' + escapeHtml(detailTip(c)) + '"><span>' + escapeHtml(c.title) + '</span></th>';
         });
         colsHtml += '<th scope="col" class="th-col" style="background:transparent"><span>مؤشر الإنجاز</span></th>';
         colsRow.innerHTML = colsHtml;
@@ -2486,12 +2838,12 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         if (src.future(id)) return { total: 0, earned: 0, future: true }; // يوم لم يأتِ لا يُحسب لا له ولا عليه
         cols.forEach(col => {
             if (src.na(col, id)) return; // لا ينطبق أصلاً، ليس معذورًا بل غير موجود
-            const st = src.status(src.dayKey(id) + '_' + col.key);
-            if (st === 'gray') return; // عذر = لا يُحسب
+            const raw = src.cells()[src.dayKey(id) + '_' + col.key], cr = creditOfRaw(raw);
+            if (cr === null) return; // عذر = لا يُحسب
+            if (cr === 0 && col.optional && statusFromRaw(raw) === 'none') return; // بند اختياري لم يُسجَّل: لا يُحسب فائتًا
             const w = src.weight(col);
             total += w;
-            if (st === 'green' || st === 'blue') earned += w;
-            else if (st === 'yellow') earned += w * 0.5;
+            earned += w * cr;
         });
         return { total: total, earned: earned };
     }
@@ -2583,14 +2935,13 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
 
         DAYS.forEach((day, di) => {
             const tr = document.createElement('tr');
-            const note = (data.notes[day] || '').trim();
+            const note = getDayNote(day).trim();
             const hasNote = note.length > 0;
 
             const tdDay = document.createElement('td');
             tdDay.style.border = 'none';
             tdDay.innerHTML =
-                '<div class="day-cell">' +
-                day +
+                '<div class="day-cell"><span class="dn">' + day + (mirrorNum(day) ? '<small class="rday">رمضان ' + mirrorNum(day) + '</small>' : '') + '</span>' +
                 '<button type="button" class="note-btn' + (hasNote ? ' active' : '') +
                 '" data-day="' + day + '" title="ملاحظات اليوم" aria-label="ملاحظات يوم ' + day + '">' +
                 '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">' +
@@ -2630,26 +2981,36 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
        prefix يمنع تعارض معرّفات DOM؛ cells() دالة لأن data قد يُعاد إسنادها عند بدء أسبوع جديد. */
     const WEEK_SRC = { prefix: '', future: id => isFutureDate(weekDayDate(DAYS.indexOf(id))), today: id => isTodayDate(weekDayDate(DAYS.indexOf(id))), dayKey: id => id, na: (c, id) => naReasonFor(c, id),
         weight: c => c.weight || (c.kind === 'prayer' ? 2 : 1),
-        opts: c => c.kind === 'prayer' ? PRAYER_OPTS : c.kind === 'nafila' ? NAFILA_OPTS : STD_OPTS, cells: () => data.cells, status: k => statusOf(k),
-        setState: (k, st) => setState(k, st), commit: () => { save(); build(); } };
+        opts: c => c.kind === 'prayer' ? PRAYER_OPTS : c.kind === 'fasting' ? FASTING_OPTS : c.kind === 'nafila' ? NAFILA_OPTS : STD_OPTS, cells: () => weekCellsProxy, status: k => statusOf(k),
+        setState: (k, st) => setState(k, st), commit: () => { saveAll(); build(); } };
     const RAMADAN_SRC = { prefix: 'r', future: n => isFutureDate(ramadanDayDate(n)), today: n => isTodayDate(ramadanDayDate(n)), dayKey: n => 'day' + n, na: (c, n) => ramadanNaReasonFor(c, n),
-        weight: c => c.weight || 1,
-        opts: c => c.kind === 'fasting' ? FASTING_OPTS : c.kind === 'nafila' ? NAFILA_OPTS : STD_OPTS, cells: () => ramadanData.cells, status: k => ramadanStatusOf(k),
-        setState: (k, st) => setRamadanState(k, st), commit: () => { saveRamadan(); buildRamadan(); } };
+        weight: c => c.weight || (c.kind === 'prayer' ? 2 : 1),
+        opts: c => c.kind === 'fasting' ? FASTING_OPTS : c.kind === 'prayer' ? PRAYER_OPTS : c.kind === 'nafila' ? NAFILA_OPTS : STD_OPTS, cells: () => ramadanCellsProxy, status: k => ramadanStatusOf(k),
+        setState: (k, st) => setRamadanState(k, st), commit: () => { saveAll(); buildRamadan(); } };
 
     function makeCellFor(src, day, col, opts, title) {
         const td = document.createElement('td');
         const key = day + '_' + col;
-        const st = src.status(key);
-        td.className = 'cell st-' + st;
-        td.textContent = shortLabel(opts, st);
-        const fullLabel = st === 'none' ? title + ' — اضغط للتحديد' : (opts.find(o => o.id === st) || {}).text || title;
+        const raw0 = src.cells()[key], st = src.status(key), obj = (raw0 && typeof raw0 === 'object') ? raw0 : null;
+        const isPrayerOpts = opts === PRAYER_OPTS;
+        td.className = 'cell st-' + st + (obj && obj.jam ? ' jam' : '');
+        td.textContent = (obj && obj.qty && obj.amt && (st === 'green' || st === 'yellow')) ? fmtQty(obj.qty) + '/' + fmtQty(obj.amt) : shortLabel(opts, st);
+        let fullLabel = st === 'none' ? title + ' — اضغط للتحديد' : (opts.find(o => o.id === st) || {}).text || title;
+        if (obj && obj.qty && obj.amt) fullLabel += ' (' + fmtQty(obj.qty) + ' من ' + fmtQty(obj.amt) + ')';
+        if (obj && obj.jam) fullLabel += ' — جماعة';
         td.title = fullLabel;
         td.tabIndex = 0;
         td.setAttribute('role', 'button');
         td.setAttribute('aria-label', fullLabel);
         td.onclick = function () {
+            const cur = src.cells()[key], curObj = (cur && typeof cur === 'object') ? cur : null;
+            const dt = isPrayerOpts ? null : detailOf(col), amt = dt && dt.amount ? dt.amount : 0;
             let html = '';
+            if (amt) {
+                html += '<div class="qty-box"><div class="qty-hd">الكمية المنجزة</div><div class="qty-row">' +
+                    '<input type="number" id="qty-inp" inputmode="decimal" min="0" step="any" placeholder="0" value="' + (curObj && curObj.qty ? curObj.qty : '') + '">' +
+                    '<button type="button" class="qty-btn primary" id="qty-save">حفظ</button><button type="button" class="qty-btn" id="qty-full">أنجزتُه كاملًا</button></div></div>';
+            }
             opts.forEach(o => {
                 html +=
                     '<div class="opt" data-key="' + key + '" data-st="' + o.id + '" tabindex="0" role="button">' +
@@ -2659,7 +3020,9 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             html +=
                 '<div class="opt" data-key="' + key + '" data-st="none" tabindex="0" role="button" style="background:#f1f5f9;justify-content:center;margin-top:10px">' +
                 '<div class="opt-txt" style="color:#64748b">مسح الاختيار</div></div>';
-            openModal('تحديد: ' + title, html, false);
+            if (isPrayerOpts) html += '<div class="chk" style="margin-top:12px"><input type="checkbox" id="jam-chk"' + (curObj && curObj.jam ? ' checked' : '') + '><label for="jam-chk">صلّيتها جماعة (في المسجد أو مع أهل بيتي)</label></div>';
+            html += infoHtml(col);
+            openModal('تحديد: ' + title, detailsHtml(col) + html, false);
             document.querySelectorAll('#modal-body .opt').forEach(el => {
                 el.onclick = function () {
                     src.setState(this.getAttribute('data-key'), this.getAttribute('data-st'));
@@ -2668,6 +3031,33 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
                     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.click(); }
                 });
             });
+            const put = function (nv, msg) {
+                const prev = src.cells()[key];
+                if (nv === undefined) delete src.cells()[key]; else src.cells()[key] = nv;
+                src.commit(); closeModal();
+                showToast(msg, function () { if (prev === undefined) delete src.cells()[key]; else src.cells()[key] = prev; src.commit(); });
+            };
+            if (amt) {
+                const apply = function (q) {
+                    if (!(q >= 0) || q > 100000) { showToast('أدخل رقمًا صحيحًا'); return; }
+                    const prev = src.cells()[key], jam = prev && typeof prev === 'object' && prev.jam;
+                    if (!(q > 0)) { put(jam ? { status: 'none', jam: 1 } : undefined, 'تم المسح'); return; }
+                    const ps = statusFromRaw(prev), ns = q >= amt ? ((ps === 'green' || ps === 'blue') ? ps : 'green') : 'yellow';
+                    const nv = { status: ns, qty: q, amt: amt }; if (jam) nv.jam = 1;
+                    put(nv, 'تم حفظ ' + fmtQty(q) + ' من ' + fmtQty(amt));
+                };
+                document.getElementById('qty-save').onclick = function () { apply(parseFloat(String(document.getElementById('qty-inp').value).replace(',', '.'))); };
+                document.getElementById('qty-full').onclick = function () { apply(amt); };
+            }
+            if (isPrayerOpts) {
+                document.getElementById('jam-chk').onchange = function () {
+                    const c2 = src.cells()[key], nv = (c2 && typeof c2 === 'object') ? Object.assign({}, c2) : { status: statusFromRaw(c2) };
+                    if (this.checked) nv.jam = 1; else delete nv.jam;
+                    if (nv.status === 'none' && !nv.jam) delete src.cells()[key];
+                    else src.cells()[key] = (!nv.jam && !nv.checks && !nv.qty) ? nv.status : nv;
+                    src.commit();
+                };
+            }
         };
         td.addEventListener('keydown', function (e) {
             if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); td.click(); }
@@ -2684,9 +3074,13 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             raw = { checks: [], status: 'none' };
         }
         const st = raw.status || 'none';
+        const meta = smartMeta(col);
+        let vis, core;
+        const calc = () => { vis = smartIdx(col, items); core = vis.filter(i => !(meta[i] && meta[i].bonus)); };
+        calc();
         td.className = 'cell st-' + st;
-        td.textContent = smartLabel(st, isPrayer);
-        const fullLabel = title + (st !== 'none' ? ' — ' + smartLabel(st, isPrayer) : ' — اضغط للتحديد');
+        td.textContent = (st === 'yellow' && raw.n) ? (raw.k + '/' + raw.n) : smartLabel(st, isPrayer);
+        const fullLabel = title + (st !== 'none' ? ' — ' + smartLabel(st, isPrayer) + (st === 'yellow' && raw.n ? ' (' + raw.k + ' من ' + raw.n + ')' : '') : ' — اضغط للتحديد');
         td.title = fullLabel;
         td.tabIndex = 0;
         td.setAttribute('role', 'button');
@@ -2699,18 +3093,23 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             : 'عذر / ظرف خاص لهذا البند كاملاً (يتجاوز القائمة أدناه)';
 
         td.onclick = function () {
-            let html = '<div class="chk-excuse">' +
+            calc();
+            const needPick = col === 'friday_sunan' && !settings.fridayChosen;
+            let html = (needPick ? '<div class="det-box"><div style="margin-bottom:8px"><b>حدّد حالتك لتظهر لك السنن المناسبة</b> (يمكنك تغييرها لاحقًا من «تخصيص البنود»):</div><div class="pill-toggle">' +
+                [['men', 'رجل يحضر الجمعة'], ['women', 'امرأة تحضرها'], ['none', 'لا أحضرها']].map(x => '<button type="button" class="pill-btn" data-pick="' + x[0] + '">' + x[1] + '</button>').join('') + '</div></div>' : '') +
+                detailsHtml(col) + '<div class="chk-excuse">' +
                 '<input type="checkbox" id="' + src.prefix + 'excuse_' + key + '"' + (st === 'gray' ? ' checked' : '') + '>' +
                 '<label for="' + src.prefix + 'excuse_' + key + '">' + excuseLabel + '</label></div>' +
                 '<div id="' + src.prefix + 'chkList_' + key + '">';
-            items.forEach((item, idx) => {
-                const checked = raw.checks.includes(idx) ? ' checked' : '';
+            vis.forEach(idx => {
+                const m = meta[idx] || {}, checked = raw.checks.includes(idx) ? ' checked' : '';
                 html +=
                     '<div class="chk">' +
                     '<input type="checkbox" id="' + src.prefix + 'c_' + key + '_' + idx + '" value="' + idx + '"' + checked + '>' +
-                    '<label for="' + src.prefix + 'c_' + key + '_' + idx + '">' + item + '</label></div>';
+                    '<label for="' + src.prefix + 'c_' + key + '_' + idx + '">' + escapeHtml(items[idx]) + (m.bonus ? ' <small class="bonus-tag">إضافي</small>' : '') +
+                    (m.note ? '<span class="smart-note">' + escapeHtml(m.note) + '</span>' : '') + '</label></div>';
             });
-            html += '</div>';
+            html += '</div>' + infoHtml(col);
             openModal(title, html, true, function () {
                 const excused = (document.getElementById(src.prefix + 'excuse_' + key) || {}).checked;
                 if (excused) {
@@ -2720,11 +3119,9 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
                     document.querySelectorAll('#modal-body .chk input:checked').forEach(inp => {
                         checks.push(parseInt(inp.value, 10));
                     });
-                    let ns = 'none';
-                    if (checks.length === items.length) ns = 'green';
-                    else if (checks.length > 0) ns = 'yellow';
-                    else ns = 'red';
-                    src.cells()[key] = { checks: checks, status: ns };
+                    const kc = checks.filter(i => core.indexOf(i) !== -1).length;
+                    const ns = (core.length && kc === core.length) ? 'green' : kc > 0 ? 'yellow' : 'red';
+                    src.cells()[key] = { checks: checks, status: ns, n: core.length, k: kc };
                 }
                 src.commit();
                 closeModal();
@@ -2736,6 +3133,9 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
                 showToast('تم المسح');
             });
 
+            document.querySelectorAll('#modal-body .pill-btn[data-pick]').forEach(function (pb) {
+                pb.onclick = function () { settings.fridayMode = pb.getAttribute('data-pick'); settings.fridayChosen = true; saveSettings(); td.onclick(); };
+            });
             // إخفاء القائمة بصريًا عند اختيار العذر لتجنّب اللبس
             const excuseBox = document.getElementById(src.prefix + 'excuse_' + key);
             const list = document.getElementById(src.prefix + 'chkList_' + key);
@@ -2761,24 +3161,22 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
     function makeRamadanSmart(dayKey, col, title, items, isPrayer) { return makeSmartFor(RAMADAN_SRC, dayKey, col, title, items, isPrayer); }
 
     function setState(key, st) {
-        const prev = data.cells[key];
-        if (st === 'none') delete data.cells[key];
-        else data.cells[key] = st;
-        save();
+        const prev = rawWeekCell(key), jam = prev && typeof prev === 'object' && prev.jam;
+        writeWeekCell(key, st === 'none' ? (jam ? { status: 'none', jam: 1 } : undefined) : (jam ? { status: st, jam: 1 } : st));
+        saveAll();
         build();
         closeModal();
-        showToast(st === 'none' ? 'تم المسح' : 'تم الحفظ', function () { if (prev === undefined) delete data.cells[key]; else data.cells[key] = prev; save(); build(); });
+        showToast(st === 'none' ? 'تم المسح' : 'تم الحفظ', function () { writeWeekCell(key, prev); saveAll(); build(); });
     }
 
     function openNote(day) {
-        const cur = data.notes[day] || '';
+        const cur = getDayNote(day);
         const html =
             '<p class="note-hint">سجّل أي ملاحظات على هذا اليوم — عذر، سبب تقصير، أو أي تعليق آخر:</p>' +
             '<textarea id="note-inp" class="note-area" maxlength="1500" placeholder="اكتب هنا...">' + escapeHtml(cur) + '</textarea>';
         openModal('ملاحظات يوم ' + day, html, true, function () {
             const val = (document.getElementById('note-inp') || {}).value || '';
-            if (!data.notes) data.notes = {};
-            data.notes[day] = val;
+            setDayNote(day, val);
             save();
             build();
             closeModal();
@@ -2819,10 +3217,10 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         const wrap = document.getElementById('printNotes');
         if (!wrap) return;
         const entries = DAYS
-            .filter(d => (data.notes[d] || '').trim())
+            .filter(d => getDayNote(d).trim())
             .map(function (d) {
                 return '<div class="pn-item"><span class="pn-day">' + d + '</span>' +
-                    '<span class="pn-text">' + escapeHtml(data.notes[d].trim()) + '</span></div>';
+                    '<span class="pn-text">' + escapeHtml(getDayNote(d).trim()) + '</span></div>';
             });
         if (entries.length) {
             wrap.innerHTML = '<div class="pn-title">ملاحظات الأيام</div>' + entries.join('');
@@ -3101,15 +3499,15 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
     function archiveCurrentWeek() {
         try {
             const pct = weekPercentSummary();
-            if (pct === null && Object.keys(data.notes).length === 0) return true; // أسبوع فارغ تمامًا، لا داعي لأرشفته
+            if (pct === null && Object.keys(effectiveWeekNotes()).length === 0) return true; // أسبوع فارغ تمامًا، لا داعي لأرشفته
             const arr = getArchive(ARCHIVE_STORAGE);
             arr.push({
                 archivedAt: new Date().toISOString(),
                 label: formatDateDisplay(data.meta.date) || ('أسبوع محفوظ في ' + (formatDateDisplay(todayISO()) || todayISO())),
                 percent: pct,
                 meta: JSON.parse(JSON.stringify(data.meta)),
-                cells: JSON.parse(JSON.stringify(data.cells)),
-                notes: JSON.parse(JSON.stringify(data.notes))
+                cells: JSON.parse(JSON.stringify(effectiveWeekCells())),
+                notes: JSON.parse(JSON.stringify(effectiveWeekNotes()))
             });
             while (arr.length > MAX_ARCHIVE_ENTRIES) arr.shift();
             localStorage.setItem(ARCHIVE_STORAGE, JSON.stringify(arr));
@@ -3172,6 +3570,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         const saved = data;
         let html = '<button type="button" class="back-link" id="ad-back">‹ رجوع للأرشيف</button>';
         try {
+            mirrorOff = true;
             data = { meta: e.meta || {}, cells: e.cells || {}, notes: e.notes || {} };
             const cols = activeColumns();
             DAYS.forEach(function (d) {
@@ -3181,8 +3580,37 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             });
             const m = e.meta || {};
             if (m.quran || m.dhikr) html += '<div class="ad-note" style="margin-top:8px">' + (m.quran ? 'الورد: ' + escapeHtml(m.quran) : '') + (m.quran && m.dhikr ? ' · ' : '') + (m.dhikr ? 'الذكر: ' + escapeHtml(m.dhikr) : '') + '</div>';
-        } catch (err) { html += '<div class="settings-empty">تعذّر عرض تفاصيل هذا الأسبوع.</div>'; } finally { data = saved; }
+        } catch (err) { html += '<div class="settings-empty">تعذّر عرض تفاصيل هذا الأسبوع.</div>'; } finally { data = saved; mirrorOff = false; }
         openModal(e.label + (e.percent === null ? '' : ' — ' + e.percent + '%'), html, false);
+        document.getElementById('ad-back').onclick = openArchive;
+    }
+
+    // تفاصيل رمضان مؤرشف: شبكة أيام ملوّنة بنسبة كل يوم + الختمة والزكاة والملاحظات (للقراءة فقط)
+    function openArchiveRamadan(i) {
+        const e = getArchive(RAMADAN_ARCHIVE_STORAGE)[i];
+        if (!e) return;
+        const saved = ramadanData;
+        let html = '<button type="button" class="back-link" id="ad-back">‹ رجوع للأرشيف</button>';
+        try {
+            const m = isPlain(e.meta) ? e.meta : {}, k = isPlain(e.khatm) ? e.khatm : {};
+            ramadanData = { meta: { startDate: cleanDate(m.startDate), dayCount: m.dayCount === 29 ? 29 : 30 }, cells: cleanCells(e.cells), notes: cleanNotes(e.notes),
+                khatm: { unit: k.unit === 'page' ? 'page' : 'juz', total: 30, days: 30, entries: isPlain(k.entries) ? k.entries : {} }, zakatFitr: { paid: !!e.zakatPaid, note: '' } };
+            const N = ramadanData.meta.dayCount, cols = ramadanActiveColumns();
+            html += '<div class="ad-grid">';
+            for (let n = 1; n <= N; n++) {
+                const r = scoreDay(RAMADAN_SRC, cols, n), pct = r.total ? Math.round(r.earned / r.total * 100) : null;
+                html += pct === null ? '<div class="ad-sq none" title="اليوم ' + n + ': بلا بيانات">' + n + '</div>'
+                    : '<div class="ad-sq" style="background:' + archiveBarColor(pct) + '" title="اليوم ' + n + ': ' + pct + '%">' + n + '</div>';
+            }
+            html += '</div><div class="ad-note">ختمة القرآن: ' + (e.khatmPercent === null || e.khatmPercent === undefined ? '—' : e.khatmPercent + '%') + ' · زكاة الفطر: ' + (e.zakatPaid ? 'تم' : 'لا') + '</div>';
+            Object.keys(ramadanData.notes).forEach(function (key) {
+                const t = ramadanData.notes[key].trim();
+                if (!t) return;
+                const mm = /^day(\d+)$/.exec(key);
+                html += '<div class="ad-note"><b>' + (mm ? 'اليوم ' + mm[1] : 'ملاحظات عامة') + ':</b> ' + escapeHtml(t) + '</div>';
+            });
+        } catch (err) { html += '<div class="settings-empty">تعذّر عرض تفاصيل هذا الشهر.</div>'; } finally { ramadanData = saved; }
+        openModal(e.label + (e.percent === null || e.percent === undefined ? '' : ' — ' + e.percent + '%'), html, false);
         document.getElementById('ad-back').onclick = openArchive;
     }
 
@@ -3211,7 +3639,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
                 }
                 const barWidth = entry.percent === null ? 100 : entry.percent;
                 const barColor = archiveBarColor(entry.percent);
-                html += '<div class="archive-row' + (isRamadan ? '' : ' clickable" tabindex="0" role="button" title="عرض تفاصيل الأسبوع" data-i="' + (full.length - 1 - ri)) + '">' +
+                html += '<div class="archive-row' + ' clickable" tabindex="0" role="button" title="' + (isRamadan ? 'عرض تفاصيل رمضان' : 'عرض تفاصيل الأسبوع') + '" data-i="' + (full.length - 1 - ri) + '">' +
                     '<div class="archive-heat" style="background:' + barColor + '; width:' + Math.max(6, barWidth * 0.4) + 'px"></div>' +
                     '<span class="archive-label">' + escapeHtml(entry.label) + '</span>' +
                     '<span class="archive-stats">' + pctText + extra + '</span>' +
@@ -3220,7 +3648,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         }
         openModal('الأرشيف — ' + (isRamadan ? 'رمضان' : 'الأسبوعي'), html, false);
         document.querySelectorAll('#modal-body .archive-row.clickable').forEach(function (r) {
-            const go = function () { openArchiveWeek(parseInt(r.getAttribute('data-i'), 10)); };
+            const go = function () { const ix = parseInt(r.getAttribute('data-i'), 10); if (isRamadan) openArchiveRamadan(ix); else openArchiveWeek(ix); };
             r.onclick = function (e) { if (!e.target.closest('.archive-del')) go(); };
             r.onkeydown = function (e) { if ((e.key === 'Enter' || e.key === ' ') && e.target === r) { e.preventDefault(); go(); } };
         });
@@ -3273,7 +3701,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             tbl.innerHTML = '<tr><th class="tg" colspan="2">' + g.label + '</th></tr>';
             gc.forEach(c => {
                 const tr = document.createElement('tr');
-                tr.innerHTML = '<td class="tl">' + escapeHtml(c.title) + '</td>';
+                tr.innerHTML = '<td class="tl">' + escapeHtml(c.title) + todayDetailHtml(c.key) + '</td>';
                 tr.appendChild(cellFor(src, c, id));
                 tbl.appendChild(tr);
             });
@@ -3306,7 +3734,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         for (let n = Math.max(1, tn - 2); n <= tn; n++) chips += '<button type="button" class="day-chip' + (n === rtodaySel ? ' active' : '') + '" data-n="' + n + '">' + (n === tn ? 'اليوم' : 'اليوم ' + n) + '</button>';
         box.innerHTML = '<div class="today-head"><div><div class="today-title">اليوم ' + rtodaySel + ' من رمضان</div><div class="today-sub">' + formatDateDisplay(isoOf(dt)) +
             (h ? ' · ' + h.day + ' ' + HIJRI_MONTHS[h.month - 1] + ' ' + h.year + 'هـ' : '') + '</div></div><div class="today-pct">' + (sc.total ? Math.round(sc.earned / sc.total * 100) + '%' : '—') + '</div></div>' +
-            '<div class="day-chips">' + chips + '</div>' + prayerStripHtml(dt, true) + '<div id="rtoday-list"></div>';
+            '<div class="day-chips">' + chips + '</div>' + prayerStripHtml(dt, true) + '<div id="rtoday-list"></div>' + (getRamadanNote('day' + rtodaySel).trim() ? '<div class="today-note-print"><b>ملاحظات اليوم:</b> ' + escapeHtml(getRamadanNote('day' + rtodaySel).trim()) + '</div>' : '');
         fillTodayList(box.querySelector('#rtoday-list'), RAMADAN_SRC, RAMADAN_GROUP_META, cols, rtodaySel);
         box.querySelectorAll('.day-chip').forEach(b => b.onclick = function () { rtodaySel = parseInt(this.getAttribute('data-n'), 10); buildRamadanToday(); });
         prayerTick();
@@ -3410,7 +3838,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         for (let i = 0; i <= ti; i++) chips += '<button type="button" class="day-chip' + (i === todaySel ? ' active' : '') + '" data-i="' + i + '">' + (i === ti ? 'اليوم' : DAYS[i]) + '</button>';
         box.innerHTML = '<div class="today-head"><div><div class="today-title">' + day + ' ' + formatDateDisplay(isoOf(dt)) + '</div><div class="today-sub">' +
             (h ? h.day + ' ' + HIJRI_MONTHS[h.month - 1] + ' ' + h.year + 'هـ' : '') + '</div></div><div class="today-pct">' + (pct === null ? '—' : pct + '%') + '</div></div>' +
-            '<div class="day-chips">' + chips + '</div>' + prayerStripHtml(dt, false) + '<div id="today-list"></div>';
+            '<div class="day-chips">' + chips + '</div>' + prayerStripHtml(dt, false) + '<div id="today-list"></div>' + (getDayNote(day).trim() ? '<div class="today-note-print"><b>ملاحظات اليوم:</b> ' + escapeHtml(getDayNote(day).trim()) + '</div>' : '');
         fillTodayList(box.querySelector('#today-list'), WEEK_SRC, GROUP_META, cols, day);
         box.querySelectorAll('.day-chip').forEach(b => b.onclick = function () { todaySel = parseInt(this.getAttribute('data-i'), 10); buildToday(); });
         prayerTick();
@@ -3420,7 +3848,23 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
     function weekRecords() {
         const list = getArchive(ARCHIVE_STORAGE).map(e => ({ date: (e.meta && e.meta.date) || (e.archivedAt || '').slice(0, 10), pct: e.percent, cells: e.cells || {}, days: 7 }));
         const st = weekStartSaturday(), cur = st && isoOf(st) === currentWeekSaturdayISO();
-        list.push({ date: data.meta.date || todayISO(), pct: weekPercentSummary(), cells: data.cells, days: cur ? (new Date().getDay() + 1) % 7 + 1 : 7 });
+        list.push({ date: data.meta.date || todayISO(), pct: weekPercentSummary(), cells: effectiveWeekCells(), days: cur ? (new Date().getDay() + 1) % 7 + 1 : 7 });
+        // أسابيع رمضان التي سُجّلت بوضع رمضان فقط (لم تُؤرشف أسبوعيًا): نُكوّنها من بياناته حتى لا تبدو فارغة في الملخص
+        const have = {}; list.forEach(r => { have[r.date] = 1; });
+        const d1 = ramadanDayDate(1), N = ramadanData.meta.dayCount || 30;
+        if (d1) {
+            for (let n = 1; n <= N; n++) {
+                const dt = ramadanDayDate(n), sat = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate() - ((dt.getDay() + 1) % 7)), iso = isoOf(sat);
+                if (have[iso]) continue;
+                have[iso] = 1;
+                const saved = data;
+                try {
+                    data = { meta: { date: iso, quran: '', dhikr: '' }, cells: {}, notes: {} };
+                    const pct = weekPercentSummary();
+                    if (pct !== null) list.push({ date: iso, pct: pct, cells: effectiveWeekCells(), days: 7 });
+                } finally { data = saved; }
+            }
+        }
         return list;
     }
     function itemStats(rec, out) {
@@ -3431,15 +3875,15 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             const c = cm[ck];
             if (c.kind === 'khatm') return;
             if (settings.over[ck] && settings.over[ck].title) c.title = settings.over[ck].title;
-            const restricted = c.days || c.whiteDays || c.hijriDates || c.hijriMonth || c.suppressDuringRamadan;
+            const restricted = c.days || c.whiteDays || c.hijriDates || c.hijriMonth || c.hijriRange || c.suppressDuringRamadan;
             const o = out[ck] = out[ck] || { title: c.title, t: 0, e: 0 };
             DAYS.forEach((d, i) => {
                 const raw = rec.cells[d + '_' + ck];
-                const st = !raw ? 'none' : (typeof raw === 'string' ? raw : (raw.status || 'none'));
-                if (st === 'gray') return;
-                if (st === 'none' && (restricted || i >= rec.days)) return; // غير منطبق أو لم يأتِ بعد
+                const cr = creditOfRaw(raw);
+                if (cr === null) return;
+                if (statusFromRaw(raw) === 'none' && (restricted || c.optional || i >= rec.days)) return; // غير منطبق أو اختياري أو لم يأتِ بعد
                 o.t += 1;
-                o.e += (st === 'green' || st === 'blue') ? 1 : st === 'yellow' ? 0.5 : 0;
+                o.e += cr;
             });
         });
     }
@@ -3453,7 +3897,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
                 let t = 0, e = 0;
                 cols.forEach(c => {
                     const raw = w.cells[d + '_' + c.key], st = !raw ? 'none' : (typeof raw === 'string' ? raw : (raw.status || 'none'));
-                    const restricted = c.days || c.whiteDays || c.hijriDates || c.hijriMonth || c.suppressDuringRamadan;
+                    const restricted = c.days || c.whiteDays || c.hijriDates || c.hijriMonth || c.hijriRange || c.suppressDuringRamadan;
                     if (st === 'gray' || (st === 'none' && (restricted || di >= w.days))) return;
                     const wt = c.weight || (c.kind === 'prayer' ? 2 : 1);
                     t += wt; e += (st === 'green' || st === 'blue') ? wt : st === 'yellow' ? wt / 2 : 0;
@@ -3474,10 +3918,11 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             days.push(r.total ? Math.round(r.earned / r.total * 100) : null);
             cols.forEach(c => {
                 if (RAMADAN_SRC.na(c, n)) return;
-                const st = RAMADAN_SRC.status('day' + n + '_' + c.key);
-                if (st === 'gray') return;
+                const raw = RAMADAN_SRC.cells()['day' + n + '_' + c.key], cr = creditOfRaw(raw);
+                if (cr === null) return;
+                if (c.optional && statusFromRaw(raw) === 'none') return;
                 const o = items[c.key] = items[c.key] || { title: c.title, t: 0, e: 0 };
-                o.t += 1; o.e += (st === 'green' || st === 'blue') ? 1 : st === 'yellow' ? 0.5 : 0;
+                o.t += 1; o.e += cr;
             });
         }
         const vals = days.filter(v => v !== null);
@@ -3633,11 +4078,15 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         if ((Date.now() - new Date(last + 'T00:00:00').getTime()) / DAY_MS >= 7) { exportBackup(); showToast('نُزّلت نسخة احتياطية أسبوعية'); }
     }
 
+    const APP_VERSION = '1.0.0';
+    const HELP_KEY = 'TazkiyahSystem_helpSeen';
+
     function exportBackup() {
         try { localStorage.setItem(LASTBACKUP_KEY, todayISO()); } catch (e) { /* تجاهل */ }
         const payload = {
             app: 'TazkiyahSystem',
             backupVersion: 1,
+            appVersion: APP_VERSION,
             exportedAt: new Date().toISOString(),
             weekly: {
                 data: JSON.parse(localStorage.getItem(STORAGE) || 'null'),
@@ -3711,7 +4160,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         const html =
             '<div class="settings-section">' +
             '<div class="settings-hint">تصدير نسخة من كل بياناتك (الأسبوعية ورمضان والأرشيف) في ملف واحد تقدر تحفظه أو تنقله لجهاز آخر.</div>' +
-            '<div class="settings-hint" style="font-weight:800">' + (function () { let l = null; try { l = localStorage.getItem(LASTBACKUP_KEY); } catch (e) { /* تجاهل */ } return l ? 'آخر نسخة: ' + (formatDateDisplay(l) || l) : 'لم تُنزَّل نسخة بعد'; })() + '</div>' +
+            '<div class="settings-hint" style="font-weight:800">' + (function () { let l = null; try { l = localStorage.getItem(LASTBACKUP_KEY); } catch (e) { /* تجاهل */ } return (l ? 'آخر نسخة: ' + (formatDateDisplay(l) || l) : 'لم تُنزَّل نسخة بعد') + ' · إصدار التطبيق ' + APP_VERSION; })() + '</div>' +
             '<button type="button" id="do-export-btn" class="cal-clear-btn" style="background:var(--primary-main);color:#fff;border-color:var(--primary-main)">تصدير نسخة احتياطية</button>' +
             '</div>' +
             '<div class="settings-section">' +
@@ -3770,7 +4219,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
        لأنها أصلاً عامة ولا ترتبط ببيانات بعينها. */
 
     function ramadanStatusOf(key) {
-        const c = ramadanData.cells[key];
+        const c = rawRamadanCell(key);
         if (!c) return 'none';
         return typeof c === 'string' ? c : (c.status || 'none');
     }
@@ -3779,24 +4228,22 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
 
 
     function setRamadanState(key, st) {
-        const prev = ramadanData.cells[key];
-        if (st === 'none') delete ramadanData.cells[key];
-        else ramadanData.cells[key] = st;
-        saveRamadan();
+        const prev = rawRamadanCell(key), jam = prev && typeof prev === 'object' && prev.jam;
+        writeRamadanCell(key, st === 'none' ? (jam ? { status: 'none', jam: 1 } : undefined) : (jam ? { status: st, jam: 1 } : st));
+        saveAll();
         buildRamadan();
         closeModal();
-        showToast(st === 'none' ? 'تم المسح' : 'تم الحفظ', function () { if (prev === undefined) delete ramadanData.cells[key]; else ramadanData.cells[key] = prev; saveRamadan(); buildRamadan(); });
+        showToast(st === 'none' ? 'تم المسح' : 'تم الحفظ', function () { writeRamadanCell(key, prev); saveAll(); buildRamadan(); });
     }
 
     function openRamadanNote(dayKey, dayLabel) {
-        const cur = ramadanData.notes[dayKey] || '';
+        const cur = getRamadanNote(dayKey);
         const html =
             '<p class="note-hint">سجّل أي ملاحظات على هذا اليوم — عذر، سبب تقصير، أو أي تعليق آخر:</p>' +
             '<textarea id="note-inp" class="note-area" maxlength="1500" placeholder="اكتب هنا...">' + escapeHtml(cur) + '</textarea>';
         openModal('ملاحظات ' + dayLabel, html, true, function () {
             const val = (document.getElementById('note-inp') || {}).value || '';
-            if (!ramadanData.notes) ramadanData.notes = {};
-            ramadanData.notes[dayKey] = val;
+            setRamadanNote(dayKey, val);
             saveRamadan();
             buildRamadan();
             closeModal();
@@ -3940,6 +4387,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         const body = document.getElementById('modal-body');
         if (body) body.innerHTML = renderSettingsBody();
         wireSettingsBody();
+        settingsExtras();
     }
 
     function applyLive() {
@@ -4051,6 +4499,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         const sel = (id, label, opts, cur) => '<div class="settings-hint" style="margin-top:8px">' + label + '</div><select class="ord-w" id="' + id + '" style="width:100%">' +
             opts.map(o => '<option value="' + o[0] + '"' + (String(o[0]) === String(cur) ? ' selected' : '') + '>' + o[1] + '</option>').join('') + '</select>';
         box.innerHTML = '<div class="settings-hint" style="font-weight:800;margin-top:14px">مواقيت الصلاة والتنبيهات</div>' +
+            '<div class="settings-hint">المواقيت حسابية تقريبية وقد تختلف دقيقة أو دقيقتين عن التقويم الرسمي في بلدك؛ فاحتط في أول الوقت وفي الإفطار والإمساك، واعتمد إعلان جهتك الرسمية.</div>' +
             sel('pr-on', 'إظهار المواقيت في عرض اليوم', [['1', 'نعم'], ['0', 'لا']], settings.prayerTimes ? '1' : '0') +
             sel('pr-city', 'المدينة', Object.keys(CITIES).map(k => [k, CITIES[k][0]]).concat([['custom', 'إحداثيات مخصصة']]), settings.city) +
             '<div id="pr-custom" style="display:' + (settings.city === 'custom' ? 'flex' : 'none') + ';gap:6px;margin-top:6px"><input class="ord-title" id="pr-lat" type="number" step="0.0001" min="-90" max="90" value="' + settings.lat + '" aria-label="خط العرض"><input class="ord-title" id="pr-lon" type="number" step="0.0001" min="-180" max="180" value="' + settings.lon + '" aria-label="خط الطول"></div>' +
@@ -4143,9 +4592,14 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             ['autoHideNA', 'إخفاء البنود غير المنطبقة هذا الأسبوع (كعرفة وعاشوراء)'], ['autoBackup', 'تنزيل نسخة احتياطية تلقائيًا كل أسبوع']];
         let h = '<div class="settings-hint" style="font-weight:800">سلوك النظام</div>';
         rows.forEach(r => { h += '<div class="settings-hint" style="margin-top:18px">' + r[1] + '</div><div class="pill-toggle"><button type="button" class="pill-btn" data-k="' + r[0] + '" data-v="1">نعم</button><button type="button" class="pill-btn" data-k="' + r[0] + '" data-v="0">لا</button></div>'; });
+        h += '<div class="settings-hint" style="margin-top:18px">سنن الجمعة — لتظهر لك السنن المناسبة لحالك</div><div class="pill-toggle">' +
+            [['men', 'رجل يحضر الجمعة'], ['women', 'امرأة تحضرها'], ['none', 'لا أحضرها']].map(x => '<button type="button" class="pill-btn" data-fm="' + x[0] + '">' + x[1] + '</button>').join('') + '</div>';
         box.innerHTML = h;
-        const paint = () => box.querySelectorAll('.pill-btn').forEach(b => b.classList.toggle('active', (settings[b.getAttribute('data-k')] ? '1' : '0') === b.getAttribute('data-v')));
-        box.querySelectorAll('.pill-btn').forEach(b => b.onclick = function () {
+        const paintFm = () => box.querySelectorAll('.pill-btn[data-fm]').forEach(b => b.classList.toggle('active', settings.fridayMode === b.getAttribute('data-fm')));
+        box.querySelectorAll('.pill-btn[data-fm]').forEach(b => b.onclick = function () { settings.fridayMode = b.getAttribute('data-fm'); settings.fridayChosen = true; saveSettings(); paintFm(); build(); buildRamadan(); });
+        paintFm();
+        const paint = () => box.querySelectorAll('.pill-btn[data-k]').forEach(b => b.classList.toggle('active', (settings[b.getAttribute('data-k')] ? '1' : '0') === b.getAttribute('data-v')));
+        box.querySelectorAll('.pill-btn[data-k]').forEach(b => b.onclick = function () {
             settings[b.getAttribute('data-k')] = b.getAttribute('data-v') === '1';
             saveSettings(); paint(); if (settings.autoWeek) rollWeek(); build(); buildRamadan();
         });
@@ -4178,9 +4632,13 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         newItemDays = DAYS.slice();
         openModal('تخصيص البنود', renderSettingsBody(), false);
         wireSettingsBody();
+        settingsExtras();
+    }
+    function settingsExtras() {
         addHijriSettings();
         addBehaviorSettings();
         addOrderSettings();
+        addDetailsSettings(activeColumns);
         addPrayerSettings();
     }
 
@@ -4226,7 +4684,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
 
         let colsHtml = '<th style="border:none;background:transparent"></th>';
         cols.forEach(c => {
-            colsHtml += '<th scope="col" class="th-col"><span>' + escapeHtml(c.title) + '</span></th>';
+            colsHtml += '<th scope="col" class="th-col' + (c.hl ? ' hl' : '') + '" title="' + escapeHtml(detailTip(c)) + '"><span>' + escapeHtml(c.title) + '</span></th>';
         });
         colsHtml += '<th scope="col" class="th-col" style="background:transparent"><span>مؤشر الإنجاز</span></th>';
         colsRow.innerHTML = colsHtml;
@@ -4255,7 +4713,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         for (let dayNum = 1; dayNum <= dayCount; dayNum++) {
             const dayKey = 'day' + dayNum;
             const tr = document.createElement('tr');
-            const note = (ramadanData.notes[dayKey] || '').trim();
+            const note = getRamadanNote(dayKey).trim();
             const hasNote = note.length > 0;
             const label = ramadanDayLabel(dayNum);
             const isQadrNight = QADR_NIGHTS.indexOf(dayNum) !== -1;
@@ -4316,7 +4774,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         const dayCount = ramadanData.meta.dayCount || 30;
         const entries = [];
         for (let dayNum = 1; dayNum <= dayCount; dayNum++) {
-            const note = (ramadanData.notes['day' + dayNum] || '').trim();
+            const note = getRamadanNote('day' + dayNum).trim();
             if (note) {
                 entries.push('<div class="pn-item"><span class="pn-day">' + ramadanDayLabel(dayNum) + '</span>' +
                     '<span class="pn-text">' + escapeHtml(note) + '</span></div>');
@@ -4349,7 +4807,12 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             '<input type="checkbox" id="zakat-paid"' + (ramadanData.zakatFitr.paid ? ' checked' : '') + '>' +
             '<label for="zakat-paid">تم إخراج زكاة الفطر</label></div>' +
             '<textarea class="zakat-note" id="zakat-note" placeholder="ملاحظة (لمين، تاريخ الإخراج...)">' + escapeHtml(ramadanData.zakatFitr.note || '') + '</textarea>' +
+            '<div class="perm-extra">واجبة على كل مسلم عن نفسه ومن يعول: صاع من غالب قوت البلد عند الجمهور (ونصف صاع من القمح عند الحنفية). تجب بغروب شمس آخر يوم من رمضان عند الشافعية والحنابلة، وبفجر يوم العيد عند الحنفية. الأفضل إخراجها قبل صلاة العيد، ويجوز تعجيلها قبله (من أول رمضان عند الشافعية، وبيوم أو يومين عند غيرهم)، ويجوز بعد الصلاة في يوم العيد، وتأخيرها عن يوم العيد بلا عذر حرام ولا تسقط بفوات وقتها. وتفتي دار الإفتاء المصرية بجواز إخراج القيمة نقودًا (وتعلن قيمتها كل عام).</div>' +
             '</div>';
+        let qadaDue = 0;
+        for (let d = 1; d <= dayCount; d++) { const fs = ramadanStatusOf('day' + d + '_fasting'); if (fs === 'red' || fs === 'gray') qadaDue++; }
+        html += '<div class="rwidget"><div class="rwidget-title">قضاء الصيام</div><div class="khatm-summary">أيام تلزمك قضاءً: <b>' + qadaDue + '</b> ' + (qadaDue === 1 ? 'يوم' : 'أيام') + ' (المُفطرة أو المعذور فيها)</div>' +
+            '<div class="perm-extra">يجب قضاء ما أفطرته من رمضان ولو بعذر، متتابعًا أو متفرقًا حتى قبل رمضان القادم. والعاجز عجزًا دائمًا (كِبَر أو مرض لا يُرجى برؤه) عليه فدية إطعام مسكين عن كل يوم. يمكنك متابعة القضاء من بند «قضاء رمضان» في المتابعة الأسبوعية (فعّله من تخصيص البنود).</div></div>';
 
         html += '<div class="rwidget">' +
             '<div class="rwidget-title"><span>ختمة القرآن</span><span style="color:var(--muted)">' + pct + '%</span></div>' +
@@ -4413,7 +4876,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         const toggleable = RAMADAN_BASE_COLUMNS.filter(c => c.toggleable);
         let html = '<div class="settings-section">' +
             '<div class="settings-title">إظهار / إخفاء البنود</div>' +
-            '<div class="settings-hint">"الصيام" أساس وضع رمضان ولا يمكن إخفاؤه. إخفاء أي بند آخر لا يحذف بياناته المسجَّلة — يمكنك إظهاره مرة أخرى في أي وقت.</div>';
+            '<div class="settings-hint">"الصيام" أساس وضع رمضان ولا يمكن إخفاؤه. إخفاء أي بند آخر لا يحذف بياناته المسجَّلة — يمكنك إظهاره مرة أخرى في أي وقت. ما تسجّله من الصلوات والنوافل والأذكار هنا يظهر تلقائيًا في المتابعة الأسبوعية لنفس الأيام (والعكس)، فلا يبدو أي أسبوع من رمضان فارغًا.</div>';
         toggleable.forEach(c => {
             const checked = ramadanSettings.hidden.indexOf(c.key) === -1;
             html += '<div class="toggle-row">' +
@@ -4451,6 +4914,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         const body = document.getElementById('modal-body');
         if (body) body.innerHTML = renderRamadanSettingsBody();
         wireRamadanSettingsBody();
+        addDetailsSettings(ramadanActiveColumns);
     }
 
     function applyRamadanLive() {
@@ -4507,6 +4971,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
     function openRamadanSettings() {
         openModal('تخصيص بنود رمضان', renderRamadanSettingsBody(), false);
         wireRamadanSettingsBody();
+        addDetailsSettings(ramadanActiveColumns);
     }
 
     /* ── تبديل الوضع (أسبوعي / رمضان) ── */
@@ -4540,6 +5005,13 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             if (tabRamadan) tabRamadan.classList.remove('active');
         }
     }
+
+    /* ── طباعة: عند عرض «اليوم» يُطبع اليوم وحده، وليس الأسبوع كله ── */
+    window.addEventListener('beforeprint', function () {
+        const t = currentMode === 'ramadan' ? settings.rview === 'today' : settings.view === 'today';
+        document.body.classList.toggle('print-today', !!t);
+    });
+    window.addEventListener('afterprint', function () { document.body.classList.remove('print-today'); });
 
     /* ── Ramadan print timestamp ── */
     window.addEventListener('beforeprint', function () {
@@ -4598,13 +5070,35 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
                 openModal('تثبيت التطبيق', '<p class="confirm-msg" style="margin-bottom:10px">ثبّته ليفتح كتطبيق مستقل، ويعمل بدون إنترنت، وتبقى بياناتك محفوظة بشكل أدوم على جهازك.</p><ol class="confirm-msg" style="padding-inline-start:22px;margin:0">' + steps.map(t => '<li style="margin-bottom:6px">' + t + '</li>').join('') + '</ol>', false);
             };
         })();
+        /* ── المساعدة: دليل سريع يُعرض مرة واحدة على شكل بانر غير مزعج ── */
+        (function () {
+            const wb = document.getElementById('welcome-banner');
+            const seen = () => { try { return !!localStorage.getItem(HELP_KEY); } catch (e) { return true; } };
+            const markSeen = () => { try { localStorage.setItem(HELP_KEY, '1'); } catch (e) { /* تجاهل */ } if (wb) wb.style.display = 'none'; };
+            const guide = [
+                ['كيف أسجّل؟', 'اضغط أي خانة واختر حالتها: <b>أخضر</b> مكتمل، <b>أزرق</b> منتصف الوقت، <b>أصفر</b> جزئي/آخر الوقت، <b>أحمر</b> لم يتم، <b>رمادي</b> عذر شرعي. وبعد كل تسجيل يظهر زر «تراجع» لثوانٍ.'],
+                ['الصلوات والجماعة', 'في الفريضة تقدر تعلّم «صلّيتها جماعة» فتظهر نقطة خضراء صغيرة في الخانة، ولا تؤثر في النسبة.'],
+                ['المقدار والتفاصيل', 'من «تخصيص البنود ← المقادير والتفاصيل» حدّد مقدار كل بند (الضحى ٨ ركعات مثلًا) وأضف دعاءً أو ملاحظة مثبّتة. بعدها تسجّل <b>الكمية المنجزة</b> (٦ من ٨) وتُحسب في النسبة.'],
+                ['وضع رمضان', 'يضم الصلوات والنوافل والأذكار مع الصيام وآدابه وليلة القدر والاعتكاف والختمة والصدقة. وما تسجّله من الصلوات والأذكار يظهر في المتابعة الأسبوعية لنفس الأيام والعكس، فلا يبدو أي أسبوع فارغًا.'],
+                ['عرض «اليوم» والطباعة', 'اختر «اليوم» لتسجيل يومك بسهولة، وعند الطباعة من عرض «اليوم» يُطبع اليوم وحده، ومن «الأسبوع كله» يُطبع الأسبوع.'],
+                ['بياناتك', 'محفوظة <b>على جهازك فقط</b>. نزّل نسخة من «نسخة احتياطية» من وقت لآخر، واستعدها إن غيّرت جهازك أو مسحت بيانات المتصفح. ويمكنك تثبيت التطبيق من زر «تثبيت التطبيق» ليعمل بدون إنترنت.'],
+                ['تنبيه', 'المعلومات الفقهية في التطبيق مختصرة للتذكير وليست فتوى؛ ارجع لأهل العلم في المسائل التي تخصّك، وللجهة الرسمية في بلدك في مواقيت الصلاة وبدء الشهور.']
+            ];
+            const openGuide = () => { markSeen(); openModal('دليل سريع', guide.map(g => '<div class="help-sec"><h4>' + g[0] + '</h4><p>' + g[1] + '</p></div>').join(''), false); };
+            const hb = document.getElementById('btn-help'); if (hb) hb.onclick = openGuide;
+            if (wb) {
+                document.getElementById('wb-guide').onclick = openGuide;
+                document.getElementById('wb-close').onclick = markSeen;
+                if (!seen()) wb.style.display = '';
+            }
+        })();
         try { localStorage.setItem('TazkiyahSystem_probe', '1'); localStorage.removeItem('TazkiyahSystem_probe'); } catch (e) { storageAvailable = false; }
         const banner = document.getElementById('storage-banner');
         const syncBanner = function () { if (banner) banner.style.display = (storageAvailable && ramadanStorageAvailable) ? 'none' : ''; };
         syncBanner(); setInterval(syncBanner, 2000);
         try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist(); } catch (e) { /* تجاهل */ } // يمنع المتصفح من حذف البيانات عند ضغط المساحة
         window.addEventListener('storage', function (ev) { // تعديل من تبويب آخر: أعد التحميل حتى لا تُكتب بيانات قديمة فوق الجديدة
-            if (ev.key && ev.key.indexOf('TazkiyahSystem') === 0 && ev.key !== LASTBACKUP_KEY && ev.key !== MODE_STORAGE && !overlay.classList.contains('open')) location.reload();
+            if (ev.key && ev.key.indexOf('TazkiyahSystem') === 0 && ev.key !== LASTBACKUP_KEY && ev.key !== MODE_STORAGE && ev.key !== HELP_KEY && !overlay.classList.contains('open')) location.reload();
         });
         setTimeout(autoBackupIfDue, 1500);
         setInterval(prayerTick, 20000);
@@ -4618,11 +5112,13 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             currentMode = 'weekly';
             saveMode();
             applyMode();
+            build();
         };
         document.getElementById('tab-ramadan').onclick = function () {
             currentMode = 'ramadan';
             saveMode();
             applyMode();
+            buildRamadan();
         };
         document.getElementById('btn-ramadan-customize').onclick = function () { openRamadanSettings(); };
         document.getElementById('btn-ramadan-print').onclick = function () { window.print(); };
