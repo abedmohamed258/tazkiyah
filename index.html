@@ -1035,7 +1035,7 @@
         .more-item { display: flex; align-items: center; gap: 12px; width: 100%; padding: 14px 16px; background: #fff; border: 1px solid var(--border); border-radius: 12px; font: inherit; font-size: 14.5px; font-weight: 800; color: var(--primary-main); cursor: pointer; text-align: right; }
         .more-item svg { width: 19px; height: 19px; flex-shrink: 0; color: var(--muted); }
         .more-item:hover, .more-item:focus-visible { border-color: var(--brand); background: #f8fafc; outline: none; }
-        @media (max-width: 720px) {
+        @media (max-width: 900px) {
             .mode-tabs-row { flex-wrap: nowrap; align-items: stretch; gap: 8px; }
             .mode-tabs.mode-switch { flex: 1; min-width: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: #e2e8f0; padding: 3px; border-radius: 12px; }
             .mode-switch .mode-tab { justify-content: center; padding: 10px 4px; border: none; background: transparent; border-radius: 9px; font-size: 13px; white-space: nowrap; gap: 5px; }
@@ -1043,6 +1043,8 @@
             .mode-switch .mode-tab.active { background: var(--primary-dark); color: #fff; }
             .mode-tabs.mode-actions { display: none; }
             .more-btn { display: inline-flex; align-items: center; justify-content: center; width: 48px; padding: 0; border-radius: 12px; }
+        }
+        @media (max-width: 720px) {
             .header .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; width: 100%; }
             .header .actions > * { min-width: 0; }
             #btn-reset, #btn-ramadan-reset { grid-column: 1 / -1; }
@@ -1326,10 +1328,100 @@
         .pr-chip span{font-weight:900;color:var(--primary-dark)}
         .pr-chip.next{background:var(--brand)}.pr-chip.next b,.pr-chip.next span{color:#fff}
         .pr-next{font-weight:800;font-size:13px;color:var(--brand);margin:2px 0 8px}
+        /* ══ حالتي ══ */
+        .state-bar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 10px; padding: 8px 14px; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+        .sb-lbl { font-weight: 900; font-size: 12.5px; color: var(--primary-main); }
+        .state-chip { display: inline-flex; align-items: center; gap: 6px; border-radius: 99px; padding: 3px 12px; font-weight: 800; font-size: 12.5px; border: 1px solid; }
+        .state-chip small { font-weight: 700; opacity: .8; font-size: 11.5px; }
+        .state-chip.n { background: var(--g-bg); border-color: #a7f3d0; color: var(--g-tx); }
+        .state-chip.b { background: var(--b-bg); border-color: #bfdbfe; color: var(--b-tx); }
+        .state-chip.y { background: var(--y-bg); border-color: #fde68a; color: var(--y-tx); }
+        .state-chip.g { background: var(--gr-bg); border-color: var(--border); color: var(--gr-tx); }
+        .sb-btn { margin-inline-start: auto; font-size: 12.5px; }
+        .state-brief { border: 1px solid var(--border); border-radius: 10px; background: #f8fafc; margin: 8px 0; padding: 0; }
+        .state-brief > summary { cursor: pointer; padding: 9px 12px; font-size: 13px; font-weight: 700; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+        .state-brief > summary::-webkit-details-marker { display: none; }
+        .state-brief > summary::after { content: '+'; font-weight: 900; color: var(--muted); }
+        .state-brief[open] > summary::after { content: '−'; }
+        .state-brief ul, .st-rules ul { list-style: none; padding: 0 12px 10px; font-size: 12.5px; font-weight: 600; line-height: 1.95; color: var(--primary-main); }
+        .state-brief li::before, .st-rules li::before { content: '•'; margin-inline-end: 6px; color: var(--muted); }
+        .state-brief.b { border-color: #bfdbfe; background: var(--b-bg); } .state-brief.y { border-color: #fde68a; background: var(--y-bg); }
+        .st-bdg { background: var(--gr-bg); color: var(--gr-tx); border-radius: 99px; padding: 0 8px; margin-inline-start: 4px; }
+        .st-row { border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; margin-top: 8px; background: #fff; }
+        .st-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+        .st-dates { font-size: 12.5px; font-weight: 700; color: var(--muted); }
+        .st-acts { display: flex; gap: 6px 14px; flex-wrap: wrap; margin-top: 8px; }
+        .st-acts .quick-fill-btn { font-size: 12.5px; padding: 6px 2px; }
+        .st-del { color: #dc2626 !important; }
+        .st-types { display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0; }
+        .st-form { display: flex; gap: 12px; flex-wrap: wrap; }
+        .st-form .field { flex: 1 1 150px; min-width: 0; }
+        .st-form .date-display-btn, .st-form .field input, .st-form .field select { width: 100%; }
+        .st-rules { border: 1px solid var(--border); border-radius: 10px; margin-top: 12px; background: #f8fafc; }
+        .st-rules > summary { cursor: pointer; padding: 10px 12px; font-size: 13px; font-weight: 800; list-style: none; display: flex; justify-content: space-between; gap: 8px; }
+        .st-rules > summary::-webkit-details-marker { display: none; }
+        .st-rules > summary::after { content: '+'; font-weight: 900; color: var(--muted); }
+        .st-rules[open] > summary::after { content: '−'; }
+        .rukhas { background: #f8fafc; border: 1px solid var(--border); border-radius: 10px; padding: 8px 12px 10px; margin-top: 12px; }
+        .rk-title { font-weight: 900; font-size: 13px; color: var(--primary-main); }
+        .rk-sub { font-size: 12px; font-weight: 800; color: var(--muted); margin: 10px 0 5px; }
+        .rk-note { font-size: 11.5px; font-weight: 600; color: var(--muted); margin-top: 8px; }
+        .rk-pills { max-width: 100%; flex-wrap: wrap; }
+        td.cell .tg { display: block; font-size: 9.5px; font-weight: 800; opacity: .8; line-height: 1.15; margin-top: 2px; }
+        .today-table td.cell .tg { display: inline; margin-inline-start: 6px; font-size: 11px; }
+        /* ══ الفوائت والقضاء ══ */
+        .qd-sum { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 12px 14px; margin-bottom: 12px; }
+        .qd-big { font-size: 30px; font-weight: 900; color: var(--g-tx); line-height: 1.1; }
+        .qd-cap { font-size: 12px; font-weight: 700; color: var(--muted); }
+        .qd-bar { height: 8px; background: #dcfce7; border-radius: 99px; overflow: hidden; margin: 8px 0 6px; }
+        .qd-bar i { display: block; height: 100%; background: var(--g-bd); border-radius: 99px; }
+        .qd-row { display: flex; align-items: center; gap: 8px; padding: 8px 0; border-bottom: 1px solid #eef2f6; }
+        .qd-row:last-of-type { border-bottom: none; }
+        .qd-nm { font-weight: 800; width: 64px; flex-shrink: 0; }
+        .qd-rm { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+        .qd-rm small { font-size: 11px; color: var(--muted); font-weight: 700; }
+        .qd-inp { width: 100%; max-width: 110px; border: 1px solid var(--border); border-radius: 8px; padding: 6px 8px; font: inherit; font-weight: 800; }
+        .qd-row .qty-btn, .qd-line .qty-btn { padding: 8px 12px; min-width: 44px; }
+        .qd-row .qty-btn:disabled, .qd-line .qty-btn:disabled { opacity: .4; cursor: not-allowed; }
+        .qd-line { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 0; border-bottom: 1px solid #eef2f6; font-size: 13px; font-weight: 700; }
+        .qd-line:last-child { border-bottom: none; }
+        .qd-step { display: inline-flex; align-items: center; gap: 8px; }
+        .qd-step b { min-width: 28px; text-align: center; font-size: 15px; }
+        .qd-res { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; margin-top: 10px; font-size: 13px; font-weight: 700; line-height: 1.9; }
+        .qd-res-acts { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+        .qd-card { background: var(--bg-surface); border: 1px dashed var(--border); border-radius: 12px; padding: 10px 14px; margin-top: 12px; }
+        .qd-card-hd { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-size: 13px; }
+        .qd-card-hd span { color: var(--muted); font-weight: 700; }
+        .qd-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+        .qd-chips .det-chip small { color: var(--muted); font-weight: 700; }
+        /* ══ تبويبات التخصيص ══ */
+        .set-tabs { display: flex; gap: 4px; overflow-x: auto; margin: 0 0 12px; padding: 3px; background: #e2e8f0; border-radius: 10px; position: sticky; top: 0; z-index: 3; scrollbar-width: none; }
+        .set-tabs::-webkit-scrollbar { display: none; }
+        .set-tab { flex: 1 0 auto; border: none; background: transparent; padding: 8px 12px; border-radius: 8px; font: inherit; font-size: 12.5px; font-weight: 800; color: var(--muted); cursor: pointer; white-space: nowrap; }
+        .set-tab.active { background: var(--primary-dark); color: #fff; }
+        .set-panel[hidden] { display: none; }
+        /* ══ ترتيب وتنظيم عام ══ */
+        .header .meta-row { flex: 1 1 260px; }
+        .header .actions { margin-inline-start: auto; }
+        .legend { gap: 8px 18px; }
+        @media (max-width: 720px) {
+            .legend { padding: 9px 12px; gap: 6px 14px; font-size: 11.5px; }
+            .legend .legend-title { flex-basis: 100%; }
+            .state-bar { padding: 8px 10px; }
+            .qd-row { flex-wrap: wrap; }
+            .qd-nm { width: 100%; }
+            .qd-rm { flex-direction: row; align-items: center; gap: 8px; }
+            .st-form .field { flex-basis: 100%; }
+        }
+        @media (min-width: 721px) and (max-width: 1100px) {
+            .container { gap: 12px; }
+            .header { padding: 14px 16px; }
+        }
+        @media print { .state-bar, .state-brief, .qd-card, .set-tabs { display: none !important; } td.cell .tg { font-size: 9px !important; opacity: 1 !important; } .st-bdg { background: none !important; border: 1px solid #333; } }
     </style>
 </head>
 <body>
-    <div class="welcome-banner no-print" id="welcome-banner" style="display:none"><span>أهلًا بك في نظام تزكية. اضغط على أي خانة في الجدول لتسجيل عبادتك.</span><span class="wb-gender" id="wb-gender">أنا: <button type="button" class="wb-g" data-g="m">رجل</button><button type="button" class="wb-g" data-g="f">امرأة</button></span><span class="wb-actions"><button type="button" class="quick-fill-btn" id="wb-guide">دليل سريع</button><button type="button" class="wb-x" id="wb-close" aria-label="إغلاق">×</button></span></div>
+    <div class="welcome-banner no-print" id="welcome-banner" style="display:none"><span>أهلًا بك في نظام تزكية. اضغط على أي خانة لتسجيل عبادتك.</span><span class="wb-gender" id="wb-gender">أنا: <button type="button" class="wb-g" data-g="m">رجل</button><button type="button" class="wb-g" data-g="f">امرأة</button></span><span class="wb-actions"><button type="button" class="quick-fill-btn" id="wb-guide">دليل سريع</button><button type="button" class="wb-x" id="wb-close" aria-label="إغلاق">×</button></span></div>
     <noscript><div style="padding:24px;text-align:center;font-weight:800;font-family:sans-serif">هذا التطبيق يحتاج تفعيل JavaScript في المتصفح ليعمل.</div></noscript>
     <div class="container">
         <div class="storage-banner no-print" id="storage-banner" role="alert" style="display:none">تنبيه: المتصفح لا يسمح بحفظ البيانات (وضع التصفح الخاص أو مساحة ممتلئة). ما تسجّله الآن سيضيع عند إغلاق الصفحة — نزّل نسخة احتياطية من زر «نسخة احتياطية» أولًا بأول.</div>
@@ -1347,6 +1439,14 @@
             </div>
             <button type="button" class="mode-tab more-btn" id="btn-more" aria-label="المزيد" aria-haspopup="dialog"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></button>
             <div class="mode-tabs mode-actions">
+                <button type="button" class="mode-tab" id="btn-states">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    حالتي
+                </button>
+                <button type="button" class="mode-tab" id="btn-qada">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                    الفوائت والقضاء
+                </button>
                 <button type="button" class="mode-tab" id="btn-archive">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="5" rx="1"/><path d="M4 8v11a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V8"/><line x1="10" y1="13" x2="14" y2="13"/></svg>
                     الأرشيف
@@ -1385,6 +1485,7 @@
             </div>
             <div class="topbar-summary" id="week-summary">—</div>
         </div>
+        <div class="state-bar no-print" id="state-bar"></div>
 
         <!-- Header -->
         <div class="header">
@@ -1395,14 +1496,6 @@
                         <button type="button" class="date-display-btn placeholder" id="meta-date-btn">اختر تاريخًا</button>
                         <button type="button" class="quick-fill-btn no-print" id="btn-this-week">هذا الأسبوع</button>
                     </div>
-                </div>
-                <div class="field">
-                    <label for="meta-quran">الورد القرآني المستهدف</label>
-                    <input type="text" id="meta-quran" maxlength="120" placeholder="مثال: جزء وربع يومياً" autocomplete="off">
-                </div>
-                <div class="field">
-                    <label for="meta-dhikr">الذكر الأسبوعي المستهدف</label>
-                    <input type="text" id="meta-dhikr" maxlength="120" placeholder="مثال: الاستغفار 100 مرة" autocomplete="off">
                 </div>
             </div>
             <div class="actions">
@@ -1467,6 +1560,7 @@
                 </div>
                 <div class="topbar-summary" id="ramadan-summary">—</div>
             </div>
+            <div class="state-bar no-print" id="rstate-bar"></div>
 
             <!-- Header -->
             <div class="header">
@@ -1503,7 +1597,6 @@
 
             <!-- Zakat al-Fitr + Khatm widgets -->
             <div id="ramadan-notice" class="no-print"></div>
-            <div class="ramadan-widgets" id="ramadan-widgets"></div>
 
             <!-- Legend -->
             <div class="legend" id="ramadan-legend">
@@ -1532,6 +1625,8 @@
 
             <!-- يظهر فقط عند الطباعة: قائمة بملاحظات كل يوم -->
             <div class="print-notes-block" id="ramadanPrintNotes"></div>
+
+            <div class="ramadan-widgets" id="ramadan-widgets"></div>
         </div>
         <!-- /mode-ramadan -->
     </div>
@@ -1835,9 +1930,9 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
     const PRAYER_OPTS = [
         { id: 'green',  text: 'أول الوقت',             short: 'أول الوقت', color: 'var(--g-bd)' },
         { id: 'blue',   text: 'منتصف الوقت',           short: 'منتصف',     color: 'var(--b-bd)' },
-        { id: 'yellow', text: 'آخر الوقت (مزنوقة)',     short: 'آخر الوقت', color: 'var(--y-bd)' },
+        { id: 'yellow', text: 'آخر الوقت',               short: 'آخر الوقت', color: 'var(--y-bd)' },
         { id: 'red',    text: 'قضاء أو فوات',          short: 'فائتة',     color: 'var(--r-bd)' },
-        { id: 'gray',   text: 'عذر شرعي / رخصة',       short: 'عذر شرعي',  color: 'var(--gr-bd)' }
+        { id: 'gray',   text: 'عذر شرعي مانع من الأداء', short: 'عذر شرعي',  color: 'var(--gr-bd)' }
     ];
 
     // نوافل الصلاة (الضحى، الوتر، القيام) لا تزال صلاة، فـ"العذر الشرعي" من الصلاة
@@ -1868,7 +1963,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
     const FRIDAY_SUNAN = ['قراءة سورة الكهف', 'تحرّي ساعة الإجابة (الدعاء)', 'الاغتسال (غسل الجمعة)', 'السواك', 'التطيّب بالطيب', 'لبس أحسن الثياب',
         'التبكير إلى المسجد', 'المشي بسكينة وتجنّب تخطّي الرقاب', 'تحية المسجد وما تيسّر من النافلة', 'الإنصات للخطبة وترك اللغو', 'الإكثار من الصلاة على النبي ﷺ',
         'قراءة (الم تنزيل) و(هل أتى) في فجر الجمعة', 'سنّة الجمعة البعدية (ركعتان أو أربع)'];
-    const EID_SUNAN = ['الاغتسال والتطيّب ولبس أجمل الثياب', 'الأكل قبل الخروج في الفطر (تمرات وترًا) وبعد الصلاة في الأضحى', 'التكبير', 'صلاة العيد', 'مخالفة الطريق (الذهاب من طريق والرجوع من آخر)', 'التهنئة وصلة الرحم'];
+    const EID_SUNAN = ['الاغتسال والتطيّب ولبس أجمل الثياب', 'الأكل قبل الخروج في الفطر (تمرات وترًا) وبعد الصلاة في الأضحى', 'التكبير', 'صلاة العيد', 'مخالفة الطريق (الذهاب من طريق والرجوع من آخر)', 'التهنئة وصلة الرحم', 'التبكير إلى المصلى والذهاب ماشيًا'];
     const SMART_META = {
         ratiba: [{ note: 'خفيفتان؛ وهي أشدّ النوافل تعاهدًا (ركعتا الفجر خير من الدنيا وما فيها — مسلم)' }, { note: 'بسلامين (٢+٢)' }, { note: 'ركعتان بعد فريضة الظهر' }, { note: 'ركعتان بعد فريضة المغرب' }, { note: 'ركعتان بعد فريضة العشاء' },
             { bonus: true, note: 'غير مؤكدة: ورد الترغيب فيها في حديث حسن (أبو داود والترمذي)' }, { bonus: true, note: 'غير مؤكدة: «صلّوا قبل المغرب» (البخاري)' }, { bonus: true, note: 'غير مؤكدة: «بين كل أذانين صلاة» (متفق عليه)' }],
@@ -1882,7 +1977,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             { note: 'ورد الأمر بالإكثار منها يوم الجمعة وليلتها' }, { note: 'ثبتت عن النبي ﷺ في صلاة فجر الجمعة' }, { tag: 'att', note: 'أقلها ركعتان (في البيت)، وأكملها أربع' }],
         etiquette: [{ note: 'يُستحب تأخيره ما لم يُخشَ طلوع الفجر' }, { note: 'عند تحقق غروب الشمس' }, { note: 'ورد أن للصائم عند فطره دعوة مستجابة' }, { note: 'في السحور بركة (متفق عليه)' },
             { note: 'رطبات ثم تمرات ثم ماء، على ما ورد عن النبي ﷺ' }, { note: 'الصيام جُنّة فلا يرفث ولا يجهل (متفق عليه)' }, { bonus: true, note: 'من فطّر صائمًا كان له مثل أجره (الترمذي)' }],
-        eid_sunan: [{}, { note: 'الفطر: قبل الصلاة؛ الأضحى: يُؤخَّر الأكل حتى يرجع فيأكل من أضحيته' }, { note: 'الفطر: من غروب ليلة العيد إلى الصلاة؛ الأضحى: من فجر عرفة إلى آخر أيام التشريق (على تفصيل بين المذاهب)' }, { note: 'سنة مؤكدة/واجبة/فرض كفاية بحسب المذهب، وتشهدها النساء أيضًا' }, {}, {}]
+        eid_sunan: [{}, { note: 'الفطر: قبل الصلاة؛ الأضحى: يُؤخَّر الأكل حتى يرجع فيأكل من أضحيته' }, { note: 'الفطر: من غروب ليلة العيد إلى الصلاة؛ الأضحى: من فجر عرفة إلى آخر أيام التشريق (على تفصيل بين المذاهب)' }, { note: 'سنة مؤكدة/واجبة/فرض كفاية بحسب المذهب، وتشهدها النساء أيضًا' }, {}, {}, { note: 'للرجال؛ وللنساء الخروج إلى المصلى مع الستر دون تطيّب' }]
     };
     const INFO = {
         prayer_0: ['وقتها من طلوع الفجر الصادق إلى طلوع الشمس.'], prayer_1: ['وقتها من زوال الشمس إلى أن يصير ظلّ كل شيء مثله؛ وللرجال المقيمين يوم الجمعة صلاة الجمعة بدلًا منها.'],
@@ -1903,16 +1998,16 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         friday_sunan: ['تظهر يوم الجمعة فقط، وتتغيّر القائمة بحسب حالتك (رجل يحضر، امرأة تحضر، لا أحضر) — يمكنك تغيير ذلك من «تخصيص البنود».'],
         eid_sunan: ['تظهر في يوم عيد الفطر (١ شوال) ويوم عيد الأضحى (١٠ ذي الحجة) فقط.'],
         white_days: ['ثلاثة أيام من كل شهر هجري (١٣ و١٤ و١٥)، وصيام ثلاثة أيام من كل شهر كصيام الدهر (متفق عليه).'],
-        mon_thu_fasting: ['تُعرض الأعمال يوم الإثنين والخميس فيُحبّ أن يُعرض عمله وهو صائم (الترمذي).'],
+        mon_thu_fasting: ['تُعرض الأعمال يوم الإثنين والخميس فيُحبّ أن يُعرض عمله وهو صائم (الترمذي).', 'يُكره إفراد يوم الجمعة بالصيام إلا أن يوافق عادةً (كصيام الإثنين والخميس) أو يصوم معه الخميس أو السبت.'],
         ashura: ['صيامه يكفّر السنة الماضية (مسلم)، ويُستحب صيام التاسع معه (أو الحادي عشر) مخالفةً لليهود.'],
         arafah: ['يكفّر السنة الماضية والباقية (مسلم) لغير الحاج؛ أما الحاج بعرفة فيُستحب له الفطر عند جمهور العلماء ليتقوّى على الدعاء.'],
         shawwal6: ['من صام رمضان ثم أتبعه ستًّا من شوال كان كصيام الدهر (مسلم)؛ تبدأ من ثاني شوال ويجوز متتابعة أو متفرقة.', 'يجوز الجمع بين نية قضاء رمضان ونية الست في شوال فيحصل الأجران (وبه تفتي دار الإفتاء المصرية)، والأكمل والأفضل صوم كلٍّ على حدة؛ ويرى بعض الفقهاء (كالحنابلة) تقديم القضاء.'],
-        sawm_dawud: ['أحبّ الصيام إلى الله صيام داود: يصوم يومًا ويفطر يومًا (متفق عليه)، ولا ينبغي الزيادة عليه.', 'تُفطر في الأيام التي يحرم صيامها (العيدان وأيام التشريق).'],
-        sawm_shaban: ['كان النبي ﷺ يكثر من الصيام في شعبان (متفق عليه).', 'يُنهى عن استقبال رمضان بصوم يوم أو يومين إلا من وافق عادةً له.'],
+        sawm_dawud: ['أحبّ الصيام إلى الله صيام داود: يصوم يومًا ويفطر يومًا (متفق عليه)، ولا ينبغي الزيادة عليه.', 'تُفطر في الأيام التي يحرم صيامها (العيدان وأيام التشريق).', 'ولمن يشقّ عليه ذلك أن يصوم ما يطيق؛ والقصد المداومة بلا إضرار بالنفس ولا بالحقوق.'],
+        sawm_shaban: ['كان النبي ﷺ يكثر من الصيام في شعبان (متفق عليه).', 'يُنهى عن استقبال رمضان بصوم يوم أو يومين إلا من وافق عادةً له.', 'ويرى الشافعية منع التطوع بالصيام بعد منتصف شعبان لمن لا عادة له ولم يصله بما قبل النصف؛ فمن أراد الاحتياط صام قبل النصف.'],
         sawm_muharram: ['أفضل الصيام بعد رمضان شهر الله المحرّم (مسلم).'],
         sawm_dhulhijja: ['العمل الصالح في العشر الأول من ذي الحجة أحبّ إلى الله من غيره (البخاري)، وصيام التسع مستحب عند جمهور العلماء ويتأكد آخرها (عرفة).', 'ويحرم صيام يوم العيد (١٠ ذي الحجة).'],
         qada: ['واجب على من أفطر أيامًا من رمضان بعذر، ويجوز متتابعًا أو متفرقًا ما لم يدخل رمضان التالي.', 'وتأخيره بلا عذر حتى يدخل رمضان التالي يوجب الفدية مع القضاء عند الجمهور. والعاجز عجزًا دائمًا يُطعم عن كل يوم مسكينًا.'],
-        fasting: ['الصيام من طلوع الفجر الصادق إلى غروب الشمس.', 'من أفطر لعذر (مرض يُرجى برؤه، سفر، حيض ونفاس، وخوف على النفس أو الولد للحامل والمرضع) وجب عليه القضاء، وفي الفدية مع القضاء خلاف بين العلماء للحامل والمرضع.', 'والعاجز عجزًا دائمًا (كبر أو مرض لا يُرجى برؤه) عليه فدية إطعام مسكين عن كل يوم.'],
+        fasting: ['الصيام من طلوع الفجر الصادق إلى غروب الشمس.', 'من أفطر لعذر (مرض يُرجى برؤه، سفر، حيض ونفاس، وخوف على النفس أو الولد للحامل والمرضع) وجب عليه القضاء، وفي الفدية مع القضاء خلاف بين العلماء للحامل والمرضع.', 'والعاجز عجزًا دائمًا (كبر أو مرض لا يُرجى برؤه) عليه فدية إطعام مسكين عن كل يوم.', 'ويحرم صيام يومي العيدين، وكذا أيام التشريق (11 و12 و13 من ذي الحجة) عند الجمهور مع رخصة لبعضهم في المتمتع الذي لم يجد الهدي.'],
         etiquette: ['السحور بركة، ويُستحب تأخيره، وتعجيل الفطر عند تحقق الغروب، والدعاء عند الفطر، وحفظ اللسان والجوارح.'],
         qadr: ['التمسوها في العشر الأواخر، وفي الوتر منها آكد (متفق عليه)، وقد تكون في أي ليلة منها.', 'الليلة «٢٧» مثلًا تبدأ من مغرب اليوم السابق؛ فإن قمتَ مساء اليوم ٢٦ فهي ليلة ٢٧ وتُسجَّل في صف اليوم ٢٧.', 'الدعاء المأثور: «اللهم إنك عفوٌّ تحب العفو فاعفُ عني» (الترمذي).'],
         itikaf: ['سنّة مؤكدة في العشر الأواخر من رمضان.', 'واختلف الفقهاء في أقلّه: فلحظة بنيّة الاعتكاف في المسجد عند الجمهور، ويوم (أو أكثر) عند غيرهم.']
@@ -1975,13 +2070,13 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
     const SETTINGS_STORAGE = 'TazkiyahSystem_v7_settings';
     // الإعدادات (البنود المخفية والمخصّصة) منفصلة عمدًا عن بيانات الأسبوع، حتى لا
     // يفقدها المستخدم عند الضغط على "مسح وبدء أسبوع"
-    let settings = { hidden: [], custom: [], hijriMethod: 'egypt', hijriOffset: 0, autoWeek: true, lockFuture: true, autoHideNA: true, view: 'week', rview: 'month', autoBackup: true, over: {}, order: [], details: {}, fridayMode: 'men', fridayChosen: false, gender: '', prAdj: {}, seen: [], prayerTimes: true, city: 'cairo', lat: 30.0444, lon: 31.2357, method: 'egyptian', madhab: 'shafi', notifyLead: -1 };
+    let settings = { hidden: [], custom: [], hijriMethod: 'egypt', hijriOffset: 0, autoWeek: true, lockFuture: true, autoHideNA: true, view: 'week', rview: 'month', autoBackup: true, over: {}, order: [], details: {}, fridayMode: 'men', fridayChosen: false, gender: '', prAdj: {}, seen: [], prayerTimes: true, city: 'cairo', lat: 30.0444, lon: 31.2357, method: 'egyptian', madhab: 'shafi', notifyLead: -1, periods: [] };
     let customCounter = 0;
 
     function loadSettings() {
         try {
             const raw = localStorage.getItem(SETTINGS_STORAGE);
-            if (!raw) { if (window.innerWidth <= 700) { settings.view = 'today'; settings.rview = 'today'; } return; }
+            if (!raw) { if (window.innerWidth <= 900) { settings.view = 'today'; settings.rview = 'today'; } return; }
             const p = JSON.parse(raw);
             if (!p || typeof p !== 'object') return;
             if (Array.isArray(p.hidden)) settings.hidden = p.hidden.filter(k => typeof k === 'string');
@@ -2016,6 +2111,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             if (p.gender === 'm' || p.gender === 'f') settings.gender = p.gender;
             if (p.prAdj && typeof p.prAdj === 'object' && !Array.isArray(p.prAdj)) settings.prAdj = p.prAdj;
             if (Array.isArray(p.seen)) settings.seen = p.seen.filter(k => typeof k === 'string').slice(0, 60);
+            if (Array.isArray(p.periods)) settings.periods = p.periods;
         } catch (e) {
             console.warn('Settings load failed', e);
         }
@@ -2028,7 +2124,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
                 hijriMethod: settings.hijriMethod, hijriOffset: settings.hijriOffset,
                 autoWeek: settings.autoWeek, lockFuture: settings.lockFuture, autoHideNA: settings.autoHideNA, view: settings.view,
                 rview: settings.rview, autoBackup: settings.autoBackup, over: settings.over, order: settings.order, details: settings.details, fridayMode: settings.fridayMode, fridayChosen: settings.fridayChosen, gender: settings.gender, prAdj: settings.prAdj, seen: settings.seen,
-                prayerTimes: settings.prayerTimes, city: settings.city, lat: settings.lat, lon: settings.lon, method: settings.method, madhab: settings.madhab, notifyLead: settings.notifyLead
+                prayerTimes: settings.prayerTimes, city: settings.city, lat: settings.lat, lon: settings.lon, method: settings.method, madhab: settings.madhab, notifyLead: settings.notifyLead, periods: settings.periods
             }));
         } catch (e) {
             console.warn('Settings save failed', e);
@@ -2374,8 +2470,8 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
     // تسميات العذر تتبع الجنس: العذر الشرعي الخاص بالمرأة (حيض/نفاس/حمل/إرضاع) لا يظهر للرجل
     function applyGenderLabels() {
         const g = settings.gender;
-        const T = g === 'f' ? { p: ['عذر شرعي (حيض / نفاس / مرض / سفر)', 'عذر شرعي'], n: ['عذر شرعي (حيض / نفاس / مرض)', 'عذر شرعي'], f: ['عذر شرعي (حيض / نفاس / حمل / إرضاع / مرض / سفر)', 'عذر شرعي'] }
-            : g === 'm' ? { p: ['عذر / رخصة (مرض / سفر / مطر)', 'عذر'], n: ['عذر (مرض / سفر)', 'عذر'], f: ['عذر (مرض / سفر)', 'عذر'] }
+        const T = g === 'f' ? { p: ['عذر شرعي (حيض / نفاس / إغماء)', 'عذر شرعي'], n: ['عذر شرعي (حيض / نفاس / مرض)', 'عذر شرعي'], f: ['عذر شرعي (حيض / نفاس / حمل / إرضاع / مرض / سفر)', 'عذر شرعي'] }
+            : g === 'm' ? { p: ['عذر مانع من الأداء (إغماء وما في حكمه)', 'عذر'], n: ['عذر (مرض / سفر)', 'عذر'], f: ['عذر (مرض / سفر)', 'عذر'] }
             : { p: ['عذر شرعي / رخصة', 'عذر شرعي'], n: ['عذر شرعي', 'عذر شرعي'], f: ['عذر شرعي', 'عذر شرعي'] };
         const set = (arr, v) => { const o = arr.find(x => x.id === 'gray'); if (o) { o.text = v[0]; o.short = v[1]; } };
         set(PRAYER_OPTS, T.p); set(NAFILA_OPTS, T.n); set(FASTING_OPTS, T.f);
@@ -2387,7 +2483,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         applyGenderLabels(); saveSettings(); refreshAllViews();
     }
     function addProfileSettings() {
-        const mb = document.getElementById('modal-body');
+        const mb = host();
         if (!mb) return;
         const box = document.createElement('div');
         box.className = 'settings-section';
@@ -2396,27 +2492,26 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         mb.insertBefore(box, mb.firstChild);
         box.querySelectorAll('.pill-btn').forEach(b => b.onclick = function () { setGender(b.getAttribute('data-g')); box.querySelectorAll('.pill-btn').forEach(x => x.classList.toggle('active', x === b)); });
     }
-    const EXCUSE_KIND = c => c.kind === 'prayer' || c.kind === 'nafila' || c.kind === 'fasting' || (c.kind === 'smart' && c.isPrayer);
-    function toggleDayExcuse(src, id, cols) {
-        const targets = cols.filter(EXCUSE_KIND), keyOf = c => src.dayKey(id) + '_' + c.key;
-        if (!targets.length) return;
-        const prev = targets.map(c => [keyOf(c), src.cells()[keyOf(c)]]);
-        const allGray = targets.every(c => statusFromRaw(src.cells()[keyOf(c)]) === 'gray');
-        targets.forEach(c => { const k = keyOf(c); if (allGray) delete src.cells()[k]; else src.cells()[k] = c.kind === 'smart' ? { checks: [], status: 'gray' } : 'gray'; });
-        src.commit();
-        showToast(allGray ? 'أُلغي العذر لهذا اليوم' : 'عُلّم اليوم بعذر (الصلوات والنوافل والصيام فقط)', function () { prev.forEach(p => { if (p[1] === undefined) delete src.cells()[p[0]]; else src.cells()[p[0]] = p[1]; }); src.commit(); });
+        function toggleMenses(src, id) {
+        const dt = src.date(id), iso = isoOf(dt), snap = JSON.stringify(settings.periods);
+        const act = settings.periods.find(x => (x.type === 'menses' || x.type === 'nifas') && x.from <= iso && (!x.to || iso <= x.to));
+        let msg;
+        if (act) {
+            const prev = isoOf(new Date(dt.getFullYear(), dt.getMonth(), dt.getDate() - 1));
+            if (prev < act.from) settings.periods = settings.periods.filter(x => x !== act); else act.to = prev;
+            msg = 'سُجّل الطهر؛ تعود الصلاة والصيام من هذا اليوم';
+        } else { settings.periods.push({ id: 'p' + Math.random().toString(36).slice(2, 8), type: 'menses', from: iso, to: '' }); msg = 'سُجّل بدء الحيض من هذا اليوم'; }
+        settings.periods = cleanPeriods(settings.periods); saveSettings(); refreshAllViews();
+        showToast(msg, function () { settings.periods = cleanPeriods(JSON.parse(snap)); saveSettings(); refreshAllViews(); });
     }
     function dayExcuseHtml(src, id, cols) {
         if (settings.gender !== 'f') return '';
-        const targets = cols.filter(EXCUSE_KIND);
-        if (!targets.length) return '';
-        const all = targets.every(c => statusFromRaw(src.cells()[src.dayKey(id) + '_' + c.key]) === 'gray');
-        return '<div class="day-actions no-print"><button type="button" class="quick-fill-btn day-excuse-btn">' + (all ? 'إلغاء العذر لهذا اليوم' : 'تعليم اليوم بعذر (حيض / نفاس)') + '</button></div>';
+        const st = statesOn(src.date(id)), on = st.indexOf('menses') !== -1 || st.indexOf('nifas') !== -1;
+        return '<div class="day-actions no-print"><button type="button" class="quick-fill-btn day-excuse-btn">' + (on ? 'طهرتُ — إنهاء الحيض / النفاس من هذا اليوم' : 'بدأ الحيض أو النفاس من هذا اليوم') + '</button></div>';
     }
     const RAMADAN_ETIQUETTE = ['تأخير السحور', 'تعجيل الفطر عند الغروب', 'الدعاء عند الإفطار', 'السحور (ولو على تمرة أو شربة ماء)', 'الإفطار على رطب أو تمر أو ماء', 'حفظ اللسان والجوارح (ترك الغيبة والسباب والرفث)', 'تفطير صائم ولو بشربة ماء'];
 
-    // الليالي الوترية من العشر الأواخر — أشهر الأقوال في تحرّي ليلة القدر (قد تكون في
-    // أي ليلة من العشر عند بعض العلماء، لكن هذا هو الأشهر والأكثر اتّباعًا)
+    // ليالي العشر الأواخر كلها تُتحرّى فيها ليلة القدر والوتر منها آكد (متفق عليه)
     const QADR_NIGHTS = [21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
 
     const SH = (k, g) => Object.assign({}, BASE_COLUMNS.find(c => c.key === k), { group: g });
@@ -2540,7 +2635,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
     // مفاتيح إصدارات سابقة من هذا النظام — تُقرأ تلقائياً عند الترقية حتى لا تُفقد بيانات المستخدم
     const LEGACY_STORAGE_KEYS = ['TazkiyahSystem_v6', 'TazkiyahSystem_v5_Master', 'TazkiyahSystem_v3'];
 
-    let data = { meta: { date: '', quran: '', dhikr: '' }, cells: {}, notes: {} };
+    let data = { meta: { date: '' }, cells: {}, notes: {} };
     let storageAvailable = true;
 
     /* ══ تنقية البيانات: أي شيء يُقرأ من التخزين أو من ملف مستورد لا يُوثق به ══ */
@@ -2560,12 +2655,15 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             if (BAD_KEYS.indexOf(k) !== -1 || k.length > 80) return;
             const v = c[k];
             if (typeof v === 'string') { if (STATUS_SET.indexOf(v) !== -1) out[k] = v; }
-            else if (isPlain(v) && (STATUS_SET.indexOf(v.status) !== -1 || (v.status === 'none' && v.jam))) {
+            else if (isPlain(v) && (STATUS_SET.indexOf(v.status) !== -1 || (v.status === 'none' && (v.jam || v.qsr || v.cmb || v.sit)))) {
                 const o = { status: v.status }, num = (x, hi) => typeof x === 'number' && isFinite(x) && x > 0 && x <= hi;
                 if (Array.isArray(v.checks)) o.checks = v.checks.filter(x => typeof x === 'number' && x >= 0 && x < 100).slice(0, 40);
                 if (num(v.qty, 100000) && num(v.amt, 100000)) { o.qty = v.qty; o.amt = v.amt; }
                 if (num(v.n, 100) && typeof v.k === 'number' && v.k >= 0 && v.k <= v.n) { o.n = v.n; o.k = v.k; }
                 if (v.jam) o.jam = 1;
+                if (v.qsr) o.qsr = 1;
+                if (v.cmb === 't' || v.cmb === 'a') o.cmb = v.cmb;
+                if (v.sit === 's' || v.sit === 'l' || v.sit === 'g') o.sit = v.sit;
                 out[k] = o;
             }
         });
@@ -2674,12 +2772,13 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
                 head.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
             };
         });
-        document.getElementById('modal-body').appendChild(box);
+        host().appendChild(box);
     }
 
     const PR_KEYS = ['fajr', 'sunrise', 'dhuhr', 'asr', 'maghrib', 'isha'];
     function sanitizeState() {
-        data = { meta: { date: cleanDate(data.meta && data.meta.date), quran: str(data.meta && data.meta.quran, 120), dhikr: str(data.meta && data.meta.dhikr, 120) },
+        const legacyQuran = str(data.meta && data.meta.quran, 50).trim(), legacyDhikr = str(data.meta && data.meta.dhikr, 50).trim();
+        data = { meta: { date: cleanDate(data.meta && data.meta.date) },
             cells: cleanCells(data.cells), notes: cleanNotes(data.notes) };
         settings.hidden = cleanKeyList(settings.hidden, 100);
         settings.custom = cleanCustom(settings.custom, MAX_CUSTOM, true);
@@ -2687,6 +2786,11 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         const ov = {}; Object.keys(settings.over || {}).forEach(k => { if (BAD_KEYS.indexOf(k) === -1 && k.length <= 60) ov[k] = settings.over[k]; });
         settings.over = ov;
         settings.details = cleanDetails(settings.details);
+        // حقلا «الورد القرآني» و«الذكر الأسبوعي» في أعلى الصفحة كانا مكررين مع «المقادير والتفاصيل»؛ يُنقل ما كُتب فيهما إلى بنده مرة واحدة
+        [['quran', legacyQuran], ['dhikr_mutlaq', legacyDhikr]].forEach(function (x) {
+            if (x[1] && !settings.details[x[0]]) { settings.details[x[0]] = { target: x[1], note: '' }; if (parseAmount(x[1])) settings.details[x[0]].amount = parseAmount(x[1]); saveSettings(); }
+        });
+        settings.periods = cleanPeriods(settings.periods);
         settings.gender = (settings.gender === 'm' || settings.gender === 'f') ? settings.gender : '';
         { const pa = {}; PR_KEYS.forEach(function (k) { const v = Math.round(Number(isPlain(settings.prAdj) ? settings.prAdj[k] : 0)); if (isFinite(v) && v !== 0) pa[k] = Math.max(-20, Math.min(20, v)); }); settings.prAdj = pa; }
         // البنود الاختيارية الجديدة (قضاء رمضان، صيام داود...) تبدأ مخفية حتى يفعّلها المستخدم بنفسه
@@ -2984,11 +3088,11 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         if (src.future(id)) return makeLocked(col.title);
         if (col.kind === 'khatm') return makeKhatmCell(id);
         const na = src.na(col, id);
-        if (na) return makeNA(col.title, na);
+        if (na) { const si = stateNaInfo(col, src.date(id)); return makeNA(col.title, na, si && si.reason === na ? si.tag : ''); }
         const dk = src.dayKey(id);
         return col.kind === 'smart'
             ? makeSmartFor(src, dk, col.key, col.title, col.items, !!col.isPrayer)
-            : makeCellFor(src, dk, col.key, src.opts(col), col.title);
+            : makeCellFor(src, dk, col.key, col.kind === 'fasting' ? fastOptsAt(src.date(id)) : src.opts(col), col.title);
     }
 
     function appendRowCells(tr, src, cols, id) {
@@ -2998,15 +3102,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
 
     function build() {
         renderHeader();
-        ['quran', 'dhikr'].forEach(k => {
-            const el = document.getElementById('meta-' + k);
-            if (!el) return;
-            el.value = data.meta[k] || '';
-            el.oninput = function () {
-                data.meta[k] = this.value;
-                save();
-            };
-        });
+        renderStateBars();
         updateDateDisplayButton('meta-date-btn', data.meta.date, function (iso) {
             data.meta.date = iso;
             save();
@@ -3033,7 +3129,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             const tdDay = document.createElement('td');
             tdDay.style.border = 'none';
             tdDay.innerHTML =
-                '<div class="day-cell"><span class="dn">' + day + (mirrorNum(day) ? '<small class="rday">رمضان ' + mirrorNum(day) + '</small>' : '') + '</span>' +
+                '<div class="day-cell"><span class="dn">' + day + (mirrorNum(day) ? '<small class="rday">رمضان ' + mirrorNum(day) + '</small>' : '') + stateBadgesHtml(weekDayDate(di)) + '</span>' +
                 '<button type="button" class="note-btn' + (hasNote ? ' active' : '') +
                 '" data-day="' + day + '" title="ملاحظات اليوم" aria-label="ملاحظات يوم ' + day + '">' +
                 '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">' +
@@ -3060,9 +3156,10 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
     }
 
     // خلية "لا ينطبق" لبند مقيَّد بأيام معيّنة (أسبوعية أو هجرية)، في يوم لا يخصّه
-    function makeNA(title, reason) {
+    function makeNA(title, reason, tag) {
         const td = document.createElement('td');
-        td.className = 'cell st-na';
+        td.className = 'cell st-na' + (tag ? ' st-na-tag' : '');
+        if (tag) td.textContent = tag;
         const label = title + ' — ' + (reason || 'لا ينطبق هذا اليوم');
         td.title = label;
         td.setAttribute('aria-label', label);
@@ -3071,11 +3168,13 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
 
     /* مصدر بيانات لكل وضع: الدوال المشتركة أدناه تعمل على أي مصدر بدل نسختين متطابقتين.
        prefix يمنع تعارض معرّفات DOM؛ cells() دالة لأن data قد يُعاد إسنادها عند بدء أسبوع جديد. */
-    const WEEK_SRC = { prefix: '', future: id => isFutureDate(weekDayDate(DAYS.indexOf(id))), today: id => isTodayDate(weekDayDate(DAYS.indexOf(id))), dayKey: id => id, na: (c, id) => naReasonFor(c, id),
+    const WEEK_SRC = { prefix: '', future: id => isFutureDate(weekDayDate(DAYS.indexOf(id))), today: id => isTodayDate(weekDayDate(DAYS.indexOf(id))), dayKey: id => id, date: id => weekDayDate(DAYS.indexOf(id)), dateK: id => weekDayDate(DAYS.indexOf(id)),
+        na: (c, id) => naReasonFor(c, id) || stateNaReason(c, weekDayDate(DAYS.indexOf(id))),
         weight: c => c.weight || (c.kind === 'prayer' ? 2 : 1),
         opts: c => c.kind === 'prayer' ? PRAYER_OPTS : c.kind === 'fasting' ? FASTING_OPTS : c.kind === 'nafila' ? NAFILA_OPTS : STD_OPTS, cells: () => weekCellsProxy, status: k => statusOf(k),
         setState: (k, st) => setState(k, st), commit: () => { saveAll(); build(); } };
-    const RAMADAN_SRC = { prefix: 'r', future: n => isFutureDate(ramadanDayDate(n)), today: n => isTodayDate(ramadanDayDate(n)), dayKey: n => 'day' + n, na: (c, n) => ramadanNaReasonFor(c, n),
+    const RAMADAN_SRC = { prefix: 'r', future: n => isFutureDate(ramadanDayDate(n)), today: n => isTodayDate(ramadanDayDate(n)), dayKey: n => 'day' + n, date: n => ramadanDayDate(n), dateK: dk => ramadanDayDate(parseInt(String(dk).slice(3), 10)),
+        na: (c, n) => ramadanNaReasonFor(c, n) || stateNaReason(c, ramadanDayDate(n)),
         weight: c => c.weight || (c.kind === 'prayer' ? 2 : 1),
         opts: c => c.kind === 'fasting' ? FASTING_OPTS : c.kind === 'prayer' ? PRAYER_OPTS : c.kind === 'nafila' ? NAFILA_OPTS : STD_OPTS, cells: () => ramadanCellsProxy, status: k => ramadanStatusOf(k),
         setState: (k, st) => setRamadanState(k, st), commit: () => { saveAll(); buildRamadan(); } };
@@ -3087,9 +3186,12 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         const isPrayerOpts = opts === PRAYER_OPTS;
         td.className = 'cell st-' + st + (obj && obj.jam ? ' jam' : '');
         td.textContent = (obj && obj.qty && obj.amt && (st === 'green' || st === 'yellow')) ? fmtQty(obj.qty) + '/' + fmtQty(obj.amt) : shortLabel(opts, st);
+        const tgs = tagsOf(obj);
+        if (tgs.length) { const sp = document.createElement('span'); sp.className = 'tg'; sp.textContent = tgs.join(' · '); td.appendChild(sp); }
         let fullLabel = st === 'none' ? title + ' — اضغط للتحديد' : (opts.find(o => o.id === st) || {}).text || title;
         if (obj && obj.qty && obj.amt) fullLabel += ' (' + fmtQty(obj.qty) + ' من ' + fmtQty(obj.amt) + ')';
         if (obj && obj.jam) fullLabel += ' — جماعة';
+        if (tgs.length) fullLabel += ' — ' + tgs.join('، ');
         td.title = fullLabel;
         td.tabIndex = 0;
         td.setAttribute('role', 'button');
@@ -3113,6 +3215,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
                 '<div class="opt" data-key="' + key + '" data-st="none" tabindex="0" role="button" style="background:#f1f5f9;justify-content:center;margin-top:10px">' +
                 '<div class="opt-txt" style="color:#64748b">مسح الاختيار</div></div>';
             if (isPrayerOpts) html += '<div class="chk" style="margin-top:12px"><input type="checkbox" id="jam-chk"' + (curObj && curObj.jam ? ' checked' : '') + '><label for="jam-chk">' + (settings.gender === 'm' ? 'صلّيتها جماعة في المسجد' : 'صلّيتها جماعة (في المسجد أو مع أهل بيتي)') + '</label></div>';
+            if (isPrayerOpts) html += rukhasHtml(src.dateK(day), prayerIdxOf(col), curObj);
             html += infoHtml(col);
             openModal('تحديد: ' + title, detailsHtml(col) + html, false);
             document.querySelectorAll('#modal-body .opt').forEach(el => {
@@ -3132,10 +3235,10 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             if (amt) {
                 const apply = function (q) {
                     if (!(q >= 0) || q > 100000) { showToast('أدخل رقمًا صحيحًا'); return; }
-                    const prev = src.cells()[key], jam = prev && typeof prev === 'object' && prev.jam;
-                    if (!(q > 0)) { put(jam ? { status: 'none', jam: 1 } : undefined, 'تم المسح'); return; }
+                    const prev = src.cells()[key], fl = flagsOf(prev);
+                    if (!(q > 0)) { put(fl ? Object.assign({ status: 'none' }, fl) : undefined, 'تم المسح'); return; }
                     const ps = statusFromRaw(prev), ns = q >= amt ? ((ps === 'green' || ps === 'blue') ? ps : 'green') : 'yellow';
-                    const nv = { status: ns, qty: q, amt: amt }; if (jam) nv.jam = 1;
+                    const nv = Object.assign({ status: ns, qty: q, amt: amt }, fl || {});
                     put(nv, 'تم حفظ ' + fmtQty(q) + ' من ' + fmtQty(amt));
                 };
                 document.getElementById('qty-save').onclick = function () { apply(parseFloat(String(document.getElementById('qty-inp').value).replace(',', '.'))); };
@@ -3145,10 +3248,12 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
                 document.getElementById('jam-chk').onchange = function () {
                     const c2 = src.cells()[key], nv = (c2 && typeof c2 === 'object') ? Object.assign({}, c2) : { status: statusFromRaw(c2) };
                     if (this.checked) nv.jam = 1; else delete nv.jam;
-                    if (nv.status === 'none' && !nv.jam) delete src.cells()[key];
-                    else src.cells()[key] = (!nv.jam && !nv.checks && !nv.qty) ? nv.status : nv;
+                    const fl2 = flagsOf(nv);
+                    if (nv.status === 'none' && !fl2) delete src.cells()[key];
+                    else src.cells()[key] = (!fl2 && !nv.checks && !nv.qty) ? nv.status : nv;
                     src.commit();
                 };
+                wireRukhas(src, key);
             }
         };
         td.addEventListener('keydown', function (e) {
@@ -3168,7 +3273,8 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         const st = raw.status || 'none';
         const meta = smartMeta(col);
         let vis, core;
-        const calc = () => { vis = smartIdx(col, items); core = vis.filter(i => !(meta[i] && meta[i].bonus)); };
+        const trav = col === 'ratiba' && hasState(src.dateK(day), 'travel');
+        const calc = () => { vis = smartIdx(col, items); core = vis.filter(i => !(meta[i] && meta[i].bonus) && !(trav && i !== 0)); };
         calc();
         td.className = 'cell st-' + st;
         td.textContent = (st === 'yellow' && raw.n) ? (raw.k + '/' + raw.n) : smartLabel(st, isPrayer);
@@ -3198,7 +3304,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
                 html +=
                     '<div class="chk">' +
                     '<input type="checkbox" id="' + src.prefix + 'c_' + key + '_' + idx + '" value="' + idx + '"' + checked + '>' +
-                    '<label for="' + src.prefix + 'c_' + key + '_' + idx + '">' + escapeHtml(items[idx]) + (m.bonus ? ' <small class="bonus-tag">إضافي</small>' : '') +
+                    '<label for="' + src.prefix + 'c_' + key + '_' + idx + '">' + escapeHtml(items[idx]) + (m.bonus ? ' <small class="bonus-tag">إضافي</small>' : (trav && idx !== 0 ? ' <small class="bonus-tag">يُترك غالبًا في السفر</small>' : '')) +
                     (m.note ? '<span class="smart-note">' + escapeHtml(m.note) + '</span>' : '') + '</label></div>';
             });
             html += '</div>' + infoHtml(col);
@@ -3253,8 +3359,8 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
     function makeRamadanSmart(dayKey, col, title, items, isPrayer) { return makeSmartFor(RAMADAN_SRC, dayKey, col, title, items, isPrayer); }
 
     function setState(key, st) {
-        const prev = rawWeekCell(key), jam = prev && typeof prev === 'object' && prev.jam;
-        writeWeekCell(key, st === 'none' ? (jam ? { status: 'none', jam: 1 } : undefined) : (jam ? { status: st, jam: 1 } : st));
+        const prev = rawWeekCell(key), fl = flagsOf(prev);
+        writeWeekCell(key, packCell(st, fl));
         saveAll();
         build();
         closeModal();
@@ -3775,7 +3881,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         if (isoOf(st) > cur && !Object.keys(data.cells).length && !Object.keys(data.notes).length) { data.meta.date = cur; save(); return false; }
         if (isoOf(st) < cur) {
             if (!archiveCurrentWeek()) { showToast('تعذّر حفظ الأسبوع السابق في الأرشيف فلم يُمسح شيء — نزّل نسخة احتياطية أولًا'); return false; }
-            data = { meta: { date: cur, quran: data.meta.quran || '', dhikr: data.meta.dhikr || '' }, cells: {}, notes: {} };
+            data = { meta: { date: cur }, cells: {}, notes: {} };
             save();
             showToast('بدأ أسبوع جديد، وحُفظ الأسبوع السابق في الأرشيف');
             return true;
@@ -3831,6 +3937,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
     }
     function startNewRamadan(iso) {
         if (!archiveCurrentRamadan()) { showToast('تعذّر حفظ الأرشيف فلم يُمسح شيء — نزّل نسخة احتياطية أولًا'); return; }
+        commitRamadanOwedToQada();
         ramadanData = { meta: { startDate: iso, dayCount: 30 }, cells: {}, notes: {}, khatm: { unit: 'juz', total: 30, days: 30, entries: {} }, zakatFitr: { paid: false, note: '' } };
         rtodaySel = null; saveRamadan(); buildRamadan(); showToast('بدأ رمضان جديد وحُفظ السابق في الأرشيف');
     }
@@ -3879,9 +3986,9 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         for (let n = 1; n <= N; n++) chips += '<button type="button" class="day-chip' + (n === rtodaySel ? ' active' : '') + '" data-n="' + n + '">' + (n === tn ? 'اليوم' : 'يوم ' + n) + '</button>';
         box.innerHTML = '<div class="today-head"><div><div class="today-title">اليوم ' + rtodaySel + ' من رمضان</div><div class="today-sub">' + formatDateDisplay(isoOf(dt)) +
             (h ? ' · ' + h.day + ' ' + HIJRI_MONTHS[h.month - 1] + ' ' + h.year + 'هـ' : '') + '</div></div><div class="today-pct">' + (sc.total ? Math.round(sc.earned / sc.total * 100) + '%' : '—') + '</div></div>' +
-            (banner ? '<div class="notice-bar">' + banner + '</div>' : '') + '<div class="day-chips chips-scroll">' + chips + '</div>' + dayExcuseHtml(RAMADAN_SRC, rtodaySel, cols) + prayerStripHtml(dt, true) + '<div id="rtoday-list"></div>' + (getRamadanNote('day' + rtodaySel).trim() ? '<div class="today-note-print"><b>ملاحظات اليوم:</b> ' + escapeHtml(getRamadanNote('day' + rtodaySel).trim()) + '</div>' : '');
+            (banner ? '<div class="notice-bar">' + banner + '</div>' : '') + '<div class="day-chips chips-scroll">' + chips + '</div>' + dayExcuseHtml(RAMADAN_SRC, rtodaySel, cols) + stateBriefHtml(dt) + prayerStripHtml(dt, true) + '<div id="rtoday-list"></div>' + (getRamadanNote('day' + rtodaySel).trim() ? '<div class="today-note-print"><b>ملاحظات اليوم:</b> ' + escapeHtml(getRamadanNote('day' + rtodaySel).trim()) + '</div>' : '');
         fillTodayList(box.querySelector('#rtoday-list'), RAMADAN_SRC, RAMADAN_GROUP_META, cols, rtodaySel);
-        box.querySelectorAll('.day-excuse-btn').forEach(b => b.onclick = function () { toggleDayExcuse(RAMADAN_SRC, rtodaySel, cols); });
+        box.querySelectorAll('.day-excuse-btn').forEach(b => b.onclick = function () { toggleMenses(RAMADAN_SRC, rtodaySel); });
         const ac = box.querySelector('.day-chip.active'); if (ac && ac.scrollIntoView) { try { ac.scrollIntoView({ inline: 'center', block: 'nearest' }); } catch (e) { /* تجاهل */ } }
         box.querySelectorAll('.day-chip').forEach(b => b.onclick = function () { rtodaySel = parseInt(this.getAttribute('data-n'), 10); buildRamadanToday(); });
         prayerTick();
@@ -3987,9 +4094,10 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         for (let i = 0; i <= ti; i++) chips += '<button type="button" class="day-chip' + (i === todaySel ? ' active' : '') + '" data-i="' + i + '">' + (i === ti ? 'اليوم' : DAYS[i]) + '</button>';
         box.innerHTML = '<div class="today-head"><div><div class="today-title">' + day + ' ' + formatDateDisplay(isoOf(dt)) + '</div><div class="today-sub">' +
             (h ? h.day + ' ' + HIJRI_MONTHS[h.month - 1] + ' ' + h.year + 'هـ' : '') + '</div></div><div class="today-pct">' + (pct === null ? '—' : pct + '%') + '</div></div>' +
-            '<div class="day-chips">' + chips + '</div>' + dayExcuseHtml(WEEK_SRC, day, cols) + prayerStripHtml(dt, false) + '<div id="today-list"></div>' + (getDayNote(day).trim() ? '<div class="today-note-print"><b>ملاحظات اليوم:</b> ' + escapeHtml(getDayNote(day).trim()) + '</div>' : '');
+            '<div class="day-chips">' + chips + '</div>' + dayExcuseHtml(WEEK_SRC, day, cols) + stateBriefHtml(dt) + prayerStripHtml(dt, false) + '<div id="today-list"></div>' + (getDayNote(day).trim() ? '<div class="today-note-print"><b>ملاحظات اليوم:</b> ' + escapeHtml(getDayNote(day).trim()) + '</div>' : '');
         fillTodayList(box.querySelector('#today-list'), WEEK_SRC, GROUP_META, cols, day);
-        box.querySelectorAll('.day-excuse-btn').forEach(b => b.onclick = function () { toggleDayExcuse(WEEK_SRC, day, cols); });
+        if (todaySel === ti) { const qh = qadaTodayHtml(); if (qh) { box.insertAdjacentHTML('beforeend', qh); wireQadaToday(box); } }
+        box.querySelectorAll('.day-excuse-btn').forEach(b => b.onclick = function () { toggleMenses(WEEK_SRC, day); });
         box.querySelectorAll('.day-chip').forEach(b => b.onclick = function () { todaySel = parseInt(this.getAttribute('data-i'), 10); buildToday(); });
         prayerTick();
     }
@@ -4009,7 +4117,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
                 have[iso] = 1;
                 const saved = data;
                 try {
-                    data = { meta: { date: iso, quran: '', dhikr: '' }, cells: {}, notes: {} };
+                    data = { meta: { date: iso }, cells: {}, notes: {} };
                     const pct = weekPercentSummary();
                     if (pct !== null) list.push({ date: iso, pct: pct, cells: effectiveWeekCells(), days: 7 });
                 } finally { data = saved; }
@@ -4031,6 +4139,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
                 const raw = rec.cells[d + '_' + ck];
                 const cr = creditOfRaw(raw);
                 if (cr === null) return;
+                if (statusFromRaw(raw) === 'none' && /^\d{4}-\d{2}-\d{2}$/.test(rec.date || '') && stateNaReason(c, new Date(+rec.date.slice(0, 4), +rec.date.slice(5, 7) - 1, +rec.date.slice(8, 10) + i))) return;
                 if (statusFromRaw(raw) === 'none' && (restricted || c.optional || i >= rec.days)) return; // غير منطبق أو اختياري أو لم يأتِ بعد
                 o.t += 1;
                 o.e += cr;
@@ -4048,7 +4157,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
                 cols.forEach(c => {
                     const raw = w.cells[d + '_' + c.key], st = !raw ? 'none' : (typeof raw === 'string' ? raw : (raw.status || 'none'));
                     const restricted = c.days || c.whiteDays || c.hijriDates || c.hijriMonth || c.hijriRange || c.suppressDuringRamadan;
-                    if (st === 'gray' || (st === 'none' && (restricted || di >= w.days))) return;
+                    if (st === 'gray' || (st === 'none' && (restricted || di >= w.days || stateNaReason(c, new Date(sat.getFullYear(), sat.getMonth(), sat.getDate() + di))))) return;
                     const wt = c.weight || (c.kind === 'prayer' ? 2 : 1);
                     t += wt; e += (st === 'green' || st === 'blue') ? wt : st === 'yellow' ? wt / 2 : 0;
                 });
@@ -4164,7 +4273,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         card.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:baseline;gap:20px;margin-bottom:12px"><div style="font-weight:900;font-size:22px;color:#0f172a">نظام تزكية</div><div style="font-weight:800;font-size:13px;color:#64748b">' + escapeHtml(info.sub) + '</div></div>';
         const clone = info.node.cloneNode(true);
         clone.style.display = 'block'; clone.style.overflow = 'visible'; clone.removeAttribute('id');
-        clone.querySelectorAll('.day-chips,.note-btn').forEach(e => e.remove()); // أزرار التنقل لا تفيد في الصورة
+        clone.querySelectorAll('.day-chips,.note-btn,.qd-card,.state-brief,.day-actions,.prayer-strip,.pr-next').forEach(e => e.remove()); // أزرار التنقل لا تفيد في الصورة
         card.appendChild(clone); holder.appendChild(card); document.body.appendChild(holder);
         try {
             if (document.fonts && document.fonts.ready) await document.fonts.ready;
@@ -4248,6 +4357,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
                 settings: JSON.parse(localStorage.getItem(RAMADAN_SETTINGS_STORAGE) || 'null'),
                 archive: getArchive(RAMADAN_ARCHIVE_STORAGE)
             },
+            qada: JSON.parse(localStorage.getItem(QADA_STORAGE) || 'null'),
             mode: currentMode
         };
         try {
@@ -4291,7 +4401,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             }
             askConfirm('استعادة نسخة احتياطية', 'هذا سيستبدل كل بياناتك الحالية (الأسبوعية ورمضان) بما في الملف. متأكد؟', 'استبدال بياناتي', function () {
             const writes = [[STORAGE, w.data], [SETTINGS_STORAGE, w.settings], [ARCHIVE_STORAGE, w.archive],
-                [RAMADAN_STORAGE, r.data], [RAMADAN_SETTINGS_STORAGE, r.settings], [RAMADAN_ARCHIVE_STORAGE, r.archive]];
+                [RAMADAN_STORAGE, r.data], [RAMADAN_SETTINGS_STORAGE, r.settings], [RAMADAN_ARCHIVE_STORAGE, r.archive], [QADA_STORAGE, payload.qada]];
             const previous = writes.map(x => localStorage.getItem(x[0]));
             try {
                 writes.forEach(x => { if (x[1]) localStorage.setItem(x[0], JSON.stringify(x[1])); });
@@ -4328,6 +4438,8 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
     document.getElementById('btn-customize').onclick = function () { openSettings(); };
     document.getElementById('btn-print').onclick = function () { window.print(); };
     document.getElementById('btn-archive').onclick = openArchive;
+    document.getElementById('btn-states').onclick = function () { openStates(); };
+    document.getElementById('btn-qada').onclick = function () { openQada(); };
     document.getElementById('btn-monthly').onclick = function () { if (currentMode === 'ramadan') openRamadanSummary(); else openMonthly(); };
     document.getElementById('btn-backup').onclick = openBackupMenu;
     document.getElementById('backup-file-input').onchange = function (e) {
@@ -4338,7 +4450,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
     document.getElementById('btn-reset').onclick = function () {
         askConfirm('مسح وبدء أسبوع', 'سيُحفظ هذا الأسبوع في الأرشيف ثم يبدأ أسبوع جديد فارغ (تبقى أهدافك الأسبوعية). متأكد؟', 'مسح وبدء أسبوع', function () {
             if (!archiveCurrentWeek()) { showToast('تعذّر حفظ الأرشيف فلم يُمسح شيء — نزّل نسخة احتياطية أولًا'); return; }
-            data = { meta: { date: currentWeekSaturdayISO(), quran: data.meta.quran || '', dhikr: data.meta.dhikr || '' }, cells: {}, notes: {} };
+            data = { meta: { date: currentWeekSaturdayISO() }, cells: {}, notes: {} };
             todaySel = null;
             save();
             build();
@@ -4378,8 +4490,8 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
 
 
     function setRamadanState(key, st) {
-        const prev = rawRamadanCell(key), jam = prev && typeof prev === 'object' && prev.jam;
-        writeRamadanCell(key, st === 'none' ? (jam ? { status: 'none', jam: 1 } : undefined) : (jam ? { status: st, jam: 1 } : st));
+        const prev = rawRamadanCell(key), fl = flagsOf(prev);
+        writeRamadanCell(key, packCell(st, fl));
         saveAll();
         buildRamadan();
         closeModal();
@@ -4533,12 +4645,33 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         return html;
     }
 
-    function refreshSettingsBody() {
+    let setHost = null, setTabId = 'items';
+    const host = () => setHost || document.getElementById('modal-body');
+    function mountTabs(tabs) {
         const body = document.getElementById('modal-body');
-        if (body) body.innerHTML = renderSettingsBody();
-        wireSettingsBody();
-        settingsExtras();
+        if (!body) return;
+        if (!tabs.some(t => t.id === setTabId)) setTabId = tabs[0].id;
+        body.innerHTML = '<div class="set-tabs" role="tablist">' + tabs.map(t => '<button type="button" class="set-tab' + (t.id === setTabId ? ' active' : '') + '" role="tab" data-t="' + t.id + '">' + t.label + '</button>').join('') + '</div>' +
+            tabs.map(t => '<div class="set-panel" data-p="' + t.id + '"' + (t.id === setTabId ? '' : ' hidden') + '></div>').join('');
+        tabs.forEach(t => { setHost = body.querySelector('.set-panel[data-p="' + t.id + '"]'); t.fill(setHost); });
+        setHost = null;
+        body.querySelectorAll('.set-tab').forEach(b => b.onclick = function () {
+            setTabId = b.getAttribute('data-t');
+            body.querySelectorAll('.set-tab').forEach(x => x.classList.toggle('active', x === b));
+            body.querySelectorAll('.set-panel').forEach(pn => { pn.hidden = pn.getAttribute('data-p') !== setTabId; });
+            body.scrollTop = 0;
+        });
     }
+    function weeklyTabs() {
+        return [
+            { id: 'items', label: 'البنود', fill: function (el) { el.innerHTML = renderSettingsBody(); wireSettingsBody(); } },
+            { id: 'names', label: 'الأسماء والأوزان', fill: addOrderSettings },
+            { id: 'details', label: 'المقادير والملاحظات', fill: function () { addDetailsSettings(activeColumns); } },
+            { id: 'me', label: 'أنا وسلوك النظام', fill: function () { addHijriSettings(); addBehaviorSettings(); addProfileSettings(); } },
+            { id: 'times', label: 'المواقيت', fill: addPrayerSettings }
+        ];
+    }
+    function refreshSettingsBody() { mountTabs(weeklyTabs()); }
 
     function applyLive() {
         renderHeader();
@@ -4672,7 +4805,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
                 };
             });
         });
-        document.getElementById('modal-body').appendChild(box);
+        host().appendChild(box);
         const q = id => box.querySelector('#' + id);
         const apply = () => {
             settings.prayerTimes = q('pr-on').value === '1'; settings.city = q('pr-city').value;
@@ -4746,7 +4879,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             box.querySelector('#ord-reset').onclick = function () { settings.over = {}; settings.order = []; apply(); render(); };
         };
         render();
-        document.getElementById('modal-body').appendChild(box);
+        host().appendChild(box);
     }
 
     function addBehaviorSettings() {
@@ -4768,7 +4901,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             saveSettings(); paint(); if (settings.autoWeek) rollWeek(); build(); buildRamadan();
         });
         paint();
-        document.getElementById('modal-body').prepend(box);
+        host().prepend(box);
     }
 
     function addHijriSettings() {
@@ -4789,22 +4922,14 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             saveSettings(); paint(); build(); buildRamadan();
         });
         paint();
-        document.getElementById('modal-body').prepend(box);
+        host().prepend(box);
     }
 
     function openSettings() {
         newItemDays = DAYS.slice();
-        openModal('تخصيص البنود', renderSettingsBody(), false);
-        wireSettingsBody();
-        settingsExtras();
-    }
-    function settingsExtras() {
-        addProfileSettings();
-        addHijriSettings();
-        addBehaviorSettings();
-        addOrderSettings();
-        addDetailsSettings(activeColumns);
-        addPrayerSettings();
+        setTabId = 'items';
+        openModal('تخصيص البنود', '', false);
+        mountTabs(weeklyTabs());
     }
 
     /* ── Print timestamp ── */
@@ -4817,6 +4942,486 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             el.textContent = 'تاريخ الطباعة: ' + new Date().toLocaleDateString();
         }
     });
+
+    /* ══════════════════════════ حالتي: السفر والمرض والحيض والنفاس والحمل والإرضاع والعجز ══════════════════════════
+       الحالة فترة زمنية (من تاريخ إلى تاريخ أو مفتوحة) تُحفظ في الإعدادات، فتنطبق تلقائيًا على كل يوم يقع فيها
+       في المتابعة الأسبوعية ووضع رمضان بدل تعليم كل خانة يدويًا. تُراجَع أحكامها مع كل بند أدناه. */
+    const STATE_KEYS = ['travel', 'sick', 'menses', 'nifas', 'pregnant', 'nursing', 'incapable'];
+    const WOMEN_STATES = { menses: 1, nifas: 1, pregnant: 1, nursing: 1 };
+    const STATE_META = {
+        travel:    { label: 'مسافر',  badge: 'سفر',   cls: 'b', open: false },
+        sick:      { label: 'مريض',   badge: 'مرض',   cls: 'y', open: false },
+        menses:    { label: 'حائض',   badge: 'حيض',   cls: 'g', open: true },
+        nifas:     { label: 'نفساء',  badge: 'نفاس',  cls: 'g', open: true },
+        pregnant:  { label: 'حامل',   badge: 'حمل',   cls: 'y', open: false },
+        nursing:   { label: 'مرضع',   badge: 'إرضاع', cls: 'y', open: false },
+        incapable: { label: 'عاجز عن الصيام عجزًا دائمًا', badge: 'عجز', cls: 'g', open: true }
+    };
+    // ملخص قصير يظهر في عرض «اليوم»
+    const STATE_BRIEF = {
+        travel: ['قصر الرباعية (الظهر والعصر والعشاء) مباح، وكذلك الجمع بين الظهر والعصر وبين المغرب والعشاء؛ والفجر والمغرب لا يُقصران.',
+            'من هديه ﷺ في السفر: سنة الفجر والوتر، وترك بقية الرواتب؛ فهي هنا غير مؤكدة.', 'لا جمعة على المسافر، فإن حضرها أجزأته عن الظهر.', 'الفطر في رمضان مباح مع القضاء.'],
+        sick: ['الصلاة لا تسقط بالمرض: صلِّ قائمًا فإن عجزت فقاعدًا فإن عجزت فعلى جنبك فإن عجزت فبالإيماء.', 'الجمع بين الظهر والعصر وبين المغرب والعشاء جائز عند المشقة (دون قصر).',
+            'الفطر في رمضان مباح إن شقّ الصوم أو خُشي زيادة المرض أو تأخر البرء، مع القضاء.'],
+        menses: ['لا صلاة ولا صيام ولا طواف ولا اعتكاف في الحيض.', 'لا قضاء للصلاة الفائتة في الحيض، ويُقضى الصيام الفائت بعد الطهر.', 'تبقى الأذكار والدعاء والاستغفار، وتُستأنف الصلاة والصيام بعد الطهر والاغتسال.', 'قراءة القرآن: جائزة عند المالكية ورواية عن أحمد (واختارها ابن تيمية) دون مسّ المصحف، والجمهور على المنع إلا لحاجة كالتعلّم والمراجعة؛ فتحرَّ ما تطمئنّين إليه.'],
+        nifas: ['حكم النفاس كحكم الحيض: لا صلاة ولا صيام ولا قضاء للصلاة، ويُقضى الصيام الفائت.', 'أكثر النفاس أربعون يومًا عند الحنفية والحنابلة وستون عند المالكية والشافعية؛ ومتى طهرت قبل ذلك اغتسلت وصلّت وصامت.'],
+        pregnant: ['الصلاة واجبة كاملة، وتصلّي قاعدة إن شقّ القيام.', 'الصيام واجب إلا إن خافت ضررًا معتبرًا على نفسها أو جنينها (بقول طبيب ثقة أو تجربة) فتفطر وتقضي؛ وفي الفدية خلاف بين الفقهاء.'],
+        nursing: ['الصلاة واجبة كاملة.', 'الصيام واجب إلا إن خافت ضررًا معتبرًا على نفسها أو رضيعها فتفطر وتقضي؛ وفي الفدية خلاف بين الفقهاء.'],
+        incapable: ['لا صيام على من عجز عنه عجزًا دائمًا (كِبَر أو مرض لا يُرجى برؤه)، وعليه عن كل يوم فدية إطعام مسكين عند الجمهور، ولا قضاء عليه.', 'الصلاة لا تسقط: يصلّي بحسب استطاعته.']
+    };
+    // الأحكام التفصيلية (تُعرض في نافذة «حالتي»)
+    const STATE_RULES = {
+        travel: ['المسافة المعتبرة نحو ٨١ كم فأكثر (يقدّرها كثيرون بين ٨١ و٨٩ كم)، وتبدأ أحكام السفر من مفارقة عمران البلد، ويشترط ألا يكون سفر معصية.',
+            'قصر الصلاة الرباعية (الظهر والعصر والعشاء) إلى ركعتين: رخصة عند الجمهور وعزيمة عند الحنفية، والقصر أفضل؛ أما الفجر والمغرب فلا يُقصران.',
+            'الجمع بين الظهر والعصر وبين المغرب والعشاء (تقديمًا أو تأخيرًا) جائز عند الجمهور، ولا يلزم من القصر ولا يلزمه القصر.',
+            'من نوى الإقامة أربعة أيام غير يومي الدخول والخروج فأكثر أتمّ من وصوله عند الجمهور، وخمسة عشر يومًا عند الحنفية؛ ومن لم يحدد مدة وبقي ينتظر حاجته جاز له القصر مدة طويلة (ثمانية عشر يومًا عند الشافعية).',
+            'لا جمعة على المسافر؛ فإن صلاّها أجزأته عن الظهر.',
+            'كان ﷺ في سفره يحافظ على سنة الفجر والوتر ويترك سائر الرواتب، ولا حرج في النوافل المطلقة.',
+            'الفطر في رمضان مباح مع القضاء، والصوم أفضل لمن لم يشقّ عليه عند الجمهور.',
+            'يمسح المسافر على الخفين ثلاثة أيام بلياليها.'],
+        sick: ['الصلاة لا تسقط بالمرض ولا يجوز إخراجها عن وقتها: قائمًا، فإن عجز فقاعدًا، فإن عجز فعلى جنبه، فإن عجز فبالإيماء.',
+            'يتطهر بقدر استطاعته، ويتيمم عند العجز أو خوف الضرر.',
+            'يجوز الجمع بين الظهر والعصر وبين المغرب والعشاء إذا لحقته مشقة بتفريقهما، عند الحنابلة والمالكية وبعض الشافعية (كالنووي)، دون قصر.',
+            'تسقط الجمعة والجماعة بالمرض الشاق.',
+            'الصيام: من خاف زيادة المرض أو تأخر البرء أفطر وقضى؛ ومن كان مرضه لا يُرجى برؤه أطعم عن كل يوم مسكينًا.'],
+        menses: ['لا تصلّي ولا تصوم في أيام الحيض، ولا قضاء عليها للصلاة، وعليها قضاء الصوم الفائت.',
+            'لا تطوف بالبيت ولا تعتكف في المسجد ولا يحلّ لها الجماع.',
+            'الأذكار والدعاء والتسبيح والاستغفار جائزة بلا خلاف.',
+            'قراءة القرآن للحائض بلا مسّ المصحف: جائزة عند المالكية ورواية عن أحمد واختارها ابن تيمية، ويمنعها الجمهور إلا لحاجة (كتعلّم أو مراجعة أو خوف النسيان)؛ والأحوط ما اطمأنّت إليه من قول أهل العلم.',
+            'إذا طهرت قبل الفجر ولو بلحظة وجب عليها الصوم وصحّ ولو اغتسلت بعد الفجر.',
+            'إذا طهرت وقد بقي من وقت الصلاة ما يتسع لركعة على الأقل (ولتكبيرة عند الشافعية والحنابلة) وجبت عليها تلك الصلاة بعد الاغتسال.'],
+        nifas: ['حكمه كحكم الحيض في ترك الصلاة والصيام والطواف والاعتكاف، ولا قضاء للصلاة ويُقضى الصيام.',
+            'أكثره أربعون يومًا عند الحنفية والحنابلة، وستون عند المالكية والشافعية؛ ومتى طهرت قبل ذلك اغتسلت وصلّت وصامت ولو بعد يوم.'],
+        pregnant: ['الصلاة واجبة كاملة، وتصلّي قاعدة إن شقّ عليها القيام.',
+            'الصيام واجب ما لم تخف ضررًا معتبرًا على نفسها أو جنينها (بقول طبيب ثقة أو تجربة)، فإن أفطرت قضت.',
+            'إن كان خوفها على الجنين وحده ففي الفدية مع القضاء خلاف: تجب عند الشافعية والحنابلة، ولا تجب عند الحنفية؛ فاسألي من تثقين به من أهل العلم.'],
+        nursing: ['الصلاة واجبة كاملة.',
+            'الصيام واجب ما لم تخف ضررًا معتبرًا على نفسها أو رضيعها، فإن أفطرت قضت.',
+            'إن كان خوفها على الرضيع وحده ففي الفدية مع القضاء خلاف بين الفقهاء (تجب عند الشافعية والحنابلة والمالكية في المرضع، ولا تجب عند الحنفية)؛ فاسألي من تثقين به من أهل العلم.'],
+        incapable: ['من عجز عن الصيام عجزًا دائمًا (كِبَر أو مرض لا يُرجى برؤه) فلا صيام عليه، وعليه عن كل يوم فدية: إطعام مسكين، ولا قضاء عليه.',
+            'إن شُفي بعد أن أطعم عن أيام وجب عليه قضاؤها عند بعض الفقهاء، فتحرَّ ذلك.',
+            'الصلاة لا تسقط عنه: يصلّي بحسب استطاعته.']
+    };
+
+    function cleanPeriods(list) {
+        const out = [], seen = {};
+        (Array.isArray(list) ? list : []).forEach(p => {
+            if (out.length >= 80 || !isPlain(p) || STATE_KEYS.indexOf(p.type) === -1) return;
+            const from = cleanDate(p.from); if (!from) return;
+            let to = cleanDate(p.to); if (to && to < from) to = from;
+            let id = (typeof p.id === 'string' && /^[a-z0-9]{3,20}$/.test(p.id) && !seen[p.id]) ? p.id : ('p' + Math.random().toString(36).slice(2, 8));
+            seen[id] = 1; out.push({ id: id, type: p.type, from: from, to: to });
+        });
+        return out;
+    }
+    // الحالات السارية في تاريخ معيّن (الحالات الخاصة بالمرأة لا تُحتسب إلا لمن اختارت «امرأة»)
+    function statesOn(date) {
+        if (!date || !settings.periods || !settings.periods.length) return [];
+        const iso = isoOf(date), out = [];
+        settings.periods.forEach(p => {
+            if (WOMEN_STATES[p.type] && settings.gender !== 'f') return;
+            if (p.from <= iso && (!p.to || iso <= p.to) && out.indexOf(p.type) === -1) out.push(p.type);
+        });
+        return out;
+    }
+    const hasState = (date, t) => statesOn(date).indexOf(t) !== -1;
+
+    // سبب عدم انطباق البند بسبب حالة سارية (يُرجع { reason, tag } أو null)
+    function stateNaReason(col, date) { const i = stateNaInfo(col, date); return i ? i.reason : null; }
+    function stateNaInfo(col, date) {
+        const st = statesOn(date);
+        if (!st.length) return null;
+        const prayerLike = col.kind === 'prayer' || (col.kind === 'nafila' && col.group !== 'fasting') || (col.kind === 'smart' && col.isPrayer);
+        const fastLike = col.group === 'fasting';
+        const hn = st.indexOf('menses') !== -1 ? 'menses' : st.indexOf('nifas') !== -1 ? 'nifas' : null;
+        if (hn) {
+            const tag = STATE_META[hn].badge, nm = hn === 'menses' ? 'الحيض' : 'النفاس';
+            if (prayerLike) return { reason: 'لا صلاة في ' + nm + '، ولا قضاء للصلاة الفائتة فيه', tag: tag };
+            if (fastLike) return { reason: 'لا صيام في ' + nm + '، ويُقضى ما فات من رمضان', tag: tag };
+            if (col.key === 'itikaf') return { reason: 'لا اعتكاف في المسجد في ' + nm, tag: tag };
+        }
+        if (st.indexOf('incapable') !== -1 && fastLike) return { reason: 'عاجز عن الصيام عجزًا دائمًا — عليه فدية عن كل يوم', tag: STATE_META.incapable.badge };
+        return null;
+    }
+    // تسمية «العذر» في خانة الصيام بحسب الحالة (السفر ليس عذرًا يمنع الصلاة، لكنه يبيح الفطر)
+    function fastOptsAt(date) {
+        const st = statesOn(date);
+        const pick = st.indexOf('sick') !== -1 ? 'أفطرت لمرض (أقضيه)' : st.indexOf('travel') !== -1 ? 'أفطرت لسفر (أقضيه)' : st.indexOf('pregnant') !== -1 ? 'أفطرت لحمل (أقضيه)' : st.indexOf('nursing') !== -1 ? 'أفطرت لإرضاع (أقضيه)' : null;
+        if (!pick) return FASTING_OPTS;
+        return FASTING_OPTS.map(x => x.id === 'gray' ? Object.assign({}, x, { text: pick, short: 'أفطرت' }) : x);
+    }
+    function stateBadgesHtml(date) {
+        return statesOn(date).map(t => '<small class="rday st-bdg">' + STATE_META[t].badge + '</small>').join('');
+    }
+
+    /* ── رخص الصلاة (القصر والجمع وهيئة المريض) داخل نافذة تحديد الصلاة ── */
+    const FLAG_KEYS = ['jam', 'qsr', 'cmb', 'sit'];
+    function flagsOf(raw) {
+        if (!raw || typeof raw !== 'object') return null;
+        let f = null;
+        FLAG_KEYS.forEach(k => { if (raw[k]) { f = f || {}; f[k] = raw[k]; } });
+        return f;
+    }
+    // يُرجع الخلية مختصرة: undefined (فارغة) أو نص الحالة أو كائن إن وُجدت علامات
+    function packCell(status, flags, extra) {
+        const ex = extra && Object.keys(extra).length ? extra : null;
+        if (!flags && !ex) return status === 'none' ? undefined : status;
+        return Object.assign({ status: status }, ex || {}, flags || {});
+    }
+    const SIT_LBL = { s: 'قاعدًا', l: 'على جنبه', g: 'بالإيماء' };
+    function tagsOf(obj) {
+        if (!obj) return [];
+        const t = [];
+        if (obj.qsr) t.push('قصر');
+        if (obj.cmb === 't') t.push('جمع تقديم'); else if (obj.cmb === 'a') t.push('جمع تأخير');
+        if (obj.sit && SIT_LBL[obj.sit]) t.push(SIT_LBL[obj.sit]);
+        return t;
+    }
+    function prayerIdxOf(colKey) { const m = /^prayer_(\d)$/.exec(colKey); return m ? +m[1] : -1; }
+    // 1 الظهر 2 العصر 4 العشاء تُقصر؛ الجمع: (1،2) و(3،4)
+    function rukhasHtml(date, pi, obj) {
+        const st = statesOn(date), travel = st.indexOf('travel') !== -1, sick = st.indexOf('sick') !== -1;
+        const canQasr = travel && (pi === 1 || pi === 2 || pi === 4), canCmb = pi >= 1 && pi <= 4;
+        const pillRow = (name, arr, cur) => '<div class="pill-toggle rk-pills" data-rk="' + name + '">' + arr.map(x => '<button type="button" class="pill-btn' + (String(cur || '') === x[0] ? ' active' : '') + '" data-v="' + x[0] + '">' + x[1] + '</button>').join('') + '</div>';
+        let h = '';
+        if (canQasr) h += '<div class="chk" style="margin-top:6px"><input type="checkbox" id="rk-qsr"' + (obj && obj.qsr ? ' checked' : '') + '><label for="rk-qsr">صلّيتها قصرًا (ركعتين)</label></div>';
+        if (canCmb) {
+            const pair = pi <= 2 ? 'الظهر والعصر' : 'المغرب والعشاء';
+            const cmbCur = obj && obj.cmb ? obj.cmb : '';
+            if (travel || sick) h += '<div class="rk-sub">الجمع بين ' + pair + (sick && !travel ? ' (لمشقة المرض)' : '') + '</div>' + pillRow('cmb', [['', 'بدون'], ['t', 'جمع تقديم'], ['a', 'جمع تأخير']], cmbCur);
+            else h += '<div id="rk-other-wrap"><button type="button" class="quick-fill-btn" id="rk-other">رخصة جمع لعذر آخر (مطر شديد / مشقة ظاهرة)</button><div id="rk-other-box" hidden><div class="rk-sub">الجمع بين ' + pair + ' — لا يجوز في الإقامة بلا عذر، ويجوز لمطر شديد أو وحل أو مشقة ظاهرة عند الجمهور (والحنفية لا يجيزونه)</div>' + pillRow('cmb', [['', 'بدون'], ['t', 'جمع تقديم'], ['a', 'جمع تأخير']], cmbCur) + '</div></div>';
+        }
+        if (sick) h += '<div class="rk-sub">هيئة الصلاة</div>' + pillRow('sit', [['', 'قائمًا'], ['s', 'قاعدًا'], ['l', 'على جنبه'], ['g', 'بالإيماء']], obj && obj.sit ? obj.sit : '');
+        if (!h) return '';
+        const ttl = travel ? 'رخص السفر' : sick ? 'رخص المرض' : 'رخصة جمع';
+        const note = travel ? '<div class="rk-note">القصر والجمع رخصتان لا تُحسبان نقصًا في الصلاة، ولا يؤثران في النسبة.</div>' : '';
+        return '<div class="rukhas"><div class="rk-title">' + ttl + '</div>' + h + note + '</div>';
+    }
+    function wireRukhas(src, key) {
+        const setFlag = (f, v) => {
+            const c2 = src.cells()[key], base = (c2 && typeof c2 === 'object') ? Object.assign({}, c2) : { status: statusFromRaw(c2) };
+            if (v) base[f] = v; else delete base[f];
+            const fl = flagsOf(base), st = base.status || 'none', ex = {};
+            ['checks', 'qty', 'amt', 'n', 'k'].forEach(k => { if (base[k] !== undefined) ex[k] = base[k]; });
+            const nv = packCell(st, fl, ex);
+            if (nv === undefined) delete src.cells()[key]; else src.cells()[key] = nv;
+            src.commit();
+        };
+        const q = document.getElementById('rk-qsr');
+        if (q) q.onchange = function () { setFlag('qsr', this.checked ? 1 : 0); };
+        document.querySelectorAll('#modal-body .rk-pills').forEach(row => {
+            const name = row.getAttribute('data-rk');
+            row.querySelectorAll('.pill-btn').forEach(b => b.onclick = function () {
+                row.querySelectorAll('.pill-btn').forEach(x => x.classList.toggle('active', x === b));
+                setFlag(name, b.getAttribute('data-v') || 0);
+            });
+        });
+        const ob = document.getElementById('rk-other');
+        if (ob) ob.onclick = function () { ob.hidden = true; const bx = document.getElementById('rk-other-box'); if (bx) bx.hidden = false; };
+    }
+
+    /* ── شريط الحالة وملخّصها ── */
+    function periodLen(p) {
+        const a = new Date(+p.from.slice(0, 4), +p.from.slice(5, 7) - 1, +p.from.slice(8, 10));
+        const e = p.to ? new Date(+p.to.slice(0, 4), +p.to.slice(5, 7) - 1, +p.to.slice(8, 10)) : new Date();
+        return Math.max(1, Math.round((new Date(e.getFullYear(), e.getMonth(), e.getDate()) - a) / DAY_MS) + 1);
+    }
+    function activePeriods() {
+        const now = todayISO();
+        return settings.periods.filter(p => (!WOMEN_STATES[p.type] || settings.gender === 'f') && p.from <= now && (!p.to || now <= p.to));
+    }
+    function renderStateBars() {
+        const act = activePeriods();
+        ['state-bar', 'rstate-bar'].forEach(id => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            const chips = act.map(p => '<span class="state-chip ' + STATE_META[p.type].cls + '">' + escapeHtml(STATE_META[p.type].label) + ' <small>' + (p.from === todayISO() ? 'منذ اليوم' : 'منذ ' + arDays(periodLen(p))) + '</small></span>').join('');
+            el.innerHTML = '<span class="sb-lbl">حالتي:</span>' + (chips || '<span class="state-chip n">مقيم صحيح</span>') +
+                '<button type="button" class="quick-fill-btn sb-btn" data-act="states">' + (act.length ? 'تعديل الحالة' : 'تغيير الحالة') + '</button>';
+            el.querySelector('[data-act="states"]').onclick = function () { openStates(); };
+        });
+    }
+    function stateBriefHtml(date) {
+        const st = statesOn(date);
+        if (!st.length) return '';
+        return st.map(t => {
+            const m = STATE_META[t];
+            return '<details class="state-brief ' + m.cls + '"' + (m.open ? ' open' : '') + '><summary>حالتك في هذا اليوم: <b>' + escapeHtml(m.label) + '</b></summary>' +
+                '<ul>' + STATE_BRIEF[t].map(x => '<li>' + escapeHtml(x) + '</li>').join('') + '</ul></details>';
+        }).join('');
+    }
+
+    /* ── نافذة «حالتي» ── */
+    let stDraft = null;
+    function availableStates() {
+        const g = settings.gender;
+        return STATE_KEYS.filter(k => !WOMEN_STATES[k] || g === 'f');
+    }
+    function periodRowHtml(p) {
+        const m = STATE_META[p.type], on = (!p.to || p.to >= todayISO()) && p.from <= todayISO();
+        const to = p.to ? formatDateDisplay(p.to) : 'مستمرة';
+        return '<div class="st-row" data-id="' + p.id + '"><div class="st-top"><span class="state-chip ' + m.cls + '">' + escapeHtml(m.label) + '</span><span class="st-dates">' + escapeHtml(formatDateDisplay(p.from)) + ' ← ' + escapeHtml(to) +
+            ' · ' + arDays(periodLen(p)) + '</span></div><div class="st-acts">' +
+            (!p.to ? '<button type="button" class="quick-fill-btn" data-a="end">انتهت اليوم</button>' : '') +
+            '<button type="button" class="quick-fill-btn" data-a="from">تعديل البداية</button><button type="button" class="quick-fill-btn" data-a="to">' + (p.to ? 'تعديل النهاية' : 'تحديد النهاية') + '</button>' +
+            '<button type="button" class="quick-fill-btn st-del" data-a="del">حذف</button></div></div>';
+    }
+    function openStates() {
+        const g = settings.gender, avail = availableStates();
+        if (!stDraft || avail.indexOf(stDraft.type) === -1) stDraft = { type: avail[0], from: todayISO(), to: '' };
+        const rows = settings.periods.slice().sort((a, b) => a.from < b.from ? 1 : -1).filter(p => !WOMEN_STATES[p.type] || g === 'f');
+        const cur = rows.filter(p => !p.to || p.to >= todayISO()), old = rows.filter(p => p.to && p.to < todayISO());
+        let h = '<div class="settings-hint">حدّد حالتك لتتكيّف الجداول مع أحكامها تلقائيًا: ما لا يلزمك يُخفى، وتظهر الرخص (قصر وجمع وهيئة الصلاة)، ويُحتسب الفطر الشرعي في قضاء الصيام. تُطبَّق الحالة على الأيام الواقعة بين تاريخيها.</div>';
+        h += '<div class="settings-hint" style="font-weight:800;margin-top:10px">أنا</div><div class="pill-toggle" id="st-gender">' + [['m', 'رجل'], ['f', 'امرأة']].map(x => '<button type="button" class="pill-btn' + (g === x[0] ? ' active' : '') + '" data-g="' + x[0] + '">' + x[1] + '</button>').join('') + '</div>';
+        if (!g) h += '<div class="settings-hint">اختر رجل أو امرأة لتظهر لك الحالات المناسبة.</div>';
+        h += '<div class="settings-section" style="margin-top:14px"><div class="settings-title">حالاتي الحالية</div>' + (cur.length ? cur.map(periodRowHtml).join('') : '<div class="settings-empty">مقيم صحيح — لا توجد حالة سارية.</div>') + '</div>';
+        h += '<div class="settings-section"><div class="settings-title">إضافة حالة</div><div class="st-types" id="st-types">' + avail.map(k => '<button type="button" class="day-chip' + (stDraft.type === k ? ' active' : '') + '" data-t="' + k + '">' + escapeHtml(STATE_META[k].label) + '</button>').join('') + '</div>' +
+            '<div class="st-form"><div class="field"><label>من</label><button type="button" class="date-display-btn" id="st-from">' + escapeHtml(formatDateDisplay(stDraft.from) || 'اختر') + '</button></div>' +
+            '<div class="field"><label>إلى (اتركه مفتوحًا إن لم تنتهِ)</label><div class="field-date-row"><button type="button" class="date-display-btn' + (stDraft.to ? '' : ' placeholder') + '" id="st-to">' + escapeHtml(stDraft.to ? formatDateDisplay(stDraft.to) : 'مستمرة') + '</button>' + (stDraft.to ? '<button type="button" class="quick-fill-btn" id="st-to-clear">مستمرة</button>' : '') + '</div></div></div>' +
+            '<button type="button" class="btn btn-primary" id="st-add" style="width:100%;margin-top:10px">إضافة الحالة</button>' +
+            '<details class="st-rules" id="st-rules" open><summary>أحكام: ' + escapeHtml(STATE_META[stDraft.type].label) + '</summary><ul>' + STATE_RULES[stDraft.type].map(x => '<li>' + escapeHtml(x) + '</li>').join('') + '</ul></details></div>';
+        if (old.length) h += '<div class="settings-section"><div class="settings-title">حالات سابقة</div>' + old.map(periodRowHtml).join('') + '</div>';
+        h += '<div class="info-box"><div>• هذه الأحكام مختصرة للتذكير وليست فتوى؛ فارجع لأهل العلم فيما يخصّك.</div><div>• الحيض والنفاس: لا يُسجَّل فيهما صلاة ولا صيام، ويُضاف الصيام الفائت من رمضان تلقائيًا إلى «الفوائت والقضاء».</div></div>';
+        openModal('حالتي', h, false);
+        const $ = id => document.getElementById(id);
+        document.querySelectorAll('#st-gender .pill-btn').forEach(b => b.onclick = function () { setGender(b.getAttribute('data-g')); stDraft = null; openStates(); });
+        document.querySelectorAll('#st-types .day-chip').forEach(b => b.onclick = function () { stDraft.type = b.getAttribute('data-t'); openStates(); });
+        const pick = (field, cur) => openDatePicker(cur, function (iso) { if (field === 'from' && !iso) { openStates(); return; } stDraft[field] = iso || ''; if (stDraft.to && stDraft.to < stDraft.from) stDraft.to = stDraft.from; openStates(); });
+        $('st-from').onclick = () => pick('from', stDraft.from); $('st-to').onclick = () => pick('to', stDraft.to);
+        if ($('st-to-clear')) $('st-to-clear').onclick = function () { stDraft.to = ''; openStates(); };
+        $('st-add').onclick = function () {
+            const dup = settings.periods.some(p => p.type === stDraft.type && !p.to && !stDraft.to);
+            if (dup) { showToast('لديك حالة «' + STATE_META[stDraft.type].label + '» مفتوحة بالفعل، عدّلها أو أنهِها أولًا'); return; }
+            settings.periods.push({ id: 'p' + Math.random().toString(36).slice(2, 8), type: stDraft.type, from: stDraft.from, to: stDraft.to });
+            settings.periods = cleanPeriods(settings.periods);
+            stDraft = null; saveSettings(); refreshAllViews(); showToast('أُضيفت الحالة'); openStates();
+        };
+        document.querySelectorAll('#modal-body .st-row').forEach(row => {
+            const id = row.getAttribute('data-id'), p = settings.periods.find(x => x.id === id);
+            if (!p) return;
+            row.querySelectorAll('[data-a]').forEach(b => b.onclick = function () {
+                const a = b.getAttribute('data-a');
+                if (a === 'end') { p.to = todayISO(); saveSettings(); refreshAllViews(); showToast('أُنهيت الحالة'); openStates(); }
+                else if (a === 'del') askConfirm('حذف الحالة', 'سيُحذف هذا السجل وتعود الأيام إلى وضعها العادي. متأكد؟', 'حذف', function () { settings.periods = settings.periods.filter(x => x.id !== id); saveSettings(); refreshAllViews(); openStates(); });
+                else openDatePicker(a === 'from' ? p.from : p.to, function (iso) {
+                    if (a === 'from') { if (iso) { p.from = iso; if (p.to && p.to < iso) p.to = iso; } } else { p.to = iso && iso >= p.from ? iso : (iso ? p.from : ''); }
+                    saveSettings(); refreshAllViews(); openStates();
+                });
+            });
+        });
+    }
+
+    /* ══════════════════════════ الفوائت والقضاء ══════════════════════════
+       صلوات فائتة (معلومة العدد أو مجهولة فيُقدَّر بغلبة الظن) + صيام فائت (من رمضان المسجَّل ومن سنوات سابقة).
+       تُحفظ في مفتاح مستقل حتى لا تضيع بـ«مسح وبدء أسبوع»، وتدخل في النسخة الاحتياطية. */
+    const QADA_STORAGE = 'TazkiyahSystem_v7_qada';
+    const QP = [['fajr', 'الفجر'], ['dhuhr', 'الظهر'], ['asr', 'العصر'], ['maghrib', 'المغرب'], ['isha', 'العشاء'], ['witr', 'الوتر']];
+    const QP_KEYS = QP.map(x => x[0]);
+    function defaultQada() {
+        const z = () => ({ fajr: 0, dhuhr: 0, asr: 0, maghrib: 0, isha: 0, witr: 0 });
+        return { p: z(), d: z(), log: {}, withWitr: false, mult: 1, fast: { man: 0, other: 0, done: 0, flog: {} }, est: { from: '', to: '', freq: '0', mens: 7 } };
+    }
+    let qada = defaultQada();
+    function cleanQada(q) {
+        const out = defaultQada();
+        if (!isPlain(q)) return out;
+        const n = (v, hi) => (typeof v === 'number' && isFinite(v) && v >= 0 && v <= hi) ? Math.round(v) : 0;
+        QP_KEYS.forEach(k => { out.p[k] = n(isPlain(q.p) ? q.p[k] : 0, 1000000); out.d[k] = Math.min(out.p[k], n(isPlain(q.d) ? q.d[k] : 0, 1000000)); });
+        if (isPlain(q.log)) Object.keys(q.log).slice(-400).forEach(day => {
+            if (!cleanDate(day) || !isPlain(q.log[day])) return;
+            const o = {}; QP_KEYS.forEach(k => { const v = n(q.log[day][k], 1000); if (v) o[k] = v; });
+            if (Object.keys(o).length) out.log[day] = o;
+        });
+        out.withWitr = q.withWitr === true;
+        out.mult = [1, 2, 3].indexOf(q.mult) !== -1 ? q.mult : 1;
+        const f = isPlain(q.fast) ? q.fast : {};
+        out.fast.man = n(f.man, 100000); out.fast.other = n(f.other, 100000); out.fast.done = n(f.done, 200000);
+        if (isPlain(f.flog)) Object.keys(f.flog).slice(-400).forEach(day => { const v = n(f.flog[day], 100); if (cleanDate(day) && v) out.fast.flog[day] = v; });
+        const e = isPlain(q.est) ? q.est : {};
+        out.est = { from: cleanDate(e.from), to: cleanDate(e.to), freq: ['0', '10', '25', '50', '80'].indexOf(String(e.freq)) !== -1 ? String(e.freq) : '0', mens: Math.max(0, Math.min(15, n(e.mens, 15) || 7)) };
+        return out;
+    }
+    function loadQada() {
+        try { const raw = localStorage.getItem(QADA_STORAGE); if (raw) qada = cleanQada(JSON.parse(raw)); } catch (e) { qada = defaultQada(); }
+    }
+    function saveQada() {
+        try { localStorage.setItem(QADA_STORAGE, JSON.stringify(qada)); } catch (e) { showToast('تعذّر حفظ بيانات القضاء على هذا الجهاز'); }
+    }
+    const qKeys = () => qada.withWitr ? QP_KEYS : QP_KEYS.filter(k => k !== 'witr');
+    const qRemain = k => Math.max(0, qada.p[k] - qada.d[k]);
+    const qTotalRemain = () => qKeys().reduce((a, k) => a + qRemain(k), 0);
+    const qTotalOwed = () => qKeys().reduce((a, k) => a + qada.p[k], 0);
+    function qAdd(k, delta, dayISO) {
+        const day = dayISO || todayISO();
+        if (delta > 0) {
+            const add = Math.min(delta, qRemain(k)); if (!add) return false;
+            qada.d[k] += add; qada.log[day] = qada.log[day] || {}; qada.log[day][k] = (qada.log[day][k] || 0) + add;
+        } else {
+            const cur = (qada.log[day] && qada.log[day][k]) || 0, sub = Math.min(-delta, cur, qada.d[k]); if (!sub) return false;
+            qada.d[k] -= sub; qada.log[day][k] = cur - sub; if (!qada.log[day][k]) delete qada.log[day][k]; if (!Object.keys(qada.log[day]).length) delete qada.log[day];
+        }
+        const keys = Object.keys(qada.log).sort(); while (keys.length > 400) delete qada.log[keys.shift()];
+        saveQada(); return true;
+    }
+    const qDoneOn = (day, k) => (qada.log[day] && qada.log[day][k]) || 0;
+    function qPace() { // متوسط المقضيّ يوميًا آخر ١٤ يومًا (للتقدير) أو الخطة إن لم توجد بيانات
+        const now = new Date(); let sum = 0;
+        for (let i = 0; i < 14; i++) { const iso = isoOf(new Date(now.getFullYear(), now.getMonth(), now.getDate() - i)); sum += qKeys().reduce((a, k) => a + qDoneOn(iso, k), 0); }
+        return sum / 14;
+    }
+    function qEtaText() {
+        const rem = qTotalRemain(); if (!rem) return '';
+        const maxRem = Math.max.apply(null, qKeys().map(qRemain)), days = Math.ceil(maxRem / qada.mult);
+        const d = new Date(); d.setDate(d.getDate() + days);
+        const yrs = Math.floor(days / 365), mos = Math.floor((days % 365) / 30);
+        const span = (yrs ? yrs + (yrs === 1 ? ' سنة' : yrs === 2 ? ' سنتان' : ' سنوات') : '') + (yrs && mos ? ' و' : '') + (mos ? mos + (mos === 1 ? ' شهر' : mos === 2 ? ' شهران' : mos <= 10 ? ' أشهر' : ' شهرًا') : '') || arDays(days);
+        return 'بمعدل ' + (qada.mult === 1 ? 'صلاة قضاء مع كل فريضة' : qada.mult + ' صلوات قضاء من كل نوع يوميًا') + ' تنتهي بعد نحو ' + span + ' (' + formatDateDisplay(isoOf(d)) + ').';
+    }
+
+    /* ── صيام: الفائت من رمضان الحالي (يُحسب من الجدول) + ما أُضيف يدويًا ── */
+    function ramadanFastStats() {
+        const N = ramadanData.meta.dayCount || 30, out = { owed: 0, unrecorded: 0, fidya: 0 };
+        if (!ramadanDayDate(1)) return out;
+        for (let n = 1; n <= N; n++) {
+            const dt = ramadanDayDate(n); if (!dt || isoOf(dt) > todayISO()) continue;
+            const st = statesOn(dt), cell = statusFromRaw(rawRamadanCell('day' + n + '_fasting'));
+            if (st.indexOf('incapable') !== -1) { out.fidya++; continue; }
+            if (st.indexOf('menses') !== -1 || st.indexOf('nifas') !== -1 || cell === 'gray' || cell === 'red') out.owed++;
+            else if (cell === 'none') out.unrecorded++;
+        }
+        return out;
+    }
+    const fastOwedTotal = () => ramadanFastStats().owed + qada.fast.man + qada.fast.other;
+    const fastRemain = () => Math.max(0, fastOwedTotal() - qada.fast.done);
+    function fastAdd(delta, dayISO) {
+        const day = dayISO || todayISO();
+        if (delta > 0) { if (!fastRemain()) return false; qada.fast.done += 1; qada.fast.flog[day] = (qada.fast.flog[day] || 0) + 1; }
+        else { if (qada.fast.done <= 0) return false; qada.fast.done -= 1; if (qada.fast.flog[day]) { qada.fast.flog[day] -= 1; if (!qada.fast.flog[day]) delete qada.fast.flog[day]; } }
+        saveQada(); return true;
+    }
+    // عند أرشفة رمضان: ما بقي من الأيام الفائتة ينتقل إلى الرصيد اليدوي حتى لا يضيع بمسح بيانات رمضان
+    function commitRamadanOwedToQada() {
+        const s = ramadanFastStats(); if (!s.owed) return;
+        qada.fast.man = Math.min(100000, qada.fast.man + s.owed); saveQada();
+    }
+    function daysToNextRamadan() {
+        const sg = suggestRamadanStart(); if (!sg) return null;
+        const d = Math.round((new Date(sg + 'T00:00:00') - new Date(todayISO() + 'T00:00:00')) / DAY_MS);
+        return d > 0 ? d : null;
+    }
+
+    /* ── الواجهة ── */
+    let qTab = 'prayers';
+    const nfmt = n => String(n);
+    function qEstimate(e) {
+        if (!e.from || !e.to || e.to <= e.from) return null;
+        const days = Math.round((new Date(e.to + 'T00:00:00') - new Date(e.from + 'T00:00:00')) / DAY_MS);
+        const prayedPct = +e.freq; // نسبة الأيام التي كان يصلّي فيها
+        const mensDays = settings.gender === 'f' ? Math.min(days, Math.round(days / 29.53 * (e.mens || 0))) : 0;
+        const missed = Math.max(0, Math.round((days - mensDays) * (1 - prayedPct / 100)));
+        return { days: days, mensDays: mensDays, missed: missed };
+    }
+    const FREQ_OPTS = [['0', 'لم أكن أصلّي إطلاقًا'], ['10', 'أصلّي نادرًا (نحو ١٠٪ من الأيام)'], ['25', 'أصلّي أحيانًا (نحو ٢٥٪)'], ['50', 'أصلّي في نصف الأيام تقريبًا'], ['80', 'أصلّي أغلب الأيام (نحو ٨٠٪)']];
+    function qadaPrayersHtml() {
+        const rem = qTotalRemain(), owed = qTotalOwed(), done = owed - rem, pct = owed ? Math.round(done / owed * 100) : 0, today = todayISO();
+        const est = qada.est, r = qEstimate(est), isF = settings.gender === 'f';
+        let h = '';
+        if (owed) {
+            h += '<div class="qd-sum"><div><div class="qd-big">' + nfmt(rem) + '</div><div class="qd-cap">صلاة متبقية</div></div><div class="qd-bar"><i style="width:' + pct + '%"></i></div><div class="qd-cap">قضيتَ ' + nfmt(done) + ' من ' + nfmt(owed) + ' (' + nfmt(pct) + '%)</div></div>';
+            if (rem) h += '<div class="settings-hint" style="font-weight:800">' + escapeHtml(qEtaText()) + '</div>';
+        } else {
+            h += '<div class="settings-hint" style="font-size:13px;line-height:1.9">هنا تتابع ما فاتك من صلوات لتقضيه. إن كنت تعرف العدد فأدخله في الخانات أدناه، وإن كنت لا تعرفه فاحسبه تقريبًا من الخيار الأول.</div>';
+        }
+        const est_html = '<details class="st-rules" id="qd-est"' + (owed ? '' : ' open') + '><summary>لا أعرف عدد ما فاتني — احسب لي تقريبًا</summary><div class="settings-hint" style="margin:8px 12px 0">من فاتته صلوات ولا يعرف عددها قدّره بغلبة الظن، ويحتاط بالأكثر إن شكّ، ثم يقضي حتى يغلب على ظنه براءة ذمته. لا يُكلَّف بإحصاء دقيق.</div><div style="padding:0 12px 12px">' +
+            '<div class="st-form"><div class="field"><label>بداية التكليف (البلوغ) أو أول ما فاتتك الصلوات</label><button type="button" class="date-display-btn' + (est.from ? '' : ' placeholder') + '" id="qd-from">' + escapeHtml(est.from ? formatDateDisplay(est.from) : 'اختر تاريخًا تقريبيًا') + '</button></div>' +
+            '<div class="field"><label>إلى متى (قبل أن تنتظم في الصلاة)</label><button type="button" class="date-display-btn' + (est.to ? '' : ' placeholder') + '" id="qd-to">' + escapeHtml(est.to ? formatDateDisplay(est.to) : 'اختر تاريخًا') + '</button></div></div>' +
+            '<div class="field" style="margin-top:8px"><label>كم كنت تصلّي في تلك المدة؟</label><select class="ord-w" id="qd-freq" style="width:100%">' + FREQ_OPTS.map(o => '<option value="' + o[0] + '"' + (est.freq === o[0] ? ' selected' : '') + '>' + o[1] + '</option>').join('') + '</select></div>' +
+            (isF ? '<div class="field" style="margin-top:8px"><label>متوسط أيام الحيض في الشهر (لا قضاء لصلاة أيام الحيض والنفاس)</label><input type="number" id="qd-mens" min="0" max="15" value="' + est.mens + '" style="width:100%"></div>' : '') +
+            (r ? '<div class="qd-res"><div>المدة نحو <b>' + nfmt(r.days) + '</b> يومًا' + (r.mensDays ? '، منها نحو <b>' + nfmt(r.mensDays) + '</b> يومًا حيضًا لا قضاء فيها' : '') + '.</div><div>التقدير: <b>' + nfmt(r.missed) + '</b> من كل صلاة، أي نحو <b>' + nfmt(r.missed * 5) + '</b> صلاة.</div>' +
+                '<div class="qd-res-acts"><button type="button" class="btn btn-primary" id="qd-apply-add">إضافة إلى ما عليّ</button>' + (owed ? '<button type="button" class="btn btn-secondary" id="qd-apply-set">اعتماده بدل الأعداد الحالية</button>' : '') + '</div></div>' : '<div class="settings-hint" style="margin-top:8px">اختر التاريخين ليظهر التقدير.</div>') + '</div></details>';
+        if (!owed) h += est_html;
+        h += '<div class="settings-section" style="margin-top:12px"><div class="settings-title">' + (owed ? 'سجّل ما قضيتَه اليوم' : 'أعرف العدد: أدخل المتبقي من كل صلاة') + '</div>';
+        qKeys().forEach(k => {
+            const nm = QP.find(x => x[0] === k)[1], td = qDoneOn(today, k);
+            h += '<div class="qd-row" data-k="' + k + '"><span class="qd-nm">' + nm + '</span><span class="qd-rm"><input type="number" class="qd-inp" min="0" max="1000000" inputmode="numeric" value="' + qRemain(k) + '" aria-label="المتبقي من ' + nm + '"><small>متبقٍ' + (td ? ' · اليوم ' + nfmt(td) : '') + '</small></span>' +
+                '<button type="button" class="qty-btn" data-d="-1" aria-label="تراجع عن قضاء ' + nm + '"' + (td ? '' : ' disabled') + '>−1</button><button type="button" class="qty-btn primary" data-d="1"' + (qRemain(k) ? '' : ' disabled') + '>قضيتُ 1</button></div>';
+        });
+        h += '<label class="chk" style="margin-top:10px"><input type="checkbox" id="qd-witr"' + (qada.withWitr ? ' checked' : '') + '><span>احتساب الوتر (واجب عند الحنفية، وسنة مؤكدة عند الجمهور فلا قضاء واجب عليه عندهم)</span></label></div>';
+        if (owed) {
+            h += '<div class="settings-section"><div class="settings-title">وتيرة القضاء</div><div class="settings-hint">أيسر طريقة (كما أفتت دار الإفتاء): أن تصلّي مع كل فريضة حاضرة صلاة فائتة من نوعها قبلها أو بعدها، ويمكنك الزيادة.</div><div class="pill-toggle" id="qd-mult">' +
+                [[1, 'مع كل فريضة: 1'], [2, 'مع كل فريضة: 2'], [3, 'مع كل فريضة: 3']].map(x => '<button type="button" class="pill-btn' + (qada.mult === x[0] ? ' active' : '') + '" data-v="' + x[0] + '">' + x[1] + '</button>').join('') + '</div></div>';
+            h += est_html;
+        }
+        h += '<div class="info-box"><div>• من ترك الصلاة بعذر أو بغير عذر وجب عليه قضاؤها مهما كثرت عند الجمهور، والتوبة تُسقط الإثم ولا تُسقط القضاء.</div><div>• لا قضاء على الحائض والنفساء لصلاة أيام الحيض والنفاس.</div>' +
+            '<div>• النوافل لا تُجزئ عن الفوائت على المختار للفتوى؛ فاقضِ الفرض أولًا ثم تطوّع.</div><div>• الترتيب بين الفوائت واجب عند الحنفية والمالكية والحنابلة مع الذكر وسعة الوقت، وسنة عند الشافعية، ويسقط عند كثرتها عند الحنفية والمالكية؛ فلا حرج عليك في ترك الترتيب مع كثرة ما عليك.</div>' +
+            '<div>• تُقضى الصلاة على صفتها: الرباعية أربعًا ولا تُقصر في الإقامة، وتُقضى الفائتة في السفر قصرًا إن كانت فاتت في السفر.</div></div>';
+        return h;
+    }
+    function qadaFastHtml() {
+        const rs = ramadanFastStats(), man = qada.fast.man, other = qada.fast.other, tot = fastOwedTotal(), rem = fastRemain(), done = qada.fast.done, dn = daysToNextRamadan();
+        let h = '<div class="qd-sum"><div><div class="qd-big">' + nfmt(rem) + '</div><div class="qd-cap">يومًا متبقيًا من صيام القضاء</div></div><div class="qd-bar"><i style="width:' + (tot ? Math.round(done / tot * 100) : 0) + '%"></i></div><div class="qd-cap">' + (tot ? 'قضيتَ ' + nfmt(Math.min(done, tot)) + ' من ' + nfmt(tot) : 'لا يوجد صيام فائت مسجَّل') + '</div></div>';
+        if (rem && dn) h += '<div class="notice-bar" style="margin:8px 0"><span>تبقّى على رمضان القادم نحو ' + arDays(dn) + (rem > dn ? ' وعليك ' + arDays(rem) + ' — لا يتّسع الوقت؛ والتأخير بلا عذر حتى يدخل رمضان التالي يُوجب الفدية مع القضاء عند الجمهور (وعند الحنفية القضاء فقط).' : '، وعليك ' + arDays(rem) + ' فبادر بالقضاء قبل رمضان.') + '</span></div>';
+        h += '<div class="settings-section"><div class="settings-title">تفصيل ما عليك</div><div class="qd-line"><span>فائت من رمضان المسجَّل في وضع رمضان (يُحسب تلقائيًا)</span><b>' + nfmt(rs.owed) + '</b></div>' +
+            '<div class="qd-line"><span>فائت من رمضانات سابقة</span><span class="qd-step"><button type="button" class="qty-btn" data-f="man-">−</button><b>' + nfmt(man) + '</b><button type="button" class="qty-btn" data-f="man+">+</button></span></div>' +
+            '<div class="qd-line"><span>أيام واجبة أخرى (نذر / كفارة)</span><span class="qd-step"><button type="button" class="qty-btn" data-f="oth-">−</button><b>' + nfmt(other) + '</b><button type="button" class="qty-btn" data-f="oth+">+</button></span></div>' +
+            (rs.unrecorded ? '<div class="settings-hint">لم تُسجّل خانة الصيام في ' + arDays(rs.unrecorded) + ' من رمضان الحالي، فلم تُحتسب هنا.</div>' : '') + '</div>';
+        h += '<div class="settings-section"><div class="settings-title">سجّل ما قضيته</div><div class="qd-line"><span>قضيتُ يومًا اليوم</span><span class="qd-step"><button type="button" class="qty-btn" data-f="done-"' + (qada.fast.flog[todayISO()] ? '' : ' disabled') + '>−</button><button type="button" class="qty-btn primary" data-f="done+"' + (rem ? '' : ' disabled') + '>قضيتُ يومًا</button></span></div>' +
+            '<div class="settings-hint">اضغط «قضيتُ يومًا» كلما صمت يومًا من القضاء. وإن تتبّعتَه أيضًا في بند «قضاء رمضان» بالجدول فهو سجلّ مستقلّ للمراجعة فقط.</div></div>';
+        if (rs.fidya) h += '<div class="notice-bar" style="margin:8px 0"><span>فدية العاجز عن الصيام: عن ' + arDays(rs.fidya) + ' من رمضان الحالي، أي إطعام ' + nfmt(rs.fidya) + ' مسكينًا (يومًا بيوم).</span></div>';
+        h += '<div class="info-box"><div>• القضاء واجب على من أفطر في رمضان لعذر (مرض يُرجى برؤه، سفر، حيض، نفاس، وخوف الضرر للحامل والمرضع) أو بلا عذر، ولا يُشترط فيه التتابع.</div><div>• يجب القضاء قبل رمضان القادم؛ فإن أخّره بلا عذر أثم، وعليه القضاء مع الفدية عند الجمهور (والحنفية: القضاء فقط).</div>' +
+            '<div>• يجوز الجمع بين نية القضاء وصيام الست من شوال أو عرفة أو الإثنين والخميس عند بعض الفقهاء فيحصل أصل الثواب، والأكمل إفراد كلٍّ.</div></div>';
+        return h;
+    }
+    function openQada(tab) {
+        if (tab) qTab = tab;
+        const body = qTab === 'fast' ? qadaFastHtml() : qadaPrayersHtml();
+        openModal('الفوائت والقضاء', '<div class="pill-toggle" id="qd-tabs" style="margin-bottom:12px">' + [['prayers', 'الصلوات'], ['fast', 'الصيام']].map(x => '<button type="button" class="pill-btn' + (qTab === x[0] ? ' active' : '') + '" data-t="' + x[0] + '">' + x[1] + '</button>').join('') + '</div>' + body, false);
+        const $ = id => document.getElementById(id), again = () => { const sc = $('modal-body') ? $('modal-body').scrollTop : 0; openQada(); const mb = $('modal-body'); if (mb) mb.scrollTop = sc; };
+        document.querySelectorAll('#qd-tabs .pill-btn').forEach(b => b.onclick = function () { openQada(b.getAttribute('data-t')); });
+        if (qTab === 'fast') {
+            document.querySelectorAll('#modal-body [data-f]').forEach(b => b.onclick = function () {
+                const a = b.getAttribute('data-f');
+                if (a === 'man+') qada.fast.man = Math.min(100000, qada.fast.man + 1); else if (a === 'man-') qada.fast.man = Math.max(0, qada.fast.man - 1);
+                else if (a === 'oth+') qada.fast.other = Math.min(100000, qada.fast.other + 1); else if (a === 'oth-') qada.fast.other = Math.max(0, qada.fast.other - 1);
+                else if (a === 'done+') fastAdd(1); else if (a === 'done-') fastAdd(-1);
+                saveQada(); again(); refreshAllViews();
+            });
+            return;
+        }
+        document.querySelectorAll('#modal-body .qd-row').forEach(row => {
+            const k = row.getAttribute('data-k');
+            row.querySelectorAll('.qty-btn').forEach(b => b.onclick = function () { qAdd(k, parseInt(b.getAttribute('data-d'), 10)); again(); buildToday(); });
+            row.querySelector('.qd-inp').onchange = function () { const v = Math.max(0, Math.min(1000000, Math.round(parseFloat(this.value) || 0))); qada.p[k] = qada.d[k] + v; saveQada(); again(); buildToday(); };
+        });
+        $('qd-witr').onchange = function () { qada.withWitr = this.checked; saveQada(); again(); buildToday(); };
+        document.querySelectorAll('#qd-mult .pill-btn').forEach(b => b.onclick = function () { qada.mult = parseInt(b.getAttribute('data-v'), 10); saveQada(); again(); });
+        const keepOpen = () => { qada.est = Object.assign({}, qada.est); saveQada(); };
+        const pickEst = f => openDatePicker(qada.est[f], function (iso) { qada.est[f] = iso || ''; keepOpen(); qTab = 'prayers'; openQada(); const d = $('qd-est'); if (d) d.open = true; });
+        if ($('qd-from')) $('qd-from').onclick = () => pickEst('from'); if ($('qd-to')) $('qd-to').onclick = () => pickEst('to');
+        if ($('qd-freq')) $('qd-freq').onchange = function () { qada.est.freq = this.value; keepOpen(); again(); const d = $('qd-est'); if (d) d.open = true; };
+        if ($('qd-mens')) $('qd-mens').onchange = function () { qada.est.mens = Math.max(0, Math.min(15, Math.round(parseFloat(this.value) || 0))); keepOpen(); again(); const d = $('qd-est'); if (d) d.open = true; };
+        const apply = replace => {
+            const r = qEstimate(qada.est); if (!r) return;
+            QP_KEYS.forEach(k => { if (k === 'witr' && !qada.withWitr) return; if (replace) qada.p[k] = qada.d[k] + r.missed; else qada.p[k] = Math.min(1000000, qada.p[k] + r.missed); });
+            saveQada(); showToast('اعتُمد التقدير: ' + nfmt(r.missed) + ' من كل صلاة'); openQada(); buildToday();
+        };
+        if ($('qd-apply-add')) $('qd-apply-add').onclick = () => apply(false);
+        if ($('qd-apply-set')) $('qd-apply-set').onclick = () => { if (qTotalOwed()) askConfirm('اعتماد التقدير', 'سيحلّ هذا التقدير محل الأعداد الحالية للمتبقي من كل صلاة (ويبقى ما قضيتَه محفوظًا). متأكد؟', 'اعتماد', () => apply(true)); else apply(true); };
+    }
+    // بطاقة سريعة في عرض «اليوم» الأسبوعي
+    function qadaTodayHtml() {
+        const rem = qTotalRemain(), frem = fastRemain();
+        if (!rem && !frem) return '';
+        const today = todayISO();
+        let h = '<div class="qd-card no-print"><div class="qd-card-hd"><b>الفوائت والقضاء</b><span>' + (rem ? 'صلوات: ' + nfmt(rem) : '') + (rem && frem ? ' · ' : '') + (frem ? 'صيام: ' + arDays(frem) : '') + '</span></div>';
+        if (rem) h += '<div class="qd-chips">' + qKeys().filter(k => qRemain(k) > 0).map(k => '<button type="button" class="det-chip" data-qk="' + k + '">' + QP.find(x => x[0] === k)[1] + ' <small>' + nfmt(qRemain(k)) + (qDoneOn(today, k) ? ' · اليوم ' + nfmt(qDoneOn(today, k)) : '') + '</small></button>').join('') + '</div><div class="settings-hint" style="margin:4px 0 0">اضغط على الصلاة بعد قضائها لتُخصم من المتبقي.</div>';
+        h += '<button type="button" class="quick-fill-btn" data-qopen="1" style="margin-top:8px">فتح الفوائت والقضاء</button></div>';
+        return h;
+    }
+    function wireQadaToday(box) {
+        box.querySelectorAll('[data-qk]').forEach(b => b.onclick = function () { if (qAdd(b.getAttribute('data-qk'), 1)) { showToast('قُضيت صلاة', function () { qAdd(b.getAttribute('data-qk'), -1); buildToday(); }); buildToday(); } });
+        box.querySelectorAll('[data-qopen]').forEach(b => b.onclick = function () { openQada(); });
+    }
 
     /* ══════════════════ بناء جدول رمضان ══════════════════ */
 
@@ -4856,6 +5461,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
     }
 
     function buildRamadan() {
+        renderStateBars();
         renderRamadanNotice();
         updateDateDisplayButton('ramadan-start-date-btn', ramadanData.meta.startDate, function (iso) {
             ramadanData.meta.startDate = iso;
@@ -4882,13 +5488,13 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             const note = getRamadanNote(dayKey).trim();
             const hasNote = note.length > 0;
             const label = ramadanDayLabel(dayNum);
-            const isQadrNight = QADR_NIGHTS.indexOf(dayNum) !== -1;
+            const isQadrNight = [21, 23, 25, 27, 29].indexOf(dayNum) !== -1;
 
             const tdDay = document.createElement('td');
             tdDay.style.border = 'none';
             tdDay.innerHTML =
                 '<div class="day-cell">' +
-                label + (isQadrNight ? ' <span class="qadr-mark" title="من الليالي الوترية للعشر الأواخر"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>' : '') +
+                label + stateBadgesHtml(ramadanDayDate(dayNum)) + (isQadrNight ? ' <span class="qadr-mark" title="من الليالي الوترية للعشر الأواخر"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>' : '') +
                 '<button type="button" class="note-btn' + (hasNote ? ' active' : '') +
                 '" data-day="' + dayKey + '" data-label="' + escapeHtml(label) + '" title="ملاحظات اليوم" aria-label="ملاحظات ' + escapeHtml(label) + '">' +
                 '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">' +
@@ -4975,10 +5581,9 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             '<textarea class="zakat-note" id="zakat-note" placeholder="ملاحظة (لمين، تاريخ الإخراج...)">' + escapeHtml(ramadanData.zakatFitr.note || '') + '</textarea>' +
             '<button type="button" class="disc-btn" data-t="zk-info" aria-expanded="false">أحكام زكاة الفطر</button><div class="perm-extra" id="zk-info" hidden>واجبة على كل مسلم عن نفسه ومن يعول: صاع من غالب قوت البلد عند الجمهور (ونصف صاع من القمح عند الحنفية). تجب بغروب شمس آخر يوم من رمضان عند الشافعية والحنابلة، وبفجر يوم العيد عند الحنفية. الأفضل إخراجها قبل صلاة العيد، ويجوز تعجيلها قبله (من أول رمضان عند الشافعية، وبيوم أو يومين عند غيرهم)، ويجوز بعد الصلاة في يوم العيد، وتأخيرها عن يوم العيد بلا عذر حرام ولا تسقط بفوات وقتها. وتفتي دار الإفتاء المصرية بجواز إخراج القيمة نقودًا (وتعلن قيمتها كل عام).</div>' +
             '</div>';
-        let qadaDue = 0;
-        for (let d = 1; d <= dayCount; d++) { const fs = ramadanStatusOf('day' + d + '_fasting'); if (fs === 'red' || fs === 'gray') qadaDue++; }
-        html += '<div class="rwidget"><div class="rwidget-title">قضاء الصيام</div><div class="khatm-summary">أيام تلزمك قضاءً: <b>' + qadaDue + '</b> ' + (qadaDue === 1 ? 'يوم' : 'أيام') + ' (المُفطرة أو المعذور فيها)</div>' +
-            '<button type="button" class="disc-btn" data-t="qd-info" aria-expanded="false">أحكام القضاء والفدية</button><div class="perm-extra" id="qd-info" hidden>يجب قضاء ما أفطرته من رمضان ولو بعذر، متتابعًا أو متفرقًا حتى قبل رمضان القادم. والعاجز عجزًا دائمًا (كِبَر أو مرض لا يُرجى برؤه) عليه فدية إطعام مسكين عن كل يوم. يمكنك متابعة القضاء من بند «قضاء رمضان» في المتابعة الأسبوعية (فعّله من تخصيص البنود).</div></div>';
+        const fs = ramadanFastStats();
+        html += '<div class="rwidget"><div class="rwidget-title">قضاء الصيام</div><div class="khatm-summary">أيام تلزمك قضاءً من هذا الشهر: <b>' + fs.owed + '</b> ' + (fs.owed === 1 ? 'يوم' : 'أيام') + ' (المفطرة أو المعذور فيها أو أيام الحيض والنفاس)' + (fs.fidya ? '<br>فدية العجز الدائم: <b>' + fs.fidya + '</b> ' + (fs.fidya === 1 ? 'يوم' : 'أيام') + '' : '') + '</div>' +
+            '<button type="button" class="quick-fill-btn" id="open-qada-r">فتح الفوائت والقضاء</button> <button type="button" class="disc-btn" data-t="qd-info" aria-expanded="false">أحكام القضاء والفدية</button><div class="perm-extra" id="qd-info" hidden>يجب قضاء ما أفطرته من رمضان ولو بعذر، متتابعًا أو متفرقًا، ويُستحب قبل رمضان القادم؛ فإن أخّره بلا عذر حتى دخل رمضان التالي أثم، وعليه القضاء مع الفدية عند الجمهور (وعند الحنفية القضاء فقط). والعاجز عجزًا دائمًا (كِبَر أو مرض لا يُرجى برؤه) عليه فدية إطعام مسكين عن كل يوم ولا قضاء. وبقاء ما عليك يُنقل تلقائيًا إلى «الفوائت والقضاء» عند أرشفة رمضان.</div></div>';
 
         html += '<div class="rwidget">' +
             '<div class="rwidget-title"><span>ختمة القرآن</span><span style="color:var(--muted)">' + pct + '%</span></div>' +
@@ -5012,6 +5617,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
                 saveRamadan();
             };
         }
+        const oq = document.getElementById('open-qada-r'); if (oq) oq.onclick = function () { openQada('fast'); };
         wirePillToggle('khatm-unit-toggle', function (val) {
             ramadanData.khatm.unit = val;
             saveRamadan();
@@ -5049,7 +5655,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
                 '<input type="checkbox" id="rtgl_' + c.key + '"' + (checked ? ' checked' : '') + '>' +
                 '<label for="rtgl_' + c.key + '">' + escapeHtml(c.title) + '</label></div>';
             if (c.key === 'qadr') {
-                html += '<div class="settings-hint" style="margin:-2px 0 8px">تظهر تلقائيًا في الليالي الوترية من العشر الأواخر (21، 23، 25، 27، 29) فقط — بقية الأيام "لا تنطبق".</div>';
+                html += '<div class="settings-hint" style="margin:-2px 0 8px">تظهر في ليالي العشر الأواخر (من 21 إلى 30)، والوتر منها آكد (21 و23 و25 و27 و29)؛ وقبل ذلك "لا ينطبق".</div>';
             }
         });
         html += '</div>';
@@ -5076,13 +5682,14 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         return html;
     }
 
-    function refreshRamadanSettingsBody() {
-        const body = document.getElementById('modal-body');
-        if (body) body.innerHTML = renderRamadanSettingsBody();
-        wireRamadanSettingsBody();
-        addProfileSettings();
-        addDetailsSettings(ramadanActiveColumns);
+    function ramadanTabs() {
+        return [
+            { id: 'items', label: 'البنود', fill: function (el) { el.innerHTML = renderRamadanSettingsBody(); wireRamadanSettingsBody(); } },
+            { id: 'details', label: 'المقادير والملاحظات', fill: function () { addDetailsSettings(ramadanActiveColumns); } },
+            { id: 'me', label: 'أنا', fill: addProfileSettings }
+        ];
     }
+    function refreshRamadanSettingsBody() { mountTabs(ramadanTabs()); }
 
     function applyRamadanLive() {
         renderRamadanHeader();
@@ -5136,10 +5743,9 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
     }
 
     function openRamadanSettings() {
-        openModal('تخصيص بنود رمضان', renderRamadanSettingsBody(), false);
-        wireRamadanSettingsBody();
-        addProfileSettings();
-        addDetailsSettings(ramadanActiveColumns);
+        setTabId = 'items';
+        openModal('تخصيص بنود رمضان', '', false);
+        mountTabs(ramadanTabs());
     }
 
     /* ── تبديل الوضع (أسبوعي / رمضان) ── */
@@ -5197,6 +5803,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         load();
         loadSettings();
         sanitizeState();
+        loadQada();
         applyGenderLabels();
         const dateMigrated = migrateDateFieldIfNeeded();
         rollWeek();
@@ -5271,6 +5878,8 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
             const guide = [
                 ['كيف أسجّل؟', 'اضغط أي خانة واختر حالتها: <b>أخضر</b> مكتمل، <b>أزرق</b> منتصف الوقت، <b>أصفر</b> جزئي/آخر الوقت، <b>أحمر</b> لم يتم، <b>رمادي</b> عذر شرعي. وبعد كل تسجيل يظهر زر «تراجع» لثوانٍ.'],
                 ['الصلوات والجماعة', 'في الفريضة تقدر تعلّم «صلّيتها جماعة» فتظهر نقطة خضراء صغيرة في الخانة، ولا تؤثر في النسبة.'],
+                ['حالتي (سفر، مرض، حيض، نفاس، حمل، إرضاع)', 'من «حالتي» حدّد حالتك وفترتها: <b>المسافر</b> تظهر له خيارات القصر والجمع في الصلاة، و<b>المريض</b> يختار هيئة الصلاة (قاعدًا أو على جنبه أو بالإيماء)، و<b>الحائض والنفساء</b> تختفي عنها الصلاة والصيام تلقائيًا ولا تُحسب عليها. وأيام الفطر الشرعي تُحتسب قضاءً.'],
+                ['الفوائت والقضاء', 'تابع الصلوات الفائتة (بعدد معلوم أو بتقدير تقريبي بغلبة الظن) وصيام القضاء. وما بقي عليك من رمضان يُنقل إليه تلقائيًا عند أرشفة رمضان.'],
                 ['المقدار والتفاصيل', 'من «تخصيص البنود ثم المقادير والتفاصيل» حدّد مقدار كل بند (الضحى ٨ ركعات مثلًا) وأضف دعاءً أو ملاحظة مثبّتة. بعدها تسجّل <b>الكمية المنجزة</b> (٦ من ٨) وتُحسب في النسبة.'],
                 ['وضع رمضان', 'يضم الصلوات والنوافل والأذكار مع الصيام وآدابه وليلة القدر والاعتكاف والختمة والصدقة. وما تسجّله من الصلوات والأذكار يظهر في المتابعة الأسبوعية لنفس الأيام والعكس، فلا يبدو أي أسبوع فارغًا.'],
                 ['عرض «اليوم» والطباعة', 'اختر «اليوم» لتسجيل يومك بسهولة، وعند الطباعة من عرض «اليوم» يُطبع اليوم وحده، ومن «الأسبوع كله» يُطبع الأسبوع.'],
@@ -5320,6 +5929,7 @@ return new kd(this.curr.time,a,b)};$jscomp.global.Object.defineProperties(H.prot
         document.getElementById('btn-ramadan-reset').onclick = function () {
             askConfirm('مسح بيانات رمضان', 'سيُحفظ رمضان الحالي في الأرشيف ثم تُمسح بياناته. متأكد؟', 'مسح بيانات رمضان', function () {
                 if (!archiveCurrentRamadan()) { showToast('تعذّر حفظ الأرشيف فلم يُمسح شيء — نزّل نسخة احتياطية أولًا'); return; }
+                commitRamadanOwedToQada();
                 ramadanData = {
                     meta: { startDate: '', dayCount: 30 }, cells: {}, notes: {},
                     khatm: { unit: 'juz', total: 30, days: 30, entries: {} },
