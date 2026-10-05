@@ -1,7 +1,7 @@
 /* نظام تزكية — Service Worker
    الصفحة: الشبكة أولًا (فيصلك كل تحديث تلقائيًا) ثم النسخة المحفوظة عند انقطاع الإنترنت.
    الملفات الثابتة (الأيقونات): من النسخة المحفوظة أولًا. غيّر رقم CACHE إذا غيّرت الأيقونات. */
-const CACHE = 'tazkiyah-v2';
+const CACHE = 'tazkiyah-v3';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './icons/maskable-512.png', './icons/apple-touch-icon.png'];
 
 self.addEventListener('install', function (e) {
